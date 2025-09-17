@@ -1,0 +1,1528 @@
+[
+  {
+    "name": {
+      "ua": "Тривога",
+      "en": "Alarm"
+    },
+    "level": 1,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 хвилина (ритуал)",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "8 годин",
+    "classes": [
+      "Бард",
+      "Маг",
+      "Чаклун"
+    ],
+    "description": "Охороняє область: подає звук або ментальне попередження, коли хтось перетинає межу."
+  },
+  {
+    "name": {
+      "ua": "Дружба з тваринами",
+      "en": "Animal Friendship"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "24 години",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Переконує звіра, що ви не ворог; при провалі рятку ставиться дружньо."
+  },
+  {
+    "name": {
+      "ua": "Агатисова броня",
+      "en": "Armor of Agathys"
+    },
+    "level": 1,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Чорнокнижник"
+    ],
+    "description": "Надає тимчасові хіти і карає холодом тих, хто влучає по вам у ближньому бою.",
+    "damage": {
+      "type": "холод",
+      "base": "5",
+      "scales_at_levels": {
+        "2": "10",
+        "3": "15",
+        "4": "20",
+        "5": "25"
+      },
+      "note": "Значення — тимчасові хіти/відплата."
+    }
+  },
+  {
+    "name": {
+      "ua": "Руки Гадара",
+      "en": "Arms of Hadar"
+    },
+    "level": 1,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "Особисто (радіус 10 футів)",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чорнокнижник"
+    ],
+    "description": "Щупальця мороку завдають шкоди навколо й позбавляють реакцій до вашого наступного ходу.",
+    "damage": {
+      "type": "некротична",
+      "base": "2к6",
+      "scales_at_levels": {
+        "2": "3к6",
+        "3": "4к6",
+        "4": "5к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Псування",
+      "en": "Bane"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Клірик"
+    ],
+    "description": "До трьох істот віднімають 1к4 від атак і рятків; більше цілей на вищих рівнях."
+  },
+  {
+    "name": {
+      "ua": "Благословення",
+      "en": "Bless"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Паладин"
+    ],
+    "description": "До трьох істот додають 1к4 до атак і рятків; більше цілей на вищих рівнях."
+  },
+  {
+    "name": {
+      "ua": "Палаючі руки",
+      "en": "Burning Hands"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "Конус 15 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Конус полум’я завдає шкоди й підпалює легкозаймисте.",
+    "damage": {
+      "type": "вогонь",
+      "base": "3к6",
+      "scales_at_levels": {
+        "2": "4к6",
+        "3": "5к6",
+        "4": "6к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Зачарувати особу",
+      "en": "Charm Person"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Чаклун",
+      "Маг",
+      "Чорнокнижник"
+    ],
+    "description": "Людиноподібна істота робить ряток Мудрості (з перевагою, якщо ворог); при провалі ставиться дружньо."
+  },
+  {
+    "name": {
+      "ua": "Хроматична сфера",
+      "en": "Chromatic Orb"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С",
+      "М (алмаз 50 зм)"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Куля вибраної стихії завдає шкоди одній цілі.",
+    "damage": {
+      "type": "за вибором",
+      "base": "3к8",
+      "scales_at_levels": {
+        "2": "4к8",
+        "3": "5к8",
+        "4": "6к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Кольоровий спалах",
+      "en": "Color Spray"
+    },
+    "level": 1,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "Конус 15 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 раунд",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Засліплює істот у порядку їх поточних хітів до вичерпання суми ефекту."
+  },
+  {
+    "name": {
+      "ua": "Наказ",
+      "en": "Command"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "1 раунд",
+    "classes": [
+      "Клірик",
+      "Паладин"
+    ],
+    "description": "Однослівний наказ людиноподібній істоті; при провалі рятку виконує команду у свій хід."
+  },
+  {
+    "name": {
+      "ua": "Розуміння мов",
+      "en": "Comprehend Languages"
+    },
+    "level": 1,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 дія (ритуал)",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Бард",
+      "Маг",
+      "Чаклун",
+      "Чорнокнижник"
+    ],
+    "description": "Розумієте сказане/написане; не надає здатності говорити."
+  },
+  {
+    "name": {
+      "ua": "Створити/Знищити воду",
+      "en": "Create or Destroy Water"
+    },
+    "level": 1,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик",
+      "Друїд"
+    ],
+    "description": "Створює воду або розсіює існуючу в межах області/посудин."
+  },
+  {
+    "name": {
+      "ua": "Лікування ран",
+      "en": "Cure Wounds"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Друїд",
+      "Паладин",
+      "Рейнджер"
+    ],
+    "description": "Торкання відновлює хіти.",
+    "damage": {
+      "type": "зцілення",
+      "base": "1к8 + модифікатор",
+      "scales_at_levels": {
+        "2": "+1к8 за рівень вище 1-го"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Виявити добро і зло",
+      "en": "Detect Evil and Good"
+    },
+    "level": 1,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Паладин"
+    ],
+    "description": "Відчуваєте феї, небожителів, демонів, нежить тощо, а також освячені/осквернені місця в радіусі 30 футів."
+  },
+  {
+    "name": {
+      "ua": "Виявити магію",
+      "en": "Detect Magic"
+    },
+    "level": 1,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 дія (ритуал)",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Друїд",
+      "Маг",
+      "Чаклун",
+      "Чорнокнижник"
+    ],
+    "description": "Бачите аури магії в 30 футах і визначаєте школу."
+  },
+  {
+    "name": {
+      "ua": "Виявити отруту і хворобу",
+      "en": "Detect Poison and Disease"
+    },
+    "level": 1,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 дія (ритуал)",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Паладин",
+      "Клірик",
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Виявляє отрути, токсини й хвороби та заражені об’єкти/істот у 30 футах."
+  },
+  {
+    "name": {
+      "ua": "Змінити вигляд",
+      "en": "Disguise Self"
+    },
+    "level": 1,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг",
+      "Чорнокнижник"
+    ],
+    "description": "Ілюзорно змінює вашу зовнішність в межах розумного."
+  },
+  {
+    "name": {
+      "ua": "Божественна прихильність",
+      "en": "Divine Favor"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 бонусна дія",
+    "range": "Особисто",
+    "components": [
+      "В"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Паладин"
+    ],
+    "description": "Ваші атаки зброєю завдають додаткової радіантної шкоди.",
+    "damage": {
+      "type": "радіантна",
+      "base": "+1к4",
+      "note": "Додається до кожного влучання."
+    }
+  },
+  {
+    "name": {
+      "ua": "Дисонуючі шепоти",
+      "en": "Dissonant Whispers"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард"
+    ],
+    "description": "Руйнівна мелодія змушує ціль тікати при провалі рятку Мудрості та завдає психічної шкоди.",
+    "damage": {
+      "type": "психічна",
+      "base": "3к6",
+      "scales_at_levels": {
+        "2": "4к6",
+        "3": "5к6",
+        "4": "6к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Оплутати",
+      "en": "Entangle"
+    },
+    "level": 1,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Друїд"
+    ],
+    "description": "Рослини скують істот у квадраті 20 футів; зв’язані роблять перевірки, щоб вирватися."
+  },
+  {
+    "name": {
+      "ua": "Квапливий відступ",
+      "en": "Expeditious Retreat"
+    },
+    "level": 1,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 бонусна дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Чаклун",
+      "Маг",
+      "Чорнокнижник"
+    ],
+    "description": "Дозволяє щоходу робити Ривок як бонусну дію."
+  },
+  {
+    "name": {
+      "ua": "Вогняні вогники",
+      "en": "Faerie Fire"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Друїд"
+    ],
+    "description": "Підсвічує істот у кубі 20 футів; по них атаки з перевагою, невидимість не допомагає."
+  },
+  {
+    "name": {
+      "ua": "Фальшиве життя",
+      "en": "False Life"
+    },
+    "level": 1,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Надає тимчасові хіти.",
+    "damage": {
+      "type": "тимчасові_хіти",
+      "base": "1к4+4",
+      "scales_at_levels": {
+        "2": "+5 за рівень вище 1-го"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Пір’їнка",
+      "en": "Feather Fall"
+    },
+    "level": 1,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "Реакція",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 хвилина",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "До п’яти істот безпечно сповільнюють падіння."
+  },
+  {
+    "name": {
+      "ua": "Знайти фамільяра",
+      "en": "Find Familiar"
+    },
+    "level": 1,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 година (ритуал)",
+    "range": "10 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Особливе",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Призиває духа-компаньйона у формі тварини; передає ваші дотикові закляття."
+  },
+  {
+    "name": {
+      "ua": "Хмарина туману",
+      "en": "Fog Cloud"
+    },
+    "level": 1,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Друїд",
+      "Рейнджер",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Сфера туману радіусом 20 футів закриває видимість."
+  },
+  {
+    "name": {
+      "ua": "Чудо-ягода",
+      "en": "Goodberry"
+    },
+    "level": 1,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво (особл.)",
+    "classes": [
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Створює до 10 ягід: кожна лікує 1 ХП і годує на день; зникають через 24 год.",
+    "damage": {
+      "type": "зцілення",
+      "base": "1 ХП за ягоду"
+    }
+  },
+  {
+    "name": {
+      "ua": "Мастило",
+      "en": "Grease"
+    },
+    "level": 1,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 хв (конц.)",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Площа 10 футів стає слизькою: складна місцевість; істоти можуть упасти при провалі рятку."
+  },
+  {
+    "name": {
+      "ua": "Провідний промінь",
+      "en": "Guiding Bolt"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Промінь завдає радіантної шкоди; наступна атака по цілі має перевагу до вашого наступного ходу.",
+    "damage": {
+      "type": "радіантна",
+      "base": "4к6",
+      "scales_at_levels": {
+        "2": "5к6",
+        "3": "6к6",
+        "4": "7к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Слово зцілення",
+      "en": "Healing Word"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 бонусна дія",
+    "range": "60 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Друїд"
+    ],
+    "description": "На відстані відновлює хіти.",
+    "damage": {
+      "type": "зцілення",
+      "base": "1к4 + модифікатор",
+      "scales_at_levels": {
+        "2": "+1к4 за рівень вище 1-го"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Пекельна відплата",
+      "en": "Hellish Rebuke"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "Реакція",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чорнокнижник"
+    ],
+    "description": "У відповідь на шкоду заливає ціль полум’ям (ряток Спритності).",
+    "damage": {
+      "type": "вогонь",
+      "base": "2к10",
+      "scales_at_levels": {
+        "2": "3к10",
+        "3": "4к10",
+        "4": "5к10"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Героїзм",
+      "en": "Heroism"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Паладин"
+    ],
+    "description": "Імун до переляку; щоходу отримує тимчасові хіти, рівні модифікатору Харизми (мін. 1)."
+  },
+  {
+    "name": {
+      "ua": "Прокляття",
+      "en": "Hex"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 бонусна дія",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Чорнокнижник"
+    ],
+    "description": "Позначає ціль: додаткова шкода по влучаннях та невдача перевірок обраної характеристики.",
+    "damage": {
+      "type": "некротична",
+      "base": "+1к6"
+    }
+  },
+  {
+    "name": {
+      "ua": "Мисливська мітка",
+      "en": "Hunter's Mark"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 бонусна дія",
+    "range": "90 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Рейнджер"
+    ],
+    "description": "Позначаєте ціль: додаткові ушкодження й перевага на пошук/відстеження.",
+    "damage": {
+      "type": "колота",
+      "base": "+1к6"
+    }
+  },
+  {
+    "name": {
+      "ua": "Впізнати",
+      "en": "Identify"
+    },
+    "level": 1,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 хвилина (ритуал)",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард",
+      "Маг"
+    ],
+    "description": "Визначає магічні властивості предмета або поточні ефекти на цілі."
+  },
+  {
+    "name": {
+      "ua": "Уявний напис",
+      "en": "Illusory Script"
+    },
+    "level": 1,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 хвилина (ритуал)",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "10 днів",
+    "classes": [
+      "Бард",
+      "Маг",
+      "Чорнокнижник"
+    ],
+    "description": "Текст читається справжнім лише визначеним адресатам; решта бачать інше."
+  },
+  {
+    "name": {
+      "ua": "Рана заподіяння",
+      "en": "Inflict Wounds"
+    },
+    "level": 1,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Дотиком завдає значної некротичної шкоди.",
+    "damage": {
+      "type": "некротична",
+      "base": "3к10",
+      "scales_at_levels": {
+        "2": "4к10",
+        "3": "5к10",
+        "4": "6к10"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Стрибок",
+      "en": "Jump"
+    },
+    "level": 1,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 хвилина",
+    "classes": [
+      "Друїд",
+      "Рейнджер",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Потроює довжину/висоту стрибка цілі."
+  },
+  {
+    "name": {
+      "ua": "Довгохід",
+      "en": "Longstrider"
+    },
+    "level": 1,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Рейнджер",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Збільшує швидкість на 10 футів."
+  },
+  {
+    "name": {
+      "ua": "Магічна броня",
+      "en": "Mage Armor"
+    },
+    "level": 1,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "8 годин",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Ціль без обладунків отримує КД 13 + модифікатор Спритності."
+  },
+  {
+    "name": {
+      "ua": "Магічний снаряд",
+      "en": "Magic Missile"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Кілька енергетичних снарядів автоматично влучають у цілі.",
+    "damage": {
+      "type": "сила",
+      "base": "1к4+1 (за снаряд)",
+      "scales_at_levels": {
+        "2": "4 снаряди",
+        "3": "5 снарядів",
+        "4": "6 снарядів"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Захист від добра і зла",
+      "en": "Protection from Evil and Good"
+    },
+    "level": 1,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Паладин",
+      "Чорнокнижник",
+      "Маг"
+    ],
+    "description": "Захищає ціль від певних типів істот; вони мають перешкоди в атаках і не можуть її зачаровувати/лякати/опановувати."
+  },
+  {
+    "name": {
+      "ua": "Очищення їжі та питва",
+      "en": "Purify Food and Drink"
+    },
+    "level": 1,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія (ритуал)",
+    "range": "10 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик",
+      "Друїд",
+      "Паладин"
+    ],
+    "description": "Очищає невеликі запаси їжі/води від отрут і хвороб."
+  },
+  {
+    "name": {
+      "ua": "Промінь хвороби",
+      "en": "Ray of Sickness"
+    },
+    "level": 1,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Промінь отруює ціль при провалі рятку та завдає шкоди.",
+    "damage": {
+      "type": "отрута",
+      "base": "2к8",
+      "scales_at_levels": {
+        "2": "3к8",
+        "3": "4к8",
+        "4": "5к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Освячення",
+      "en": "Sanctuary"
+    },
+    "level": 1,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 бонусна дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 хвилина",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Захищає ціль: вороги повинні пройти ряток Мудрості, щоб націлитися; спадає, якщо ціль завдає шкоди."
+  },
+  {
+    "name": {
+      "ua": "Палаючий розсік",
+      "en": "Searing Smite"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 бонусна дія",
+    "range": "Особисто",
+    "components": [
+      "В"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Паладин"
+    ],
+    "description": "Наступний удар підпалює ціль; можливі подальші опіки.",
+    "damage": {
+      "type": "вогонь",
+      "base": "+1к6",
+      "scales_at_levels": {
+        "2": "+2к6",
+        "3": "+3к6",
+        "4": "+4к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Щит",
+      "en": "Shield"
+    },
+    "level": 1,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "Реакція",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "1 раунд",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Дає +5 до КД до початку вашого наступного ходу; захищає від Magic Missile."
+  },
+  {
+    "name": {
+      "ua": "Щит віри",
+      "en": "Shield of Faith"
+    },
+    "level": 1,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 бонусна дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Паладин"
+    ],
+    "description": "Надає цілі +2 до КД на тривалість."
+  },
+  {
+    "name": {
+      "ua": "Тиха ілюзія",
+      "en": "Silent Image"
+    },
+    "level": 1,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Створює статичну ілюзію в межах куба 15 футів; можна переміщувати/трансформувати."
+  },
+  {
+    "name": {
+      "ua": "Сон",
+      "en": "Sleep"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 хвилина",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Присплює істот із найменшими поточними хітами до вичерпання суми ефекту."
+  },
+  {
+    "name": {
+      "ua": "Розмова з тваринами",
+      "en": "Speak with Animals"
+    },
+    "level": 1,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 дія (ритуал)",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "10 хвилин",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Надає можливість обмінюватися простими повідомленнями з тваринами."
+  },
+  {
+    "name": {
+      "ua": "Сміх Таші",
+      "en": "Tasha's Hideous Laughter"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Ціль падає від реготу: непрацездатна і лежить; робить рятки наприкінці ходів і при отриманні шкоди."
+  },
+  {
+    "name": {
+      "ua": "Диск Тенсера",
+      "en": "Tenser's Floating Disk"
+    },
+    "level": 1,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія (ритуал)",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює левітуючий диск, що слідує за вами і переносить до 500 фунтів."
+  },
+  {
+    "name": {
+      "ua": "Гримотна карма",
+      "en": "Thunderous Smite"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 бонусна дія",
+    "range": "Особисто",
+    "components": [
+      "В"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Паладин"
+    ],
+    "description": "Наступний удар завдає додаткової громової шкоди та може відштовхнути/повалити.",
+    "damage": {
+      "type": "громова",
+      "base": "+2к6"
+    }
+  },
+  {
+    "name": {
+      "ua": "Гуркіт",
+      "en": "Thunderwave"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "Куб 15 футів (від вас)",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Хвиля сили завдає шкоди та штовхає істот; дуже гучно.",
+    "damage": {
+      "type": "громова",
+      "base": "2к8",
+      "scales_at_levels": {
+        "2": "3к8",
+        "3": "4к8",
+        "4": "5к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Невидимий слуга",
+      "en": "Unseen Servant"
+    },
+    "level": 1,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія (ритуал)",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг",
+      "Чорнокнижник"
+    ],
+    "description": "Невидима сила виконує прості завдання; не атакує."
+  },
+  {
+    "name": {
+      "ua": "Відьмин болт",
+      "en": "Witch Bolt"
+    },
+    "level": 1,
+    "school": "Евокація",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Енергетичний промінь підтримує зв’язок із ціллю, дозволяючи щоходу завдавати шкоду без нового кидка.",
+    "damage": {
+      "type": "блискавка",
+      "base": "1к12",
+      "scales_at_levels": {
+        "2": "2к12",
+        "3": "3к12",
+        "4": "4к12"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Вимушена дуель",
+      "en": "Compelled Duel"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 бонусна дія",
+    "range": "30 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Паладин"
+    ],
+    "description": "Примушує ціль зосередитися на вас; обмежує її атаки проти інших."
+  },
+  {
+    "name": {
+      "ua": "Оплутуючий удар",
+      "en": "Ensnaring Strike"
+    },
+    "level": 1,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 бонусна дія",
+    "range": "Особисто",
+    "components": [
+      "В"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Рейнджер"
+    ],
+    "description": "Наступне влучання створює лози, що зв’язують ціль і завдають шкоди щоходу до звільнення.",
+    "damage": {
+      "type": "колота",
+      "base": "1к6/хід",
+      "scales_at_levels": {
+        "2": "2к6/хід",
+        "3": "3к6/хід",
+        "4": "4к6/хід"
+      },
+      "note": "Шкода на початку ходу цілі."
+    }
+  },
+  {
+    "name": {
+      "ua": "Злива шипів",
+      "en": "Hail of Thorns"
+    },
+    "level": 1,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 бонусна дія",
+    "range": "Особисто",
+    "components": [
+      "В"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Рейнджер"
+    ],
+    "description": "Наступний постріл створює шипи навколо цілі; сусідні істоти роблять ряток.",
+    "damage": {
+      "type": "колота",
+      "base": "1к10",
+      "scales_at_levels": {
+        "2": "2к10",
+        "3": "3к10",
+        "4": "4к10"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Гнівний розсік",
+      "en": "Wrathful Smite"
+    },
+    "level": 1,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 бонусна дія",
+    "range": "Особисто",
+    "components": [
+      "В"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Паладин"
+    ],
+    "description": "Наступний удар додає психічну шкоду і накладає Переляк; ціль може припинити ефект дією (перевірка Мудрості).",
+    "damage": {
+      "type": "психічна",
+      "base": "+1к6"
+    }
+  }
+]

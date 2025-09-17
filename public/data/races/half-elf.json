@@ -1,0 +1,34 @@
+{
+    "id": "half-elf",
+    "name": "Напівельф",
+    "image": "https://i.pinimg.com/originals/a2/30/80/a23080752501bab4fce47c5d219d0d8f.jpg",
+    "source": "Книга гравця (Player’s Handbook)",
+    "version": "5e",
+    "size": "Середній",
+    "speed": {
+        "walk": 30
+    },
+    "ability_bonuses": {
+        "charisma": 2,
+        "choice": [
+            1,
+            1
+        ]
+    },
+    "languages": [
+        "Спільна",
+        "Ельфійська",
+        "ще одна на вибір"
+    ],
+    "darkvision": "60 футів",
+    "traits": [
+        {
+            "name": "Змішана спадщина",
+            "description": "Бонус +2 Харизма та +1 до двох інших характеристик."
+        },
+        {
+            "name": "Незламна воля",
+            "description": "Перевага на рятівні кидки проти чарування, і магія не може приспати вас."
+        }
+    ]
+}

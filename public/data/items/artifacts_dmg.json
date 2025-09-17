@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Book of Exalted Deeds",
+    "rarity": "Artifact",
+    "type": "Wondrous Item (Book)",
+    "attunement": true,
+    "description": "Священна книга світла, що дарує знання та силу істотам доброго світогляду.",
+    "effects": {
+      "bonus": "+2 до мудрості при завершенні читання",
+      "alignment_restriction": "Тільки істоти доброго світогляду",
+      "special": "Надає доступ до потужних святкових заклять"
+    }
+  },
+  {
+    "name": "Book of Vile Darkness",
+    "rarity": "Artifact",
+    "type": "Wondrous Item (Book)",
+    "attunement": true,
+    "description": "Темний трактат, що наповнює носія жахливою силою, але розбещує душу.",
+    "effects": {
+      "bonus": "+2 до інтелекту або харизми",
+      "alignment_restriction": "Тільки істоти злого світогляду",
+      "special": "Доступ до заклять некромантії та темних ритуалів"
+    }
+  },
+  {
+    "name": "Eye of Vecna",
+    "rarity": "Artifact",
+    "type": "Wondrous Item",
+    "attunement": true,
+    "description": "Магічне око, яке треба вбудувати замість власного. Дає величезну силу, але накладає прокляття.",
+    "effects": {
+      "bonus": "+2 до заклять та перевірок магії",
+      "cursed": true,
+      "special": "Може накликати вплив самого Векни"
+    }
+  },
+  {
+    "name": "Hand of Vecna",
+    "rarity": "Artifact",
+    "type": "Wondrous Item",
+    "attunement": true,
+    "description": "Рука Векни, що приєднується до тіла замість втраченої руки. Дає силу і прокляття.",
+    "effects": {
+      "bonus": "+2 до атак та урону заклять",
+      "cursed": true,
+      "special": "Сильний некротичний вплив на душу власника"
+    }
+  },
+  {
+    "name": "Orb of Dragonkind",
+    "rarity": "Artifact",
+    "type": "Wondrous Item",
+    "attunement": true,
+    "description": "Древній кристал, що дозволяє керувати драконами і закликати їх.",
+    "effects": {
+      "spell": "Dominate Dragon",
+      "special": "Може викликати дракона раз у певний час",
+      "risk": "Високий шанс бути виявленим драконами"
+    }
+  },
+  {
+    "name": "Sword of Kas",
+    "rarity": "Artifact",
+    "type": "Weapon (Longsword)",
+    "attunement": true,
+    "description": "Легендарний меч вампіра Каса, що наділяє величезною силою, але прагне зради.",
+    "effects": {
+      "attack_bonus": 3,
+      "damage_bonus": 3,
+      "special": "Дає вампіричні здібності",
+      "sentient": true
+    }
+  },
+  {
+    "name": "Axe of the Dwarvish Lords",
+    "rarity": "Artifact",
+    "type": "Weapon (Axe)",
+    "attunement": true,
+    "description": "Могутня бойова сокира, що уособлює спадок дворфів.",
+    "effects": {
+      "attack_bonus": 3,
+      "damage_bonus": 3,
+      "bonus": "+2 до Конституції",
+      "special": "Володар отримує повагу дворфів"
+    }
+  },
+  {
+    "name": "Rod of Seven Parts",
+    "rarity": "Artifact",
+    "type": "Rod",
+    "attunement": true,
+    "description": "Древній артефакт, розбитий на частини. Збираючи їх, можна відкрити істинну силу.",
+    "effects": {
+      "bonus": "+2 до атак і заклять",
+      "special": "Кожна частина дає додаткову силу; зібраний повністю — надзвичайно потужний"
+    }
+  }
+]

@@ -1,0 +1,264 @@
+[
+  {
+    "name": {
+      "ua": "Астральна проекція",
+      "en": "Astral Projection"
+    },
+    "level": 9,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 година",
+    "range": "10 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До розвіяння",
+    "classes": [
+      "Клірик",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Відправляє душу та союзників у Астральний план, залишаючи тіла безпечними у матеріальному світі."
+  },
+  {
+    "name": {
+      "ua": "Брама",
+      "en": "Gate"
+    },
+    "level": 9,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Маг"
+    ],
+    "description": "Створює портал у будь-який план або закликає конкретну істоту з іншого плану."
+  },
+  {
+    "name": {
+      "ua": "Метеоритний дощ",
+      "en": "Meteor Swarm"
+    },
+    "level": 9,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "1 миля",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Закликає чотири гігантські метеори, що вибухають і завдають величезної шкоди.",
+    "damage": {
+      "type": "вогонь + дробильна",
+      "base": "20к6 вогонь + 20к6 дробильна",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": {
+      "ua": "Потужне слово вбивство",
+      "en": "Power Word Kill"
+    },
+    "level": 9,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Одним словом миттєво вбиває істоту, якщо в неї 100 хітів чи менше."
+  },
+  {
+    "name": {
+      "ua": "Призмати́чна стіна",
+      "en": "Prismatic Wall"
+    },
+    "level": 9,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює багатошарову стіну з кольорового світла, кожен шар якої має унікальний захисний ефект."
+  },
+  {
+    "name": {
+      "ua": "Форсована клітка",
+      "en": "Time Stop"
+    },
+    "level": 9,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В"
+    ],
+    "duration": "Кілька ходів",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Зупиняє час для всіх, окрім вас, дозволяючи зробити кілька ходів поспіль."
+  },
+  {
+    "name": {
+      "ua": "Форсована клітка",
+      "en": "Imprisonment"
+    },
+    "level": 9,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 хв",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До розвіяння",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Ув’язнює істоту в магічну пастку: сон, кристал, ланцюги чи іншу форму. Тривале та майже незламне закляття."
+  },
+  {
+    "name": {
+      "ua": "Форсований вигнання",
+      "en": "Mass Heal"
+    },
+    "level": 9,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Відновлює до 700 хітпоінтів, розподілених між істотами на ваш вибір."
+  },
+  {
+    "name": {
+      "ua": "Перевтілення істоти",
+      "en": "Shapechange"
+    },
+    "level": 9,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Дає змогу перетворитися на будь-яку істоту, яку ви бачили, з усіма її здібностями."
+  },
+  {
+    "name": {
+      "ua": "Справжнє воскресіння",
+      "en": "True Resurrection"
+    },
+    "level": 9,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 година",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик",
+      "Друїд"
+    ],
+    "description": "Воскрешає істоту навіть після століть смерті, навіть без тіла."
+  },
+  {
+    "name": {
+      "ua": "Справжнє поліморфування",
+      "en": "True Polymorph"
+    },
+    "level": 9,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 година",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.) або постійно",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Перетворює істоту чи предмет на іншу форму назавжди, якщо не зняти закляття."
+  },
+  {
+    "name": {
+      "ua": "Передбачення",
+      "en": "Foresight"
+    },
+    "level": 9,
+    "school": "Дивінація",
+    "school_english": "Divination",
+    "casting_time": "1 хв",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "8 годин",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Дає істоті надзвичайну інтуїцію: перевагу на атаки, кидки рятунку й захист від ворожих атак."
+  }
+]

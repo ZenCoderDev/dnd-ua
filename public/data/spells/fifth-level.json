@@ -1,0 +1,718 @@
+[
+  {
+    "name": {
+      "ua": "Анімувати мертвих",
+      "en": "Animate Dead"
+    },
+    "level": 5,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 хв",
+    "range": "10 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик",
+      "Маг"
+    ],
+    "description": "Піднімає скелета чи зомбі з кісток або трупа для служби вам."
+  },
+  {
+    "name": {
+      "ua": "Антимагічне поле",
+      "en": "Antimagic Field"
+    },
+    "level": 5,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Особисто (10-футова сфера)",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює сферу, всередині якої магія не працює."
+  },
+  {
+    "name": {
+      "ua": "Заклик небожителя",
+      "en": "Conjure Celestial"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 хв",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Закликає небесну істоту, яка воює на вашому боці."
+  },
+  {
+    "name": {
+      "ua": "Зараза",
+      "en": "Contagion"
+    },
+    "level": 5,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "7 днів",
+    "classes": [
+      "Клірик",
+      "Друїд"
+    ],
+    "description": "Інфікує істоту смертельною хворобою, що завдає різні ефекти."
+  },
+  {
+    "name": {
+      "ua": "Створення",
+      "en": "Creation"
+    },
+    "level": 5,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 хв",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює об’єкт з тіні, який існує обмежений час."
+  },
+  {
+    "name": {
+      "ua": "Хмара смерті",
+      "en": "Cloudkill"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Закликає отруйну хмару, що рухається і шкодить істотам всередині.",
+    "damage": {
+      "type": "отрута",
+      "base": "5к8",
+      "scales_at_levels": {
+        "6": "6к8",
+        "7": "7к8",
+        "8": "8к8",
+        "9": "9к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Стовп полум’я",
+      "en": "Flame Strike"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Закликає стовп божественного полум’я, що обпалює ворогів.",
+    "damage": {
+      "type": "вогонь + радіантна",
+      "base": "4к6 вогонь + 4к6 радіантна",
+      "scales_at_levels": {
+        "6": "5к6 + 5к6",
+        "7": "6к6 + 6к6",
+        "8": "7к6 + 7к6",
+        "9": "8к6 + 8к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Закляття людини",
+      "en": "Dominate Person"
+    },
+    "level": 5,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Підкоряє людиноподібну істоту вашій волі."
+  },
+  {
+    "name": {
+      "ua": "Стовп комет",
+      "en": "Cone of Cold"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "Особисто (60-футовий конус)",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Випускає конус крижаної енергії, що заморожує ворогів.",
+    "damage": {
+      "type": "холод",
+      "base": "8к8",
+      "scales_at_levels": {
+        "6": "9к8",
+        "7": "10к8",
+        "8": "11к8",
+        "9": "12к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Телекінез",
+      "en": "Telekinesis"
+    },
+    "level": 5,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Дозволяє переміщати об’єкти або істот силою розуму."
+  },
+  {
+    "name": {
+      "ua": "Задушлива стіна",
+      "en": "Wall of Force"
+    },
+    "level": 5,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює непроникну невидиму стіну сили, яку неможливо зруйнувати звичайними засобами."
+  },
+  {
+    "name": {
+      "ua": "Стіна каменю",
+      "en": "Wall of Stone"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Створює масивну стіну з каменю, яку можна формувати за потреби."
+  },
+  {
+    "name": {
+      "ua": "Стіна вогню",
+      "en": "Wall of Fire"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Друїд",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Створює стіну полум’я, яка завдає шкоди ворогам.",
+    "damage": {
+      "type": "вогонь",
+      "base": "5к8",
+      "scales_at_levels": {
+        "6": "6к8",
+        "7": "7к8",
+        "8": "8к8",
+        "9": "9к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Стіна світла",
+      "en": "Wall of Light"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює стіну з яскравого світла, яка осліплює ворогів і завдає шкоди.",
+    "damage": {
+      "type": "радіантна",
+      "base": "4к8",
+      "scales_at_levels": {
+        "6": "5к8",
+        "7": "6к8",
+        "8": "7к8",
+        "9": "8к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Символ",
+      "en": "Symbol"
+    },
+    "level": 5,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 хв",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До того часу, поки не активується",
+    "classes": [
+      "Клірик",
+      "Маг"
+    ],
+    "description": "Малює магічний символ, що викликає потужний ефект (страх, сон, біль тощо) при активації."
+  },
+  {
+    "name": {
+      "ua": "Телекіничний удар",
+      "en": "Bigby’s Hand"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює величезну магічну руку, яка може атакувати, захищати чи штовхати.",
+    "damage": {
+      "type": "силова",
+      "base": "4к8",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": {
+      "ua": "Зв’язування",
+      "en": "Hold Monster"
+    },
+    "level": 5,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Паралізує істоту на час концентрації."
+  },
+  {
+    "name": {
+      "ua": "Контакт з іншим світом",
+      "en": "Contact Other Plane"
+    },
+    "level": 5,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 хв",
+    "range": "Особисто",
+    "components": [
+      "В"
+    ],
+    "duration": "1 хв",
+    "classes": [
+      "Чаклун"
+    ],
+    "description": "Дозволяє поставити питання потужній сутності з іншого плану, ризикуючи розумом."
+  },
+  {
+    "name": {
+      "ua": "Масова лікувальна рана",
+      "en": "Mass Cure Wounds"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Друїд"
+    ],
+    "description": "Виліковує кількох союзників у межах області.",
+    "damage": {
+      "type": "лікування",
+      "base": "3к8 + мод. магії",
+      "scales_at_levels": {
+        "6": "4к8",
+        "7": "5к8",
+        "8": "6к8",
+        "9": "7к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Планарне переміщення",
+      "en": "Plane Shift"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Переносить вас та союзників в інший план існування."
+  },
+  {
+    "name": {
+      "ua": "Магічний сенсор",
+      "en": "Scrying"
+    },
+    "level": 5,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "10 хв",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Друїд",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Створює невидимий сенсор для спостереження за істотою чи місцем на відстані."
+  },
+  {
+    "name": {
+      "ua": "Магічний круг",
+      "en": "Magic Circle"
+    },
+    "level": 5,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 хв",
+    "range": "10 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Клірик",
+      "Паладин",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Створює захисний круг проти певних типів істот (небожителі, феї, елементалі, демони тощо)."
+  },
+  {
+    "name": {
+      "ua": "Маскування",
+      "en": "Seeming"
+    },
+    "level": 5,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 8 год",
+    "classes": [
+      "Бард",
+      "Маг"
+    ],
+    "description": "Змінює зовнішність кількох істот у межах дальності."
+  },
+  {
+    "name": {
+      "ua": "Розщеплення",
+      "en": "Dispel Evil and Good"
+    },
+    "level": 5,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Паладин"
+    ],
+    "description": "Захищає від створінь з інших планів і може вигнати їх назад."
+  },
+  {
+    "name": {
+      "ua": "Маловідомий санктум Морденакайна",
+      "en": "Mordenkainen’s Private Sanctum"
+    },
+    "level": 5,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "10 хв",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "24 години",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює зону, захищену від телепортації, бачення та магічного проникнення."
+  },
+  {
+    "name": {
+      "ua": "Маленька хижа",
+      "en": "Leomund’s Tiny Hut"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 хв",
+    "range": "Особисто (10-футовий купол)",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "8 годин",
+    "classes": [
+      "Бард",
+      "Маг"
+    ],
+    "description": "Створює магічний купол, що захищає вас та союзників."
+  },
+  {
+    "name": {
+      "ua": "Перетворення",
+      "en": "Transmute Rock"
+    },
+    "level": 5,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Перетворює камінь на бруд або навпаки."
+  },
+  {
+    "name": {
+      "ua": "Природні союзники",
+      "en": "Commune with Nature"
+    },
+    "level": 5,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 хв",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Розуміння навколишньої місцевості: ландшафт, істоти, ресурси."
+  },
+  {
+    "name": {
+      "ua": "Пробудження",
+      "en": "Awaken"
+    },
+    "level": 5,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "8 год",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард",
+      "Друїд"
+    ],
+    "description": "Дарує істоті чи рослині інтелект і свідомість."
+  },
+  {
+    "name": {
+      "ua": "Стіна туману",
+      "en": "Wall of Fog"
+    },
+    "level": 5,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює густий туман, що блокує видимість."
+  }
+]

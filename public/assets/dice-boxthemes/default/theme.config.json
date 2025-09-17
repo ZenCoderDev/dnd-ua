@@ -1,0 +1,30 @@
+{
+	"name": "Default Colors",
+	"systemName": "default",
+	"author": "Frank Ali",
+	"version": 0.2,
+	"meshFile": "default.json",
+	"material": {
+		"type": "color",
+		"themeColor": "#FF0055",
+		"diffuseTexture": {
+			"light": "diffuse-light.png",
+			"dark": "diffuse-dark.png"
+		},
+		"color": "#FF0055",
+		"diffuseLevel": 2,
+		"bumpTexture": "normal.png",
+		"bumpLevel": 0.8,
+		"specularTexture": "specular.jpg",
+		"specularPower": 2
+	},
+	"diceAvailable": [
+		"d4",
+		"d6",
+		"d8",
+		"d10",
+		"d12",
+		"d20",
+		"d100"
+	]
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "name": "Potion of Climbing",
+    "rarity": "Common",
+    "type": "Potion",
+    "attunement": false,
+    "description": "Зілля, яке тимчасово наділяє здатністю легко пересуватися по стінах і схилах.",
+    "effects": {
+      "duration": "1 година",
+      "bonus": "Перевага на перевірки Атлетики для лазіння",
+      "speed": "Рівна швидкості пересування"
+    }
+  },
+  {
+    "name": "Potion of Healing",
+    "rarity": "Common",
+    "type": "Potion",
+    "attunement": false,
+    "description": "Зцілююче зілля, яке миттєво відновлює здоров’я.",
+    "effects": {
+      "healing": "2d4 + 2 хітів",
+      "action": "Випити або дати іншому як дію"
+    }
+  },
+  {
+    "name": "Ammunition, +1",
+    "rarity": "Common",
+    "type": "Weapon (Ammunition)",
+    "attunement": false,
+    "description": "Магічні стріли, болти чи кулі, що завдають точніших ударів.",
+    "effects": {
+      "attack_bonus": 1,
+      "damage_bonus": 1,
+      "note": "Зникають після влучання"
+    }
+  },
+  {
+    "name": "Spell Scroll (Cantrip)",
+    "rarity": "Common",
+    "type": "Scroll",
+    "attunement": false,
+    "description": "Магічний сувій із закляттям-заговором, яке можна одноразово використати.",
+    "effects": {
+      "casting": "Миттєве накладання записаного заговору",
+      "note": "Знищується після використання"
+    }
+  },
+  {
+    "name": "Spell Scroll (1st Level)",
+    "rarity": "Common",
+    "type": "Scroll",
+    "attunement": false,
+    "description": "Магічний сувій із закляттям першого рівня, яке можна використати без витрат слотів.",
+    "effects": {
+      "casting": "Одноразове накладання закляття 1-го рівня",
+      "note": "Знищується після використання"
+    }
+  },
+  {
+    "name": "Potion of Heroism (Diluted)",
+    "rarity": "Common",
+    "type": "Potion",
+    "attunement": false,
+    "description": "Слабший варіант зілля героїзму, який дає невеликий тимчасовий захист.",
+    "effects": {
+      "temp_hp": "2d4",
+      "duration": "10 хвилин",
+      "bonus": "Незначний бонус до атак"
+    }
+  }
+]

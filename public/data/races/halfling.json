@@ -1,0 +1,58 @@
+{
+    "id": "halfling",
+    "name": "Напіврослик",
+    "image": "https://i.pinimg.com/originals/11/7f/31/117f3182681946dccd76e74c3705f85a.jpg",
+    "source": "Книга гравця (Player’s Handbook)",
+    "version": "5e",
+    "size": "Малий",
+    "speed": {
+        "walk": 25
+    },
+    "ability_bonuses": {
+        "dexterity": 2
+    },
+    "languages": [
+        "Спільна",
+        "Мова напівросликів"
+    ],
+    "traits": [
+        {
+            "name": "Щасливчик",
+            "description": "Якщо на к20 випало 1, можна перебросити і використати новий результат."
+        },
+        {
+            "name": "Хоробрість",
+            "description": "Перевага на рятівні кидки проти страху."
+        }
+    ],
+    "subraces": [
+        {
+            "id": "lightfoot-halfling",
+            "name": "Світлоногий",
+            "image": "https://i.pinimg.com/564x/8a/4c/b7/8a4cb7ef038ea7a93a0afdf7df0bc7e8.jpg",
+            "ability_bonuses": {
+                "charisma": 1
+            },
+            "traits": [
+                {
+                    "name": "Природна скритність",
+                    "description": "Можете ховатися навіть за істотою, що більша за вас на 1 розмір."
+                }
+            ]
+        },
+        {
+            "id": "stout-halfling",
+            "name": "Відважний",
+            "image": "https://i.pinimg.com/564x/55/73/3d/55733d0db2ed3e647ec87328cfb78f6a.jpg",
+            "ability_bonuses": {
+                "constitution": 1
+            },
+            "traits": [
+                {
+                    "name": "Стійкість відважних",
+                    "description": "Опір до ушкоджень отрутою."
+                }
+            ]
+        }
+    ]
+}

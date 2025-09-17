@@ -1,0 +1,24 @@
+{
+    "id": "human",
+    "name": "Людина",
+    "image": "https://i.pinimg.com/originals/d7/1c/e2/d71ce2800f3f853af21ef4ed792214cf.png",
+    "source": "Книга гравця (Player’s Handbook)",
+    "version": "5e",
+    "size": "Середній",
+    "speed": {
+        "walk": 30
+    },
+    "ability_bonuses": {
+        "all": 1
+    },
+    "languages": [
+        "Спільна",
+        "ще одна на вибір"
+    ],
+    "traits": [
+        {
+            "name": "Універсальність",
+            "description": "Люди здатні пристосуватись до будь-яких умов, отримуючи бонус +1 до всіх характеристик."
+        }
+    ]
+}

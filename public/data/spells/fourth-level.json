@@ -1,0 +1,795 @@
+[
+  {
+    "name": {
+      "ua": "Арканне око",
+      "en": "Arcane Eye"
+    },
+    "level": 4,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює невидиме магічне око, яке можна рухати та спостерігати крізь нього."
+  },
+  {
+    "name": {
+      "ua": "Вигнання",
+      "en": "Banishment"
+    },
+    "level": 4,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Паладин",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Відправляє істоту в інший вимір або її рідний план."
+  },
+  {
+    "name": {
+      "ua": "Згуба",
+      "en": "Blight"
+    },
+    "level": 4,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Друїд",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Висмоктує життєву силу з рослин і істот.",
+    "damage": {
+      "type": "некротична",
+      "base": "8к8",
+      "scales_at_levels": {
+        "5": "9к8",
+        "6": "10к8",
+        "7": "11к8",
+        "8": "12к8",
+        "9": "13к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Сплутаність",
+      "en": "Confusion"
+    },
+    "level": 4,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Плутанина у свідомості істот змушує їх діяти хаотично."
+  },
+  {
+    "name": {
+      "ua": "Виклик дрібних елементалів",
+      "en": "Conjure Minor Elementals"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 хв",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Закликає кількох малих елементалів для допомоги у бою."
+  },
+  {
+    "name": {
+      "ua": "Виклик лісових істот",
+      "en": "Conjure Woodland Beings"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Закликає духів фей у формі лісових істот, які діють на вашому боці."
+  },
+  {
+    "name": {
+      "ua": "Контроль води",
+      "en": "Control Water"
+    },
+    "level": 4,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "300 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Маніпулює водою: змінює течію, рівень або створює вир."
+  },
+  {
+    "name": {
+      "ua": "Оборона від смерті",
+      "en": "Death Ward"
+    },
+    "level": 4,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "8 годин",
+    "classes": [
+      "Клірик",
+      "Паладин"
+    ],
+    "description": "Захищає ціль від смерті, залишаючи її на 1 хп при зведенні до 0."
+  },
+  {
+    "name": {
+      "ua": "Двері виміру",
+      "en": "Dimension Door"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "500 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Телепортує вас і одного союзника у межах дальності."
+  },
+  {
+    "name": {
+      "ua": "Віщування",
+      "en": "Divination"
+    },
+    "level": 4,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 хв",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Задаєте питання божеству, отримуючи загальну відповідь."
+  },
+  {
+    "name": {
+      "ua": "Домінація над звіром",
+      "en": "Dominate Beast"
+    },
+    "level": 4,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Підпорядковуєте собі звіра, змушуючи його виконувати ваші накази."
+  },
+  {
+    "name": {
+      "ua": "Чорні щупальця Еварда",
+      "en": "Evard’s Black Tentacles"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Викликає чорні щупальця, що хапають та завдають шкоди істотам.",
+    "damage": {
+      "type": "дробильна",
+      "base": "3к6",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": {
+      "ua": "Створення",
+      "en": "Fabricate"
+    },
+    "level": 4,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "10 хв",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Перетворює сировину на готові предмети."
+  },
+  {
+    "name": {
+      "ua": "Вогняний щит",
+      "en": "Fire Shield"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "10 хвилин",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Оточує вас полум’ям, яке шкодить нападникам і захищає від вогню або холоду."
+  },
+  {
+    "name": {
+      "ua": "Свобода руху",
+      "en": "Freedom of Movement"
+    },
+    "level": 4,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Ціль не може бути обмежена: ігнорує складну місцевість і ефекти, що сковують рух."
+  },
+  {
+    "name": {
+      "ua": "Гігантські комахи",
+      "en": "Giant Insect"
+    },
+    "level": 4,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Друїд"
+    ],
+    "description": "Перетворює кілька звичайних комах на гігантських союзників."
+  },
+  {
+    "name": {
+      "ua": "Хапаюча лоза",
+      "en": "Grasping Vine"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 бонусна дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Створює лозу, що хапає істот і притягує їх."
+  },
+  {
+    "name": {
+      "ua": "Більша невидимість",
+      "en": "Greater Invisibility"
+    },
+    "level": 4,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Робить істоту повністю невидимою на час закляття."
+  },
+  {
+    "name": {
+      "ua": "Страж віри",
+      "en": "Guardian of Faith"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "До 8 годин",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Закликає ефірного стража, що завдає радіантної шкоди ворогам.",
+    "damage": {
+      "type": "радіантна",
+      "base": "20 шкоди (без кубів, разове завдання)",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": {
+      "ua": "Галюцинаторна місцевість",
+      "en": "Hallucinatory Terrain"
+    },
+    "level": 4,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "10 хв",
+    "range": "300 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "24 години",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Створює велику ілюзію, що змінює вигляд місцевості."
+  },
+  {
+    "name": {
+      "ua": "Крижаний шторм",
+      "en": "Ice Storm"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "300 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Друїд",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Закликає крижаний град, що завдає шкоди і робить землю складною.",
+    "damage": {
+      "type": "дробильна + холод",
+      "base": "2к8 дробильна + 4к6 холод",
+      "scales_at_levels": {
+        "5": "2к8 + 5к6",
+        "6": "2к8 + 6к6",
+        "7": "2к8 + 7к6",
+        "8": "2к8 + 8к6",
+        "9": "2к8 + 9к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Таємна скриня Леомунда",
+      "en": "Leomund’s Secret Chest"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 60 днів",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Сховуєте магічну скриню на ефірному плані, з можливістю викликати її назад."
+  },
+  {
+    "name": {
+      "ua": "Знайти істоту",
+      "en": "Locate Creature"
+    },
+    "level": 4,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Відчуваєте напрямок на істоту, якщо вона в межах 1000 футів."
+  },
+  {
+    "name": {
+      "ua": "Вірний пес Морденакайна",
+      "en": "Mordenkainen’s Faithful Hound"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "8 годин",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Закликає невидимого пса-охоронця, що гавкає та кусає ворогів."
+  },
+  {
+    "name": {
+      "ua": "Таємний санктум Морденакайна",
+      "en": "Mordenkainen’s Private Sanctum"
+    },
+    "level": 4,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "10 хв",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "24 години",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює захищену область, що блокує магічне виявлення та телепортацію."
+  },
+  {
+    "name": {
+      "ua": "Сфера стійкості Отилука",
+      "en": "Otiluke’s Resilient Sphere"
+    },
+    "level": 4,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Укладає істоту у непроникну сферу сили, що захищає її від зовнішнього впливу."
+  },
+  {
+    "name": {
+      "ua": "Фантомний убивця",
+      "en": "Phantasmal Killer"
+    },
+    "level": 4,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Викликає найгірший кошмар істоти, змушуючи її відчувати смертельний страх.",
+    "damage": {
+      "type": "психічна",
+      "base": "4к10 за хід",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": {
+      "ua": "Поліморф",
+      "en": "Polymorph"
+    },
+    "level": 4,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Перетворює істоту на іншу форму, наприклад тварину."
+  },
+  {
+    "name": {
+      "ua": "Форма каменю",
+      "en": "Stone Shape"
+    },
+    "level": 4,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик",
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Формуєте об’єм каменю у потрібну форму."
+  },
+  {
+    "name": {
+      "ua": "Кам’яна шкіра",
+      "en": "Stoneskin"
+    },
+    "level": 4,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Друїд",
+      "Паладин",
+      "Рейнджер",
+      "Маг"
+    ],
+    "description": "Шкіра істоти стає твердою як камінь, даючи опір немагічній шкоді від зброї."
+  },
+  {
+    "name": {
+      "ua": "Стіна вогню",
+      "en": "Wall of Fire"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Друїд",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Створює стіну полум’я, яка завдає шкоди тим, хто проходить крізь неї.",
+    "damage": {
+      "type": "вогонь",
+      "base": "5к8",
+      "scales_at_levels": {
+        "5": "6к8",
+        "6": "7к8",
+        "7": "8к8",
+        "8": "9к8",
+        "9": "10к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Водяна сфера",
+      "en": "Watery Sphere"
+    },
+    "level": 4,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Створює сферу води, яка може захоплювати і затримувати істот."
+  },
+  {
+    "name": {
+      "ua": "Контроль погоди",
+      "en": "Control Weather"
+    },
+    "level": 4,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "10 хв",
+    "range": "Особисто (2 милі радіус)",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 8 годин",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Змінює погодні умови у великому регіоні."
+  },
+  {
+    "name": {
+      "ua": "Чарівний санктум",
+      "en": "Magic Circle"
+    },
+    "level": 4,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 хв",
+    "range": "10 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Клірик",
+      "Паладин"
+    ],
+    "description": "Створює захисне коло проти демонів, фей, небожителів та нежиті."
+  }
+]

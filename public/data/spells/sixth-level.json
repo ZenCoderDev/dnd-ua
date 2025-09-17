@@ -1,0 +1,639 @@
+[
+  {
+    "name": {
+      "ua": "Клинок ілюзії",
+      "en": "Blade Barrier"
+    },
+    "level": 6,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Створює стіну з обертових магічних клинків, які ріжуть усіх, хто проходить крізь неї.",
+    "damage": {
+      "type": "різана",
+      "base": "6к10",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": {
+      "ua": "Ланцюг блискавки",
+      "en": "Chain Lightning"
+    },
+    "level": 6,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "150 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Блискавка вражає одну ціль, а потім стрибає на ще три інші.",
+    "damage": {
+      "type": "блискавка",
+      "base": "10к8",
+      "scales_at_levels": {
+        "7": "11к8",
+        "8": "12к8",
+        "9": "13к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Знищення плоті",
+      "en": "Disintegrate"
+    },
+    "level": 6,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Потік зеленого енергійного променя розпилює тіло або об’єкт на порох.",
+    "damage": {
+      "type": "силова",
+      "base": "10к6 + 40",
+      "scales_at_levels": {
+        "7": "10к6 + 40 (за додаткову ціль)",
+        "8": "10к6 + 40 (ще +1 ціль)",
+        "9": "10к6 + 40 (ще +1 ціль)"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Коло смерті",
+      "en": "Circle of Death"
+    },
+    "level": 6,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "150 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Розширює вибух некротичної енергії, який завдає шкоди всім у великій області.",
+    "damage": {
+      "type": "некротична",
+      "base": "8к6",
+      "scales_at_levels": {
+        "7": "9к6",
+        "8": "10к6",
+        "9": "11к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Контінгент",
+      "en": "Contingency"
+    },
+    "level": 6,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "10 хв",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "10 днів",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Ви підготуєте інше закляття, яке автоматично спрацює при виконанні певної умови."
+  },
+  {
+    "name": {
+      "ua": "Створення нежиті",
+      "en": "Create Undead"
+    },
+    "level": 6,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 хв",
+    "range": "10 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Підіймає кількох гулів (або інших нежитів на вищих рівнях), щоб служили вам."
+  },
+  {
+    "name": {
+      "ua": "Довготривалий образ",
+      "en": "Programmed Illusion"
+    },
+    "level": 6,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 30 днів",
+    "classes": [
+      "Бард",
+      "Маг"
+    ],
+    "description": "Створює складну ілюзію, яка активується при виконанні умови."
+  },
+  {
+    "name": {
+      "ua": "Заборона",
+      "en": "Forbiddance"
+    },
+    "level": 6,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "10 хв",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Добa",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Захищає велику територію від телепортації, входу певних типів істот і завдає їм шкоди."
+  },
+  {
+    "name": {
+      "ua": "Перекинутий гравітаційний купол",
+      "en": "Reverse Gravity"
+    },
+    "level": 6,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "100 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Перевертає гравітацію у великій області, підіймаючи все в повітря."
+  },
+  {
+    "name": {
+      "ua": "Захисний символ",
+      "en": "Glyph of Warding (6th-level use)"
+    },
+    "level": 6,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 година",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Доки не спрацює",
+    "classes": [
+      "Клірик",
+      "Маг"
+    ],
+    "description": "Магічний символ, який можна зарядити закляттям 6-го рівня для відкладеної активації."
+  },
+  {
+    "name": {
+      "ua": "Героїчне слово",
+      "en": "Hero’s Feast"
+    },
+    "level": 6,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "10 хв",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво (ефекти 24 години)",
+    "classes": [
+      "Клірик",
+      "Друїд"
+    ],
+    "description": "Створює магічну трапезу, що знімає хвороби й отрути та підвищує бойові можливості союзників."
+  },
+  {
+    "name": {
+      "ua": "Сонне слово",
+      "en": "Eyebite"
+    },
+    "level": 6,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Чаклун"
+    ],
+    "description": "Ваш погляд накладає на ворогів хворобу, сон або страх."
+  },
+  {
+    "name": {
+      "ua": "Магічна в’язниця",
+      "en": "Magic Jar"
+    },
+    "level": 6,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 хв",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До руйнування",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Ви переносите свою душу в магічний контейнер і можете вселятися у тіла інших."
+  },
+  {
+    "name": {
+      "ua": "Отовидіння",
+      "en": "True Seeing"
+    },
+    "level": 6,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Маг"
+    ],
+    "description": "Дарує істоті здатність бачити істинну форму речей, невидимість та ілюзії."
+  },
+  {
+    "name": {
+      "ua": "Кам’яна форма",
+      "en": "Flesh to Stone"
+    },
+    "level": 6,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Перетворює тіло істоти на камінь, паралізуючи її."
+  },
+  {
+    "name": {
+      "ua": "Гармонійний хор",
+      "en": "Mass Suggestion"
+    },
+    "level": 6,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "М"
+    ],
+    "duration": "До 24 годин",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Ви вкладаєте велику кількість істот до 12 у потужну пропозицію."
+  },
+  {
+    "name": {
+      "ua": "Планарне зв’язування",
+      "en": "Planar Binding"
+    },
+    "level": 6,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 година",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "24 години",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Змушує викликану істоту служити вам певний час."
+  },
+  {
+    "name": {
+      "ua": "Перетворення каменю",
+      "en": "Move Earth"
+    },
+    "level": 6,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 2 год (конц.)",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Маніпулює великими ділянками землі, створюючи рів, вал чи інші форми."
+  },
+  {
+    "name": {
+      "ua": "Магічна клітка",
+      "en": "Forcecage"
+    },
+    "level": 6,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "100 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює кубічну клітку чи коробку силового поля, з якої майже неможливо втекти."
+  },
+  {
+    "name": {
+      "ua": "Магічна хвороба",
+      "en": "Harm"
+    },
+    "level": 6,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Завдає істоті величезної некротичної шкоди, послаблюючи її життєву силу.",
+    "damage": {
+      "type": "некротична",
+      "base": "14к6",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": {
+      "ua": "Залізне тіло",
+      "en": "Tenser’s Transformation"
+    },
+    "level": 6,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Перетворює заклинача на воїна, наділяючи його бойовими навичками та міцністю."
+  },
+  {
+    "name": {
+      "ua": "Сонячний промінь",
+      "en": "Sunbeam"
+    },
+    "level": 6,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Випускає потужний промінь сонячного світла, що завдає шкоди та осліплює ворогів.",
+    "damage": {
+      "type": "радіантна",
+      "base": "6к8",
+      "scales_at_levels": {
+        "7": "7к8",
+        "8": "8к8",
+        "9": "9к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Оживлення предметів",
+      "en": "Animate Objects"
+    },
+    "level": 6,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Надає неживим предметам рух і здатність атакувати ворогів."
+  },
+  {
+    "name": {
+      "ua": "Розуміння магії",
+      "en": "Globe of Invulnerability"
+    },
+    "level": 6,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "10 футів (сфера навколо вас)",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює магічний бар’єр, що блокує закляття 5-го рівня і нижче."
+  },
+  {
+    "name": {
+      "ua": "Справжня зцілююча сила",
+      "en": "Heal"
+    },
+    "level": 6,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик",
+      "Друїд"
+    ],
+    "description": "Миттєво відновлює значну кількість здоров’я та знімає хвороби.",
+    "damage": {
+      "type": "лікування",
+      "base": "70 HP",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": {
+      "ua": "Інші світи",
+      "en": "Word of Recall"
+    },
+    "level": 6,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Миттєво переносить вас і союзників у підготовлене святилище."
+  },
+  {
+    "name": {
+      "ua": "Шестий рівень — Ментальний зв’язок",
+      "en": "Mental Prison"
+    },
+    "level": 6,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Замкнює істоту в ілюзорну пастку її розуму, завдаючи шкоди та обмежуючи рух.",
+    "damage": {
+      "type": "психічна",
+      "base": "5к10",
+      "scales_at_levels": {}
+    }
+  }
+]

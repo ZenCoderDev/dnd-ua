@@ -1,0 +1,171 @@
+[
+    {
+        "id": "human",
+        "name": "Людина",
+        "description": "Люди — найбільш різноманітна і чисельна раса, що здатна пристосуватись майже до будь-яких умов.",
+        "image": "https://i.pinimg.com/originals/d7/1c/e2/d71ce2800f3f853af21ef4ed792214cf.png",
+        "source": "Книга гравця (Player’s Handbook)",
+        "version": "5e",
+        "tags": [
+            "універсальність",
+            "різноманітність"
+        ]
+    },
+    {
+        "id": "dwarf",
+        "name": "Дварф",
+        "description": "Дварфи відомі своєю стійкістю, майстерністю в кузні та глибоким зв’язком із горами.",
+        "image": "https://i.pinimg.com/originals/89/fa/fc/89fafcb192a63a08d5b7c133ce6875bd.jpg",
+        "source": "Книга гравця (Player’s Handbook)",
+        "version": "5e",
+        "tags": [
+            "витривалість",
+            "кузня",
+            "гори"
+        ],
+        "subraces": [
+            {
+                "id": "hill-dwarf",
+                "name": "Холмський дварф",
+                "image": "https://i.pinimg.com/564x/82/2b/5f/822b5f35df505f32225c1436a4ad22d4.jpg"
+            },
+            {
+                "id": "mountain-dwarf",
+                "name": "Гірський дварф",
+                "image": "https://i.pinimg.com/564x/f0/f9/c3/f0f9c31368d50b878c5e1632f48b6b65.jpg"
+            }
+        ]
+    },
+    {
+        "id": "elf",
+        "name": "Ельф",
+        "description": "Ельфи — витончені й довговічні, тісно пов’язані з магією та природою.",
+        "image": "https://i.pinimg.com/originals/c7/49/8b/c7498bb42532530665ea3ac058e6dc5e.jpg",
+        "source": "Книга гравця (Player’s Handbook)",
+        "version": "5e",
+        "tags": [
+            "довговічність",
+            "магія",
+            "природа"
+        ],
+        "subraces": [
+            {
+                "id": "high-elf",
+                "name": "Високий ельф",
+                "image": "https://i.pinimg.com/564x/5e/11/aa/5e11aa77e5e18b4ef8a2722b84eced20.jpg"
+            },
+            {
+                "id": "wood-elf",
+                "name": "Лісовий ельф",
+                "image": "https://i.pinimg.com/564x/f5/6b/67/f56b670c3195eeed2c2a1f0c660e0a56.jpg"
+            },
+            {
+                "id": "dark-elf",
+                "name": "Дроу (Темний ельф)",
+                "image": "https://i.pinimg.com/564x/3a/6f/3b/3a6f3b6f63e2dc2146a823b4d62d9b55.jpg"
+            }
+        ]
+    },
+    {
+        "id": "gnome",
+        "name": "Гном",
+        "description": "Гноми — допитливі винахідники та дослідники, що обожнюють магію та ремесло.",
+        "image": "https://i.pinimg.com/736x/7d/e8/21/7de8211b10979ba6d141d736ac572eaf--fantasy-rpg-fantasy-gnome.jpg",
+        "source": "Книга гравця (Player’s Handbook)",
+        "version": "5e",
+        "tags": [
+            "допитливість",
+            "магія",
+            "ремесло"
+        ],
+        "subraces": [
+            {
+                "id": "forest-gnome",
+                "name": "Лісовий гном",
+                "image": "https://i.pinimg.com/564x/ae/14/6c/ae146c1f86c8c993f48c7d2893f9b17d.jpg"
+            },
+            {
+                "id": "rock-gnome",
+                "name": "Кам’яний гном",
+                "image": "https://i.pinimg.com/564x/4f/37/40/4f3740a91582c8e3ab556a12e8289b29.jpg"
+            }
+        ]
+    },
+    {
+        "id": "halfling",
+        "name": "Напіврослик",
+        "description": "Напіврослики — маленькі, але хоробрі й щасливі істоти, що цінують затишок і пригоди.",
+        "image": "https://i.pinimg.com/originals/11/7f/31/117f3182681946dccd76e74c3705f85a.jpg",
+        "source": "Книга гравця (Player’s Handbook)",
+        "version": "5e",
+        "tags": [
+            "щастя",
+            "хоробрість",
+            "малі розміри"
+        ],
+        "subraces": [
+            {
+                "id": "lightfoot-halfling",
+                "name": "Світлоногий",
+                "image": "https://i.pinimg.com/564x/8a/4c/b7/8a4cb7ef038ea7a93a0afdf7df0bc7e8.jpg"
+            },
+            {
+                "id": "stout-halfling",
+                "name": "Відважний",
+                "image": "https://i.pinimg.com/564x/55/73/3d/55733d0db2ed3e647ec87328cfb78f6a.jpg"
+            }
+        ]
+    },
+    {
+        "id": "half-elf",
+        "name": "Напівельф",
+        "description": "Напівельфи поєднують у собі людську гнучкість і ельфійську грацію, але часто відчувають себе чужими серед обох народів.",
+        "image": "https://i.pinimg.com/originals/a2/30/80/a23080752501bab4fce47c5d219d0d8f.jpg",
+        "source": "Книга гравця (Player’s Handbook)",
+        "version": "5e",
+        "tags": [
+            "гнучкість",
+            "магія",
+            "змішана спадщина"
+        ]
+    },
+    {
+        "id": "half-orc",
+        "name": "Напіворк",
+        "description": "Напіворки успадкували силу та витривалість орків, поєднану з гнучкістю людей.",
+        "image": "https://i.pinimg.com/originals/59/fe/ef/59feefb18c3752b56a97fd7cb064a11a.png",
+        "source": "Книга гравця (Player’s Handbook)",
+        "version": "5e",
+        "tags": [
+            "сила",
+            "витривалість",
+            "воїн"
+        ]
+    },
+    {
+        "id": "tiefling",
+        "name": "Тіфлінг",
+        "description": "Тіфлінги несуть у собі спадщину демонів і пекельну магію, через що часто стикаються з упередженням.",
+        "image": "https://i.pinimg.com/originals/ad/ca/7c/adca7c4957fb1c86f885081fd3e8e5c0.jpg",
+        "source": "Книга гравця (Player’s Handbook)",
+        "version": "5e",
+        "tags": [
+            "пекло",
+            "магія",
+            "таємниця"
+        ]
+    },
+    {
+        "id": "dragonborn",
+        "name": "Драконороджений",
+        "description": "Драконороджені — горда і могутня раса, що успадкувала риси від своїх драконячих предків.",
+        "image": "https://i.pinimg.com/originals/63/5f/ec/635fecc208274aa075ff499158d613ff.jpg",
+        "source": "Книга гравця (Player’s Handbook)",
+        "version": "5e",
+        "tags": [
+            "дракон",
+            "сила",
+            "честь"
+        ]
+    }
+]

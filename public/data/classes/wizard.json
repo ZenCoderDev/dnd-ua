@@ -1,0 +1,220 @@
+{
+  "id": "wizard",
+  "name": "Чарівник",
+  "source": "SRD 5.1 (CC BY 4.0)",
+  "image": "https://i.pinimg.com/1200x/48/02/bb/4802bbab4abbfe2d699fd37c926071aa.jpg",
+  "hitDice": "1d6",
+  "primaryAbility": [
+    "Інтелект"
+  ],
+  "savingThrows": [
+    "Інтелект",
+    "Мудрість"
+  ],
+  "skills": {
+    "choose": 2,
+    "from": [
+      "Історія",
+      "Аркана",
+      "Проникливість",
+      "Мудрість природи",
+      "Медицина",
+      "Релігія"
+    ]
+  },
+  "armor": [],
+  "weapons": [
+    {
+      "daggers": "Кинджали"
+    },
+    {
+      "darts": "Дротики"
+    },
+    {
+      "slings": "Пращі"
+    },
+    {
+      "quarterstaffs": "Посохи"
+    },
+    {
+      "light_crossbows": "Легкі арбалети"
+    }
+  ],
+  "tools": [],
+  "equipment": [
+    "Компонентна сумка або чарівний фокус",
+    "Пакунок вченого або мандрівника",
+    "Книга заклять"
+  ],
+  "description": "Маги — вчені арканісти, які вивчають закляття й зберігають їх у книзі; їхня гнучкість — у підготовці.",
+  "progression": [
+    {
+      "level": 1,
+      "proficiencyBonus": "+2",
+      "features": [
+        "Чари мага",
+        "Відновлення аркани"
+      ]
+    },
+    {
+      "level": 2,
+      "proficiencyBonus": "+2",
+      "features": [
+        "Арканна традиція"
+      ]
+    },
+    {
+      "level": 3,
+      "proficiencyBonus": "+2",
+      "features": [
+        "—"
+      ]
+    },
+    {
+      "level": 4,
+      "proficiencyBonus": "+2",
+      "features": [
+        "Покращення характеристик"
+      ]
+    },
+    {
+      "level": 5,
+      "proficiencyBonus": "+3",
+      "features": [
+        "—"
+      ]
+    },
+    {
+      "level": 6,
+      "proficiencyBonus": "+3",
+      "features": [
+        "Особливість традиції"
+      ]
+    },
+    {
+      "level": 7,
+      "proficiencyBonus": "+3",
+      "features": [
+        "—"
+      ]
+    },
+    {
+      "level": 8,
+      "proficiencyBonus": "+3",
+      "features": [
+        "Покращення характеристик"
+      ]
+    },
+    {
+      "level": 9,
+      "proficiencyBonus": "+4",
+      "features": [
+        "—"
+      ]
+    },
+    {
+      "level": 10,
+      "proficiencyBonus": "+4",
+      "features": [
+        "Особливість традиції"
+      ]
+    },
+    {
+      "level": 11,
+      "proficiencyBonus": "+4",
+      "features": [
+        "—"
+      ]
+    },
+    {
+      "level": 12,
+      "proficiencyBonus": "+4",
+      "features": [
+        "Покращення характеристик"
+      ]
+    },
+    {
+      "level": 13,
+      "proficiencyBonus": "+5",
+      "features": [
+        "—"
+      ]
+    },
+    {
+      "level": 14,
+      "proficiencyBonus": "+5",
+      "features": [
+        "Особливість традиції"
+      ]
+    },
+    {
+      "level": 15,
+      "proficiencyBonus": "+5",
+      "features": [
+        "—"
+      ]
+    },
+    {
+      "level": 16,
+      "proficiencyBonus": "+5",
+      "features": [
+        "Покращення характеристик"
+      ]
+    },
+    {
+      "level": 17,
+      "proficiencyBonus": "+6",
+      "features": [
+        "—"
+      ]
+    },
+    {
+      "level": 18,
+      "proficiencyBonus": "+6",
+      "features": [
+        "Володар заклять"
+      ]
+    },
+    {
+      "level": 19,
+      "proficiencyBonus": "+6",
+      "features": [
+        "Покращення характеристик"
+      ]
+    },
+    {
+      "level": 20,
+      "proficiencyBonus": "+6",
+      "features": [
+        "Підписні закляття"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "level": 1,
+      "name": "Чари мага",
+      "description": "Ти готуєш закляття щодня зі своєї книги заклять; використовуєш Інтелект."
+    },
+    {
+      "level": 1,
+      "name": "Відновлення аркани",
+      "description": "Після короткого відпочинку віднови частину осередків (сумарний рівень = половина рівня мага)."
+    },
+    {
+      "level": 2,
+      "name": "Арканна традиція",
+      "description": "Обираєш школу магії (з SRD), отримуєш її особливості."
+    },
+    {
+      "level": 18,
+      "name": "Володар заклять",
+      "description": "Обираєш одне закляття 1 рівня і одне 2 рівня — можеш кидати без витрат осередків."
+    },
+    {
+      "level": 20,
+      "name": "Підписні закляття",
+      "description": "Обираєш дві підготовлені формули 3 рівня — кидаєш кожну 1/бій без осередку."
+    }
+  ]
+}

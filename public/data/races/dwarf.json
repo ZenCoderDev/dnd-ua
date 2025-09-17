@@ -1,0 +1,63 @@
+{
+    "id": "dwarf",
+    "name": "Дварф",
+    "image": "https://i.pinimg.com/originals/89/fa/fc/89fafcb192a63a08d5b7c133ce6875bd.jpg",
+    "source": "Книга гравця (Player’s Handbook)",
+    "version": "5e",
+    "size": "Середній",
+    "speed": {
+        "walk": 25
+    },
+    "ability_bonuses": {
+        "constitution": 2
+    },
+    "languages": [
+        "Спільна",
+        "Дварфійська"
+    ],
+    "darkvision": "60 футів",
+    "traits": [
+        {
+            "name": "Темновидіння",
+            "description": "Ви бачите у темряві на 60 футів."
+        },
+        {
+            "name": "Стійкість дварфа",
+            "description": "Перевага на рятівні кидки проти отрути, опір до ушкоджень отрутою."
+        },
+        {
+            "name": "Тренованість у зброї",
+            "description": "Володіння бойовим молотом, ручним топором, легким і бойовим арбалетом."
+        }
+    ],
+    "subraces": [
+        {
+            "id": "hill-dwarf",
+            "name": "Холмський дварф",
+            "image": "https://i.pinimg.com/564x/82/2b/5f/822b5f35df505f32225c1436a4ad22d4.jpg",
+            "ability_bonuses": {
+                "wisdom": 1
+            },
+            "traits": [
+                {
+                    "name": "Дварфійська витривалість",
+                    "description": "Максимум хітів збільшується на 1, і ще +1 на кожен рівень."
+                }
+            ]
+        },
+        {
+            "id": "mountain-dwarf",
+            "name": "Гірський дварф",
+            "image": "https://i.pinimg.com/564x/f0/f9/c3/f0f9c31368d50b878c5e1632f48b6b65.jpg",
+            "ability_bonuses": {
+                "strength": 2
+            },
+            "traits": [
+                {
+                    "name": "Тренованість у броні",
+                    "description": "Володіння легкою та середньою бронею."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "id": "gnome",
+    "name": "Гном",
+    "image": "https://i.pinimg.com/736x/7d/e8/21/7de8211b10979ba6d141d736ac572eaf--fantasy-rpg-fantasy-gnome.jpg",
+    "source": "Книга гравця (Player’s Handbook)",
+    "version": "5e",
+    "size": "Малий",
+    "speed": {
+        "walk": 25
+    },
+    "ability_bonuses": {
+        "intelligence": 2
+    },
+    "languages": [
+        "Спільна",
+        "Гномська"
+    ],
+    "darkvision": "60 футів",
+    "traits": [
+        {
+            "name": "Гном’яча кмітливість",
+            "description": "Перевага на всі рятівні кидки Інтелекту, Мудрості та Харизми проти магії."
+        }
+    ],
+    "subraces": [
+        {
+            "id": "forest-gnome",
+            "name": "Лісовий гном",
+            "image": "https://i.pinimg.com/564x/ae/14/6c/ae146c1f86c8c993f48c7d2893f9b17d.jpg",
+            "ability_bonuses": {
+                "dexterity": 1
+            },
+            "traits": [
+                {
+                    "name": "Ілюзії",
+                    "description": "Ви знаєте закляття кантрип «маленька ілюзія»."
+                },
+                {
+                    "name": "Розмова з тваринами",
+                    "description": "Можете розуміти й спілкуватися з маленькими звірями."
+                }
+            ]
+        },
+        {
+            "id": "rock-gnome",
+            "name": "Кам’яний гном",
+            "image": "https://i.pinimg.com/564x/4f/37/40/4f3740a91582c8e3ab556a12e8289b29.jpg",
+            "ability_bonuses": {
+                "constitution": 1
+            },
+            "traits": [
+                {
+                    "name": "Майстер винаходів",
+                    "description": "Ви вправні з інструментами для винахідництва, створюєте маленькі механізми."
+                }
+            ]
+        }
+    ]
+}

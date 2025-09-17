@@ -1,0 +1,130 @@
+{
+  "id": "paladin",
+  "name": {
+    "en": "Paladin",
+    "uk": "Паладин"
+  },
+  "description": "Священні лицарі з Клятвами.",
+  "subclasses": [
+    {
+      "id": "oath_of_devotion",
+      "name": {
+        "en": "Oath of Devotion",
+        "uk": "Клятва Відданості"
+      },
+      "description": "Чесність, мужність, світло.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Channel Divinity: Sacred Weapon / Священна зброя",
+          "description": "Додаєте мод. Харизми до кидків атаки зброєю 1 хв; зброя світиться.",
+          "details": "Action: дія; Concentration: немає."
+        },
+        {
+          "level": 3,
+          "name": "Channel Divinity: Turn the Unholy / Вигнання нечисті",
+          "description": "Вигнання нежиті/демонів у 30 фт.",
+          "details": "Save: Мудр.; на провал — тікають/вигнані."
+        },
+        {
+          "level": 7,
+          "name": "Aura of Devotion / Аура відданості",
+          "description": "Ви та союзники в 10 фт. імунні до чарування.",
+          "details": "30 фт. з 18 рівня."
+        },
+        {
+          "level": 15,
+          "name": "Purity of Spirit / Очищуючий дотик",
+          "description": "Постійний «Protection from Evil and Good» на собі.",
+          "details": "—"
+        },
+        {
+          "level": 20,
+          "name": "Holy Nimbus / Священний чемпіон",
+          "description": "1 хв аура світла 30 фт.; вороги отримують радіантну шкоду; ви маєте перевагу проти заклять.",
+          "details": "1/довгий відпочинок."
+        }
+      ]
+    },
+    {
+      "id": "oath_of_the_ancients",
+      "name": {
+        "en": "Oath of the Ancients",
+        "uk": "Клятва Першоджерел"
+      },
+      "description": "Захист життя і краси.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Channel Divinity: Nature's Wrath / Опікун природи",
+          "description": "Заковує ворога корінням/виноградом.",
+          "details": "Save: Сила/Спритність (вибір цілі) або Restrained 1 хв."
+        },
+        {
+          "level": 3,
+          "name": "Channel Divinity: Turn the Faithless / Утримання ворога",
+          "description": "Вигнання фей/дияволів.",
+          "details": "Save: Мудр."
+        },
+        {
+          "level": 7,
+          "name": "Aura of Warding / Аура варти стародавніх",
+          "description": "Ви та союзники отримуєте опір до шкоди від заклять у 10/30 фт.",
+          "details": "—"
+        },
+        {
+          "level": 15,
+          "name": "Undying Sentinel / Невгасиме життя",
+          "description": "Раз/довгий: при 0 хп — замість цього залишається 1 хп.",
+          "details": "—"
+        },
+        {
+          "level": 20,
+          "name": "Elder Champion / Чемпіон природи",
+          "description": "1 хв посилення: регенерація, посилені закляття, складнішає для ворогів сейв.",
+          "details": "1/довгий відпочинок."
+        }
+      ]
+    },
+    {
+      "id": "oath_of_vengeance",
+      "name": {
+        "en": "Oath of Vengeance",
+        "uk": "Клятва Помсти"
+      },
+      "description": "Нещадне переслідування винних.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Channel Divinity: Abjure Enemy / Сповільнення ворога",
+          "description": "Одну істоту в 60 фт. сповільнює і лякає.",
+          "details": "Save: Мудр.; швидкість 0 при провалі (проти фенд/нежиті)."
+        },
+        {
+          "level": 3,
+          "name": "Channel Divinity: Vow of Enmity / Обітниця ворожнечі",
+          "description": "Бонусна дія: 1 хв перевага на атаки по обраній цілі в 10 фт.",
+          "details": "1/відпочинок."
+        },
+        {
+          "level": 7,
+          "name": "Relentless Avenger / Аура ненастанної помсти",
+          "description": "Коли робите AO, можете переміститись до половини швидкості.",
+          "details": "Без провокації AO."
+        },
+        {
+          "level": 15,
+          "name": "Soul of Vengeance / Незворушність",
+          "description": "Реакцією атакуєте вашу Vow of Enmity ціль, якщо вона атакує когось іншого.",
+          "details": "—"
+        },
+        {
+          "level": 20,
+          "name": "Avenging Angel / Аватар помсти",
+          "description": "Крила, політ, аура страху 1 хв.",
+          "details": "1/довгий відпочинок."
+        }
+      ]
+    }
+  ]
+}

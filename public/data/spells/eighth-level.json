@@ -1,0 +1,296 @@
+[
+  {
+    "name": {
+      "ua": "Антимагічне поле",
+      "en": "Antimagic Field"
+    },
+    "level": 8,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Особисто (сфера 10 футів)",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Клірик",
+      "Маг"
+    ],
+    "description": "Створює зону, де магія не працює: закляття, магічні предмети та ефекти втрачають силу."
+  },
+  {
+    "name": {
+      "ua": "Антипатія/Симпатія",
+      "en": "Antipathy/Sympathy"
+    },
+    "level": 8,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 година",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "10 днів",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Змушує істот або уникати певного об’єкта/місця, або навпаки — тягнутися до нього."
+  },
+  {
+    "name": {
+      "ua": "Клон",
+      "en": "Clone"
+    },
+    "level": 8,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 година",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До руйнування",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює резервне тіло для істоти. Якщо вона помирає, душа переноситься в клон."
+  },
+  {
+    "name": {
+      "ua": "Контроль погоди",
+      "en": "Control Weather"
+    },
+    "level": 8,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "10 хв",
+    "range": "Особисто (8 миль радіус)",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 8 год (конц.)",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Дозволяє змінювати погодні умови у величезному масштабі."
+  },
+  {
+    "name": {
+      "ua": "Землетрус",
+      "en": "Earthquake"
+    },
+    "level": 8,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "500 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Друїд",
+      "Чаклун"
+    ],
+    "description": "Викликає сильні підземні поштовхи, що руйнують будівлі та збивають ворогів."
+  },
+  {
+    "name": {
+      "ua": "Домінація монстра",
+      "en": "Dominate Monster"
+    },
+    "level": 8,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Повністю підкорює волю істоти, змушуючи її виконувати ваші накази."
+  },
+  {
+    "name": {
+      "ua": "Великий вигнання",
+      "en": "Feeblemind"
+    },
+    "level": 8,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "150 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Завдає психічної шкоди та різко знижує інтелект і харизму істоти.",
+    "damage": {
+      "type": "психічна",
+      "base": "4к6",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": {
+      "ua": "Сила сонця",
+      "en": "Sunburst"
+    },
+    "level": 8,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "150 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Друїд",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Величезний вибух сонячного світла осліплює ворогів і завдає їм шкоди.",
+    "damage": {
+      "type": "радіантна",
+      "base": "12к6",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": { "ua": "Глабейнуна рама", "en": "Incendiary Cloud" },
+    "level": 8,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "150 футів",
+    "components": ["В", "С"],
+    "duration": "До 1 хв (конц.)",
+    "classes": ["Чаклун", "Маг"],
+    "description": "Створює рухливу хмару гарячого диму і попелу, яка завдає шкоди всім усередині.",
+    "damage": {
+      "type": "вогонь",
+      "base": "10к8",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": { "ua": "Заточення", "en": "Maze" },
+    "level": 8,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": ["В", "С"],
+    "duration": "До 10 хв",
+    "classes": ["Маг"],
+    "description": "Відправляє істоту у лабіринтний деміплан; вона застрягає там, поки не знайде вихід."
+  },
+  {
+    "name": { "ua": "Могутня словесна команда", "en": "Power Word Stun" },
+    "level": 8,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": ["В"],
+    "duration": "Миттєво",
+    "classes": ["Бард", "Чаклун", "Маг"],
+    "description": "Одним словом приголомшує істоту з 150 хітпоінтами чи менше."
+  },
+  {
+    "name": { "ua": "Розсіювання магії вищого рівня", "en": "Mind Blank" },
+    "level": 8,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": ["В", "С"],
+    "duration": "24 години",
+    "classes": ["Бард", "Маг"],
+    "description": "Захищає істоту від психічної шкоди та магічного виявлення."
+  },
+  {
+    "name": { "ua": "Поліморфія вищого рівня", "en": "Polymorph (True Polymorph use)" },
+    "level": 8,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 хв",
+    "range": "30 футів",
+    "components": ["В", "С", "М"],
+    "duration": "До 1 год (конц.) або постійно",
+    "classes": ["Бард", "Чаклун", "Маг"],
+    "description": "Перетворює істоту або предмет на іншу істоту чи предмет; трансформація може стати постійною."
+  },
+  {
+    "name": { "ua": "Телекинетичний шторм", "en": "Telepathy" },
+    "level": 8,
+    "school": "Дивінація",
+    "school_english": "Divination",
+    "casting_time": "1 дія",
+    "range": "Без обмежень",
+    "components": ["В", "С", "М"],
+    "duration": "24 години",
+    "classes": ["Маг"],
+    "description": "Встановлює телепатичний зв’язок з будь-якою істотою, навіть на величезних відстанях."
+  },
+  {
+    "name": { "ua": "Темрява світу", "en": "Dark Star" },
+    "level": 8,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "150 футів",
+    "components": ["В", "С", "М"],
+    "duration": "До 1 хв (конц.)",
+    "classes": ["Маг"],
+    "description": "Створює темну сферу, що глушить, осліплює та завдає психічної шкоди.",
+    "damage": {
+      "type": "психічна",
+      "base": "8к10",
+      "scales_at_levels": {}
+    }
+  },
+  {
+    "name": { "ua": "Деміплан", "en": "Demiplane" },
+    "level": 8,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": ["В", "С"],
+    "duration": "Миттєво",
+    "classes": ["Маг"],
+    "description": "Створює двері до невеликого власного деміплану."
+  }
+]

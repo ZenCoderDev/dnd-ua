@@ -1,0 +1,879 @@
+[
+  {
+    "name": {
+      "ua": "Анімація мертвих",
+      "en": "Animate Dead"
+    },
+    "level": 3,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 хв",
+    "range": "10 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Піднімає скелета або зомбі з кісток чи трупа, підкоряючи їх вашій волі."
+  },
+  {
+    "name": {
+      "ua": "Аура життєвості",
+      "en": "Aura of Vitality"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 бонусна дія",
+    "range": "Особисто (аура 30 футів)",
+    "components": [
+      "В"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Паладин"
+    ],
+    "description": "Створює ауру, у межах якої можна зцілювати союзників."
+  },
+  {
+    "name": {
+      "ua": "Ауру захисту від енергії",
+      "en": "Protection from Energy"
+    },
+    "level": 3,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Клірик",
+      "Друїд",
+      "Рейнджер",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Дарує істоті опір до одного типу енергійних ушкоджень."
+  },
+  {
+    "name": {
+      "ua": "Прокляття",
+      "en": "Bestow Curse"
+    },
+    "level": 3,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Чаклун"
+    ],
+    "description": "Накладає прокляття на істоту, накладаючи різні негативні ефекти."
+  },
+  {
+    "name": {
+      "ua": "Виклик тварини",
+      "en": "Conjure Animals"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Ви закликаєте духів тварин, які набувають фізичної форми та б’ються на вашому боці."
+  },
+  {
+    "name": {
+      "ua": "Виклик феї",
+      "en": "Conjure Fey"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 хв",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Друїд"
+    ],
+    "description": "Закликає духа феї або істоту, що діє за вашим наказом."
+  },
+  {
+    "name": {
+      "ua": "Зворотна доля",
+      "en": "Counterspell"
+    },
+    "level": 3,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "Реакція",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Перериває застосування заклинання іншої істоти."
+  },
+  {
+    "name": {
+      "ua": "Розсіювання магії",
+      "en": "Dispel Magic"
+    },
+    "level": 3,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Друїд",
+      "Паладин",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Розсіює дію магічних ефектів і заклять."
+  },
+  {
+    "name": {
+      "ua": "Вигнання",
+      "en": "Banishment"
+    },
+    "level": 3,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Клірик",
+      "Паладин",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Відправляє істоту в інший вимір чи рідний план."
+  },
+  {
+    "name": {
+      "ua": "Блискавка",
+      "en": "Lightning Bolt"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "100 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Випускає блискавку у пряму лінію, що завдає шкоди істотам у дорозі.",
+    "damage": {
+      "type": "електрика",
+      "base": "8к6",
+      "scales_at_levels": {
+        "4": "9к6",
+        "5": "10к6",
+        "6": "11к6",
+        "7": "12к6",
+        "8": "13к6",
+        "9": "14к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Вогняна куля",
+      "en": "Fireball"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "150 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Потужний вибух полум’я в зоні ураження.",
+    "damage": {
+      "type": "вогонь",
+      "base": "8к6",
+      "scales_at_levels": {
+        "4": "9к6",
+        "5": "10к6",
+        "6": "11к6",
+        "7": "12к6",
+        "8": "13к6",
+        "9": "14к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Глиняний голем",
+      "en": "Conjure Minor Elementals"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 хв",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Закликає дрібних елементалів, які б’ються на вашому боці."
+  },
+  {
+    "name": {
+      "ua": "Гіпнотичний візерунок",
+      "en": "Hypnotic Pattern"
+    },
+    "level": 3,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Створює кольоровий візерунок світла, який зачаровує істот."
+  },
+  {
+    "name": {
+      "ua": "Зв’язати істоту",
+      "en": "Hold Person"
+    },
+    "level": 3,
+    "school": "Зачарування",
+    "school_english": "Enchantment",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Друїд",
+      "Паладин",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Паралізує гуманоїда на час дії заклинання."
+  },
+  {
+    "name": {
+      "ua": "Дихання води",
+      "en": "Water Breathing"
+    },
+    "level": 3,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "24 години",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Рейнджер",
+      "Маг"
+    ],
+    "description": "Дає істотам можливість дихати під водою."
+  },
+  {
+    "name": {
+      "ua": "Дихання вогню дракона",
+      "en": "Elemental Weapon"
+    },
+    "level": 3,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Паладин"
+    ],
+    "description": "Накладає на зброю енергію (кислота, холод, вогонь, блискавка або грім)."
+  },
+  {
+    "name": {
+      "ua": "Клятва",
+      "en": "Beacon of Hope"
+    },
+    "level": 3,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Наділяє союзників силою надії: максимальні кидки зцілення, перевага на рятки проти страху."
+  },
+  {
+    "name": {
+      "ua": "Крик",
+      "en": "Fear"
+    },
+    "level": 3,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Істоти в полі зору кидають предмети та тікають у жаху."
+  },
+  {
+    "name": {
+      "ua": "Кліматична куля",
+      "en": "Sleet Storm"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "150 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Друїд",
+      "Маг",
+      "Чаклун"
+    ],
+    "description": "Викликає заметіль, що знижує видимість і ускладнює рух."
+  },
+  {
+    "name": {
+      "ua": "Крижаний шторм",
+      "en": "Ice Storm"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "300 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Друїд",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Злива граду б’є по площі, завдаючи шкоди.",
+    "damage": {
+      "type": "дробильна/холод",
+      "base": "2к8 дробильна + 4к6 холод",
+      "scales_at_levels": {
+        "4": "3к8 + 5к6",
+        "5": "4к8 + 6к6",
+        "6": "5к8 + 7к6",
+        "7": "6к8 + 8к6",
+        "8": "7к8 + 9к6",
+        "9": "8к8 + 10к6"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Маяк надії",
+      "en": "Beacon of Hope"
+    },
+    "level": 3,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Клірик"
+    ],
+    "description": "Дарує союзникам перевагу на рятки проти страху та максимальні кидки лікування."
+  },
+  {
+    "name": {
+      "ua": "Мова тварин",
+      "en": "Tongues"
+    },
+    "level": 3,
+    "school": "Віщування",
+    "school_english": "Divination",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Дозволяє істоті розуміти та говорити будь-якою мовою."
+  },
+  {
+    "name": {
+      "ua": "Мерехтіння",
+      "en": "Blink"
+    },
+    "level": 3,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Особисто",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "1 хвилина",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "На кожному ході є шанс переміститися на Ефірний План."
+  },
+  {
+    "name": {
+      "ua": "Надання здібності",
+      "en": "Enhance Ability"
+    },
+    "level": 3,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 год (конц.)",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Наділяє істоту магічним покращенням характеристик."
+  },
+  {
+    "name": {
+      "ua": "Невидимість",
+      "en": "Greater Invisibility"
+    },
+    "level": 3,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Робить істоту невидимою до завершення закляття."
+  },
+  {
+    "name": {
+      "ua": "Прокидання",
+      "en": "Nondetection"
+    },
+    "level": 3,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "8 годин",
+    "classes": [
+      "Бард",
+      "Друїд",
+      "Маг"
+    ],
+    "description": "Приховує ціль від магічного виявлення."
+  },
+  {
+    "name": {
+      "ua": "Сказати істину",
+      "en": "Speak with Dead"
+    },
+    "level": 3,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "10 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "10 хвилин",
+    "classes": [
+      "Бард",
+      "Клірик"
+    ],
+    "description": "Дозволяє ставити питання мертвому тілу."
+  },
+  {
+    "name": {
+      "ua": "Слизька підлога",
+      "en": "Stinking Cloud"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Evocation",
+    "casting_time": "1 дія",
+    "range": "90 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 1 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Створює смердючу хмару, що ослаблює істот."
+  },
+  {
+    "name": {
+      "ua": "Створення їжі та води",
+      "en": "Create Food and Water"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Клірик",
+      "Паладин"
+    ],
+    "description": "Створює харчі та питну воду для кількох істот."
+  },
+  {
+    "name": {
+      "ua": "Удар грому",
+      "en": "Thunder Step"
+    },
+    "level": 3,
+    "school": "Викликання",
+    "school_english": "Conjuration",
+    "casting_time": "1 дія",
+    "range": "90 футів",
+    "components": [
+      "В"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Телепортує вас на відстань і завдає шкоди грому у вихідній точці.",
+    "damage": {
+      "type": "грім",
+      "base": "3к10",
+      "scales_at_levels": {
+        "4": "4к10",
+        "5": "5к10",
+        "6": "6к10",
+        "7": "7к10",
+        "8": "8к10",
+        "9": "9к10"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Уява",
+      "en": "Major Image"
+    },
+    "level": 3,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 дія",
+    "range": "120 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Бард",
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Створює реалістичну ілюзію, яка включає звук, запах і температуру."
+  },
+  {
+    "name": {
+      "ua": "Фантомний скакун",
+      "en": "Phantom Steed"
+    },
+    "level": 3,
+    "school": "Ілюзія",
+    "school_english": "Illusion",
+    "casting_time": "1 хв",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Створює ілюзорного коня, який може швидко пересуватись."
+  },
+  {
+    "name": {
+      "ua": "Флай",
+      "en": "Fly"
+    },
+    "level": 3,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До 10 хв (конц.)",
+    "classes": [
+      "Чаклун",
+      "Маг"
+    ],
+    "description": "Надає істоті можливість літати зі швидкістю 60 футів."
+  },
+  {
+    "name": {
+      "ua": "Форма води",
+      "en": "Water Walk"
+    },
+    "level": 3,
+    "school": "Трансмутація",
+    "school_english": "Transmutation",
+    "casting_time": "1 дія",
+    "range": "30 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Клірик",
+      "Друїд",
+      "Рейнджер"
+    ],
+    "description": "Дає істотам можливість ходити по воді та іншим рідинам."
+  },
+  {
+    "name": {
+      "ua": "Хвороботворний промінь",
+      "en": "Ray of Sickness"
+    },
+    "level": 3,
+    "school": "Некромантія",
+    "school_english": "Necromancy",
+    "casting_time": "1 дія",
+    "range": "60 футів",
+    "components": [
+      "В",
+      "С"
+    ],
+    "duration": "Миттєво",
+    "classes": [
+      "Маг"
+    ],
+    "description": "Випускає зелений промінь, що завдає шкоди отрутою та може отруїти істоту.",
+    "damage": {
+      "type": "отрута",
+      "base": "2к8",
+      "scales_at_levels": {
+        "4": "3к8",
+        "5": "4к8",
+        "6": "5к8",
+        "7": "6к8",
+        "8": "7к8",
+        "9": "8к8"
+      }
+    }
+  },
+  {
+    "name": {
+      "ua": "Чарівне коло",
+      "en": "Magic Circle"
+    },
+    "level": 3,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 хв",
+    "range": "10 футів",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "1 година",
+    "classes": [
+      "Клірик",
+      "Паладин"
+    ],
+    "description": "Створює захисне коло проти демонів, небожителів, фей та нежиті."
+  },
+  {
+    "name": {
+      "ua": "Чарівний знак",
+      "en": "Glyph of Warding"
+    },
+    "level": 3,
+    "school": "Оборона",
+    "school_english": "Abjuration",
+    "casting_time": "1 година",
+    "range": "Дотик",
+    "components": [
+      "В",
+      "С",
+      "М"
+    ],
+    "duration": "До розсіювання",
+    "classes": [
+      "Бард",
+      "Клірик",
+      "Маг"
+    ],
+    "description": "Накладає магічну пастку, яка може вибухнути або накласти заклинання."
+  }
+]

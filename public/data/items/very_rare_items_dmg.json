@@ -1,0 +1,71 @@
+[
+  {
+    "name": "Armor, +2",
+    "rarity": "Very Rare",
+    "type": "Armor",
+    "attunement": false,
+    "description": "Броня, що надає додатковий захист. Підвищує AC на +2 понад стандартні властивості.",
+    "effects": {
+      "ac_bonus": 2,
+      "notes": "Доступні будь-які види броні з цією властивістю."
+    }
+  },
+  {
+    "name": "Weapon, +2",
+    "rarity": "Very Rare",
+    "type": "Weapon",
+    "attunement": false,
+    "description": "Зброя, зачарована магією, завдає додаткової шкоди та краще долає захист.",
+    "effects": {
+      "attack_bonus": 2,
+      "damage_bonus": 2
+    }
+  },
+  {
+    "name": "Rod of Absorption",
+    "rarity": "Very Rare",
+    "type": "Rod",
+    "attunement": true,
+    "description": "Поглинає закляття, спрямовані у власника, зберігаючи енергію для власного використання.",
+    "effects": {
+      "spell_absorption": true,
+      "charges": "До 50 рівнів заклять",
+      "usage": "Може використовувати збережену енергію для відновлення чарів."
+    }
+  },
+  {
+    "name": "Cloak of Invisibility",
+    "rarity": "Very Rare",
+    "type": "Wondrous Item",
+    "attunement": true,
+    "description": "Надає змогу ставати невидимим на певний час, використовуючи заряд магії плаща.",
+    "effects": {
+      "invisibility": true,
+      "charges": "Заряд витрачається на кожну хвилину невидимості"
+    }
+  },
+  {
+    "name": "Ring of Regeneration",
+    "rarity": "Very Rare",
+    "type": "Ring",
+    "attunement": true,
+    "description": "Повільно відновлює здоров’я власника та може відновлювати втрачені частини тіла.",
+    "effects": {
+      "healing": "1к6 хітів кожні 10 хвилин",
+      "regrowth": "Втрачені органи або частини тіла відновлюються за 1д6+1 днів"
+    }
+  },
+  {
+    "name": "Holy Avenger",
+    "rarity": "Very Rare",
+    "type": "Weapon (Sword)",
+    "attunement": true,
+    "description": "Могутній меч, створений для паладинів. Завдає додаткової шкоди злим істотам і дарує союзникам захист.",
+    "effects": {
+      "attack_bonus": 2,
+      "damage_bonus": 2,
+      "radiant_damage": "2d10 проти злих істот",
+      "aura": "+5 до рятівних кидків для союзників у радіусі 10 футів"
+    }
+  }
+]

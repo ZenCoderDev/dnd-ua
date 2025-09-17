@@ -1,0 +1,127 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Background {
+  id          Int                 @id @default(autoincrement())
+  name        String
+  description String
+  skills      String[]
+  languages   Int
+  equipment   String[]
+  features    BackgroundFeature[] // теперь массив
+}
+
+model BackgroundFeature {
+  id           Int         @id @default(autoincrement())
+  name         String
+  description  String
+  background   Background? @relation(fields: [backgroundId], references: [id])
+  backgroundId Int?
+}
+
+model Class {
+  id          String  @id
+  name        String
+  description String
+  image       String?
+
+  long       ClassLong?
+  spells     Spell[]    @relation("ClassSpells")
+  subclasses Subclass[] @relation("ClassToSubclass") // ✅ имя связи
+}
+
+model ClassLong {
+  id             String   @id
+  source         String
+  hitDice        String
+  image          String?
+  primaryAbility String[]
+  savingThrows   String[]
+  skillsChoose   Int
+  skillsFrom     String[]
+  description    String
+  progression    Json
+  features       Json
+
+  class Class @relation(fields: [id], references: [id])
+}
+
+model Race {
+  id             String    @id
+  name           String
+  image          String?
+  source         String
+  version        String
+  size           String
+  speed          String[]
+  abilityBonuses String[]
+  languages      String[]
+  darkvision     String?
+  traits         Trait[]
+  subraces       SubRace[]
+}
+
+model Trait {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String
+  race        Race?   @relation(fields: [raceId], references: [id])
+  raceId      String?
+}
+
+model SubRace {
+  id             String  @id
+  name           String
+  image          String?
+  abilityBonuses String?
+  traits         Json
+  race           Race?   @relation(fields: [raceId], references: [id])
+  raceId         String?
+}
+
+model Spell {
+  id          Int     @id @default(autoincrement())
+  nameUa      String
+  nameEn      String
+  school      String
+  level       Int
+  castingTime String
+  range       String
+  components  String
+  duration    String
+  description String
+  damage      Json?
+  classes     Class[] @relation("ClassSpells")
+}
+
+model Subclass {
+  id          String @id
+  nameEn      String
+  nameUk      String
+  description String
+  features    Json
+  classId     String
+  class       Class  @relation("ClassToSubclass", fields: [classId], references: [id]) // ✅ имя совпадает
+}
+
+model MagicItem {
+  id          Int     @id @default(autoincrement())
+  name        String
+  rarity      String
+  type        String
+  attunement  Boolean
+  description String
+  effects     Json
+}

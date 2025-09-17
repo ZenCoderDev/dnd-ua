@@ -1,8 +1,17 @@
 @import "tailwindcss";
+@import "tailwindcss-animated";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0F0A1F;
+  --foreground: #FFFFFF;
+
+  --card-background: #18112D;
+  --active: #3B266D;
+  --accent: #7C3AED;
+  --accent-hover: #A78BFA;
+  --text-second: #D1D5DB;
+  --text-tips: #9CA3AF;
+  --border: #27233A;
 }
 
 @theme inline {
@@ -14,8 +23,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0F0A1F;
+    --foreground: #FFFFFF;
   }
 }
 
