@@ -9,16 +9,12 @@
     "school_english": "Necromancy",
     "casting_time": "1 година",
     "range": "10 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До розвіяння",
     "classes": [
-      "Клірик",
-      "Чаклун",
-      "Маг"
+      "cleric",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Відправляє душу та союзників у Астральний план, залишаючи тіла безпечними у матеріальному світі."
   },
@@ -32,15 +28,11 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Клірик",
-      "Маг"
+      "cleric",
+      "wizard"
     ],
     "description": "Створює портал у будь-який план або закликає конкретну істоту з іншого плану."
   },
@@ -54,14 +46,11 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "1 миля",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "Миттєво",
     "classes": [
-      "Чаклун",
-      "Маг"
+      "sorcerer",
+      "wizard"
     ],
     "description": "Закликає чотири гігантські метеори, що вибухають і завдають величезної шкоди.",
     "damage": {
@@ -80,14 +69,12 @@
     "school_english": "Enchantment",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В"
-    ],
+    "components": "В",
     "duration": "Миттєво",
     "classes": [
-      "Бард",
-      "Чаклун",
-      "Маг"
+      "bard",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Одним словом миттєво вбиває істоту, якщо в неї 100 хітів чи менше."
   },
@@ -101,13 +88,10 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "До 10 хв (конц.)",
     "classes": [
-      "Маг"
+      "wizard"
     ],
     "description": "Створює багатошарову стіну з кольорового світла, кожен шар якої має унікальний захисний ефект."
   },
@@ -121,12 +105,10 @@
     "school_english": "Transmutation",
     "casting_time": "1 дія",
     "range": "Особисто",
-    "components": [
-      "В"
-    ],
+    "components": "В",
     "duration": "Кілька ходів",
     "classes": [
-      "Маг"
+      "wizard"
     ],
     "description": "Зупиняє час для всіх, окрім вас, дозволяючи зробити кілька ходів поспіль."
   },
@@ -140,16 +122,12 @@
     "school_english": "Abjuration",
     "casting_time": "1 хв",
     "range": "30 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До розвіяння",
     "classes": [
-      "Маг"
+      "wizard"
     ],
-    "description": "Ув’язнює істоту в магічну пастку: сон, кристал, ланцюги чи іншу форму. Тривале та майже незламне закляття."
+    "description": "Ув’язнює істоту в wizardічну пастку: сон, кристал, ланцюги чи іншу форму. Тривале та майже незламне закляття."
   },
   {
     "name": {
@@ -161,13 +139,10 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "Миттєво",
     "classes": [
-      "Клірик"
+      "cleric"
     ],
     "description": "Відновлює до 700 хітпоінтів, розподілених між істотами на ваш вибір."
   },
@@ -181,15 +156,11 @@
     "school_english": "Transmutation",
     "casting_time": "1 дія",
     "range": "Особисто",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 год (конц.)",
     "classes": [
-      "Друїд",
-      "Маг"
+      "druid",
+      "wizard"
     ],
     "description": "Дає змогу перетворитися на будь-яку істоту, яку ви бачили, з усіма її здібностями."
   },
@@ -203,15 +174,11 @@
     "school_english": "Necromancy",
     "casting_time": "1 година",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "Миттєво",
     "classes": [
-      "Клірик",
-      "Друїд"
+      "cleric",
+      "druid"
     ],
     "description": "Воскрешає істоту навіть після століть смерті, навіть без тіла."
   },
@@ -225,16 +192,12 @@
     "school_english": "Transmutation",
     "casting_time": "1 година",
     "range": "30 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 год (конц.) або постійно",
     "classes": [
-      "Бард",
-      "Чаклун",
-      "Маг"
+      "bard",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Перетворює істоту чи предмет на іншу форму назавжди, якщо не зняти закляття."
   },
@@ -248,16 +211,12 @@
     "school_english": "Divination",
     "casting_time": "1 хв",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "8 годин",
     "classes": [
-      "Бард",
-      "Друїд",
-      "Маг"
+      "bard",
+      "druid",
+      "wizard"
     ],
     "description": "Дає істоті надзвичайну інтуїцію: перевагу на атаки, кидки рятунку й захист від ворожих атак."
   }

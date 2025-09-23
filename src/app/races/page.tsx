@@ -8,7 +8,7 @@ export default function Home() {
     const { data: races, isLoading, error } = useGetRacesQuery();
 
     return (
-        <div className="relative top-16 max-w-[80%] mx-auto grid grid-cols-4 gap-6 p-6">
+        <div className="relative top-16 max-w-[90%] mx-auto grid grid-cols-4 gap-6 p-6">
             {races?.map((race, index) => (
                 <Link
                     key={race.id}

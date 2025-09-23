@@ -1,14 +1,17 @@
 interface SpellObj {
-    name: Name;
-    school: string;
-    level: string;
-    casting_time: string;
-    range: string;
-    components: string;
-    duration: string;
-    classes: string[];
-    description: string;
-    damage: SpellDmg;
+  id: number;
+  nameUa: string;
+  nameEn: string;
+  school: string;
+  level: number;
+  casting_time: string;
+  range: string;
+  components: string;
+  duration: string;
+  classes: ClassShort[];
+  description: string;
+  damage: SpellDmg;
+  effects: string[];
 }
 
 type Name = {
@@ -17,10 +20,10 @@ type Name = {
 };
 
 interface SpellDmg {
-    base: string;
-    scaling: SpellScaleInter;
-    type: string;
-    scales_at_levels: string[];
+  base: string;
+  scaling: SpellScaleInter;
+  type: string;
+  scales_at_levels: string[];
 }
 
 interface SpellScaleInter {

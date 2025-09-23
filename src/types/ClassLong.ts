@@ -1,11 +1,15 @@
 interface ClassLong {
   id: string;
   name: string;
+  nameUa: string;
+  nameEn: string;
   source: string;
   hitDice: string;
   image: string;
   primaryAbility: string[];
   savingThrows: string[];
+  skillsChoose: number;
+  skillsFrom: string[];
   skills: ClassSkills;
   armor: ItemInter[];
   weapons: ItemInter[];

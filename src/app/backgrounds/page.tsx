@@ -6,11 +6,11 @@ export default function Home() {
     const { data: backgrounds } = useGetBackgroundsQuery();
 
     return (
-        <div className=" max-w-[80%] relative top-16 mx-auto grid grid-cols-3 gap-6 p-6">
+        <div className=" max-w-[90%] relative top-16 mx-auto grid grid-cols-3 gap-6 p-6">
             {backgrounds?.map((background, index) => (
                 <div
                     key={index}
-                    className={`cursor-pointer animate-fade-up border border-(--border) animate-duration-1000 flex flex-col gap-4 group p-4 relative overflow-hidden bg-(--card-background) rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105`}
+                    className={`animate-fade-up border border-(--border) animate-duration-1000 flex flex-col gap-4 group p-4 relative overflow-hidden bg-(--card-background) rounded-2xl shadow-xl transition-transform duration-300`}
                     style={{ animationDelay: `${index * 100}ms` }}>
                     <div className="absolute inset-0 pointer-events-none overflow-hidden">
                         <div className="absolute bottom-1/2 right-1/2 w-[200%] h-[200%]

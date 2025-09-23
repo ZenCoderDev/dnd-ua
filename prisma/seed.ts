@@ -1,105 +1,49 @@
 import path from "path";
 import { PrismaClient } from "@prisma/client";
-import { readdirSync, readFileSync } from "fs";
+import { readFileSync } from "fs";
+import fs from "fs";
 
 const prisma = new PrismaClient();
 
-interface TraitSeed {
-  name: string;
-  description: string;
-}
-
-interface SubRaceSeed {
+interface ClassJson {
   id: string;
-  name: string;
-  image?: string;
-  abilityBonuses?: string;
-  traits: any; // Json
-}
-
-interface RaceJson {
-  id: string;
-  name: string;
-  image?: string;
-  source: string;
-  version: string;
-  size: string;
-  speed: Record<string, number>; // например { walk: 30 }
-  ability_bonuses: Record<string, number>; // например { strength: 2, charisma: 1 }
-  languages: string[];
-  darkvision?: string | null;
-  traits: TraitSeed[];
-  subraces?: SubRaceSeed[];
+  armor: Record<string, string>[];
+  weapons: Record<string, string>[];
+  tools: Record<string, string>[];
+  equipment: string[];
 }
 
 async function main() {
-  const racesDir = path.join(process.cwd(), "public", "data", "races");
-
-  // все файлы кроме short.json
-  const files = readdirSync(racesDir).filter(
-    (file) => file.endsWith(".json") && file !== "short.json"
-  );
+  const classesDir = path.join(process.cwd(), "public", "data", "classes");
+  const files = fs.readdirSync(classesDir);
 
   for (const file of files) {
-    const filePath = path.join(racesDir, file);
-    const raw: RaceJson = JSON.parse(readFileSync(filePath, "utf-8"));
+    const filePath = path.join(classesDir, file);
+    const raw: ClassJson = JSON.parse(readFileSync(filePath, "utf-8"));
 
-    // преобразуем speed в string[]
-    const speedEntries = Object.entries(raw.speed);
-    const speedArr =
-      speedEntries.length === 1 && speedEntries[0][0] === "walk"
-        ? [`${speedEntries[0][1]}`]
-        : speedEntries.map(([type, value]) => `${type}: ${value}`);
-
-    // преобразуем ability_bonuses в string[]
-    const abilityBonusesArr = Object.entries(raw.ability_bonuses).map(
-      ([ability, bonus]) => `${ability} +${bonus}`
-    );
-
-    const existing = await prisma.race.findFirst({
-      where: { name: raw.name },
+    const existing = await prisma.classLong.findUnique({
+      where: { id: raw.id },
     });
 
-    if (existing) {
-      console.log(`Race "${raw.name}" уже существует, пропускаю...`);
-    } else {
-      await prisma.race.create({
-        data: {
-          id: raw.id,
-          name: raw.name,
-          image: raw.image,
-          source: raw.source,
-          version: raw.version,
-          size: raw.size,
-          speed: speedArr,
-          abilityBonuses: abilityBonusesArr,
-          languages: raw.languages,
-          darkvision: raw.darkvision || null,
-          traits: {
-            create: raw.traits.map((t) => ({
-              name: t.name,
-              description: t.description,
-            })),
-          },
-          subraces: raw.subraces
-            ? {
-                create: raw.subraces.map((s) => ({
-                  id: s.id,
-                  name: s.name,
-                  image: s.image,
-                  abilityBonuses: s.abilityBonuses || null,
-                  traits: s.traits,
-                })),
-              }
-            : undefined,
-        },
-      });
-
-      console.log(`Race "${raw.name}" добавлена!`);
+    if (!existing) {
+      console.log(`⚠️ ${raw.id} не знайдено, пропускаю...`);
+      continue;
     }
+
+    await prisma.classLong.update({
+      where: { id: raw.id },
+      data: {
+        armor: raw.armor,
+        weapons: raw.weapons,
+        tools: raw.tools,
+        equipment: raw.equipment,
+      },
+    });
+
+    console.log(`✅ Оновлено: ${raw.id}`);
   }
 
-  console.log("✅ Все расы загружены!");
+  console.log("🎉 Усі класи оновлені!");
 }
 
 main()

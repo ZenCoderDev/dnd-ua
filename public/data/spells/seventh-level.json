@@ -9,14 +9,11 @@
     "school_english": "Necromancy",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "Миттєво",
     "classes": [
-      "Чаклун",
-      "Маг"
+      "sorcerer",
+      "wizard"
     ],
     "description": "Випромінює некротичну енергію, що завдає величезної шкоди і може перетворити жертву на зомбі.",
     "damage": {
@@ -35,16 +32,12 @@
     "school_english": "Abjuration",
     "casting_time": "1 хв",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До руйнування або активації",
     "classes": [
-      "Бард",
-      "Клірик",
-      "Маг"
+      "bard",
+      "cleric",
+      "wizard"
     ],
     "description": "Накладає потужний символ, що активується і завдає різні ефекти (страх, біль, сон тощо)."
   },
@@ -58,14 +51,12 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "10 футів",
-    "components": [
-      "В"
-    ],
+    "components": "В",
     "duration": "Миттєво",
     "classes": [
-      "Бард",
-      "Чаклун",
-      "Маг"
+      "bard",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Миттєво переносить вас та союзників у відоме місце."
   },
@@ -79,13 +70,10 @@
     "school_english": "Necromancy",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "Миттєво",
     "classes": [
-      "Чаклун"
+      "sorcerer"
     ],
     "description": "Якщо жертва помирає від цього закляття, вона повертається у вигляді зомбі під вашим контролем."
   },
@@ -99,12 +87,10 @@
     "school_english": "Evocation",
     "casting_time": "1 бонусна дія",
     "range": "30 футів",
-    "components": [
-      "В"
-    ],
+    "components": "В",
     "duration": "Миттєво",
     "classes": [
-      "Клірик"
+      "cleric"
     ],
     "description": "Святе слово виганяє або знищує істот залежно від їхніх хітів."
   },
@@ -118,16 +104,12 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "150 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "Миттєво",
     "classes": [
-      "Друїд",
-      "Чаклун",
-      "Маг"
+      "druid",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Величезний вибух сонячного світла завдає шкоди й осліплює ворогів.",
     "damage": {
@@ -146,17 +128,13 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "10 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "Миттєво",
     "classes": [
-      "Клірик",
-      "Друїд",
-      "Чаклун",
-      "Маг"
+      "cleric",
+      "druid",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Переміщує вас та союзників на інший план існування."
   },
@@ -170,14 +148,11 @@
     "school_english": "Transmutation",
     "casting_time": "1 дія",
     "range": "Особисто",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "До 8 годин",
     "classes": [
-      "Клірик",
-      "Маг"
+      "cleric",
+      "wizard"
     ],
     "description": "Дозволяє увійти в Ефірний план і рухатися крізь матеріальний світ."
   },
@@ -191,16 +166,12 @@
     "school_english": "Abjuration",
     "casting_time": "1 хв",
     "range": "30 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До розвіяння",
     "classes": [
-      "Маг"
+      "wizard"
     ],
-    "description": "Ув’язнює істоту в магічну в’язницю (ланцюги, сон, кристал тощо)."
+    "description": "Ув’язнює істоту в wizardічну в’язницю (ланцюги, сон, кристал тощо)."
   },
   {
     "name": {
@@ -212,20 +183,16 @@
     "school_english": "Abjuration",
     "casting_time": "1 дія",
     "range": "100 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "1 година",
     "classes": [
-      "Маг"
+      "wizard"
     ],
-    "description": "Створює надзвичайно міцну магічну клітку, з якої неможливо втекти звичайними методами."
+    "description": "Створює надзвичайно міцну wizardічну клітку, з якої неможливо втекти звичайними методами."
   },
   {
     "name": {
-      "ua": "Магічний меч Морденканена",
+      "ua": "wizardічний меч Морденканена",
       "en": "Mordenkainen’s Sword"
     },
     "level": 7,
@@ -233,17 +200,13 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Бард",
-      "Маг"
+      "bard",
+      "wizard"
     ],
-    "description": "Створює величезний магічний меч, який атакує ворогів за вашим наказом.",
+    "description": "Створює величезний wizardічний меч, який атакує ворогів за вашим наказом.",
     "damage": {
       "type": "силова",
       "base": "3к10",
@@ -260,14 +223,10 @@
     "school_english": "Abjuration",
     "casting_time": "1 дія",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До розвіяння",
     "classes": [
-      "Маг"
+      "wizard"
     ],
     "description": "Робить істоту або предмет невидимим і прихованим від виявлення заклять."
   },
@@ -281,15 +240,11 @@
     "school_english": "Conjuration",
     "casting_time": "1 хв",
     "range": "10 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "1 раунд",
     "classes": [
-      "Бард",
-      "Маг"
+      "bard",
+      "wizard"
     ],
     "description": "Створює постійний телепортаційний портал у відоме місце."
   },
@@ -303,15 +258,12 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "150 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "Миттєво",
     "classes": [
-      "Клірик",
-      "Друїд",
-      "Чаклун"
+      "cleric",
+      "druid",
+      "sorcerer"
     ],
     "description": "Створює область з вогняними стовпами, що завдають шкоди.",
     "damage": {
@@ -330,22 +282,18 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "10 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "Миттєво",
     "classes": [
-      "Клірик",
-      "Чаклун",
-      "Маг"
+      "cleric",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Може відправити небажану істоту на інший план існування, якщо вона не пройде ряткид."
   },
   {
     "name": {
-      "ua": "Магічний захист",
+      "ua": "wizardічний захист",
       "en": "Regenerate"
     },
     "level": 7,
@@ -353,16 +301,12 @@
     "school_english": "Transmutation",
     "casting_time": "1 хв",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "1 година",
     "classes": [
-      "Бард",
-      "Клірик",
-      "Друїд"
+      "bard",
+      "cleric",
+      "druid"
     ],
     "description": "Відновлює хіти щохвилини, зцілює тяжкі поранення та навіть відновлює втрачені частини тіла.",
     "damage": {
@@ -381,14 +325,10 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "300 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Друїд"
+      "druid"
     ],
     "description": "Створює величезний вихор, який може піднімати й кидати істот."
   },
@@ -402,14 +342,11 @@
     "school_english": "Transmutation",
     "casting_time": "1 дія",
     "range": "Особисто",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "До 8 год",
     "classes": [
-      "Клірик",
-      "Маг"
+      "cleric",
+      "wizard"
     ],
     "description": "Дозволяє довготривале перебування в Ефірному плані."
   },
@@ -423,15 +360,11 @@
     "school_english": "Illusion",
     "casting_time": "1 дія",
     "range": "500 миль",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 дня (конц.)",
     "classes": [
-      "Бард",
-      "Маг"
+      "bard",
+      "wizard"
     ],
     "description": "Створює ілюзорну копію себе, яку можна використовувати для обману та керування на відстані."
   },
@@ -445,14 +378,10 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "10 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "Миттєво",
     "classes": [
-      "Маг"
+      "wizard"
     ],
     "description": "Телепортує предмет будь-якого розміру до відомого місця."
   },
@@ -466,13 +395,10 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "Миттєво",
     "classes": [
-      "Маг"
+      "wizard"
     ],
     "description": "Випромінює кольорові промені, кожен з яких має різний ефект — від вогню й кислоти до перетворення на камінь.",
     "damage": {
@@ -491,15 +417,11 @@
     "school_english": "Transmutation",
     "casting_time": "1 дія",
     "range": "100 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Друїд",
-      "Маг"
+      "druid",
+      "wizard"
     ],
     "description": "Перевертає гравітацію у великій зоні, змушуючи істот і предмети падати вгору."
   },
@@ -513,15 +435,11 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "10 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "Миттєво",
     "classes": [
-      "Клірик",
-      "Маг"
+      "cleric",
+      "wizard"
     ],
     "description": "Використовується як потужна версія переміщення, інколи для відкриття порталу між планами."
   }

@@ -9,6 +9,7 @@ import PriestSilhouette from "./silhouettes/PriestSilhouette";
 import DruidSilhouette from "./silhouettes/DruidSilhouette";
 import ClassSlider from "./ClassSlider";
 import DiceRoller from "./DiceRoller";
+import { prisma } from "../../lib/prisma";
 
 export default function HomePage() {
     const { scrollYProgress } = useScroll();
@@ -17,11 +18,21 @@ export default function HomePage() {
         scrollYProgress,
         [0, 0.5, 1],
         [
-            "linear-gradient(to bottom, #0F0A1F, #18112D)",
-            "linear-gradient(to bottom, #18112D, #3B266D)",
-            "linear-gradient(to bottom, #3B266D, #7C3AED)"
+            "linear-gradient(to bottom, #0F0A1F, #7C3AED)",
+            "linear-gradient(to bottom, #7C3AED, #0F0A1F)",
+            "linear-gradient(to bottom, #0F0A1F, #7C3AED)"
         ]
     );
+
+    // async function update() {
+    //     await prisma.spell.updateMany({
+    //         where: { id: { gt: 285 } },
+    //         data: { level: 9 },
+    //     });
+    //     console.log("✅ Updated spells");
+    // }
+
+    // update();
 
     return (
         <motion.main
@@ -64,11 +75,11 @@ export default function HomePage() {
                     <h1 className="animate-fade-up animate-duration-1000 animate-delay-100 self-center uppercase">Підземелля та Дракони</h1>
                     <h1 className="animate-fade-up animate-duration-1000 animate-delay-100 self-center uppercase">твій портал у світ пригод</h1>
                     <h3 className="animate-fade-down text-2xl animate-duration-1000 animate-delay-300 self-center">Створи власну історію, кинь кубик долі та занурся у безмежний світ фантазії.</h3>
-                    <DiceRoller/>
+                    <DiceRoller />
                 </motion.div>
 
             </motion.div>
-            <div className="h-8 bg-(--background)">
+            <div className="h-8">
 
             </div>
             <motion.div
@@ -114,7 +125,7 @@ export default function HomePage() {
                     <h3 className="self-center text-3xl">Розпочни свій шлях героя: обери расу, клас та здібності. Тут ти знайдеш усе необхідне для створення персонажа та участі в кампанії.</h3>
                 </motion.div>
             </motion.div>
-            <div className="h-8 bg-(--background)">
+            <div className="h-8">
 
             </div>
             <motion.div

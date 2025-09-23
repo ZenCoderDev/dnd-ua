@@ -16,12 +16,12 @@ export default function RaceDetails() {
     if (!race) return <p>Раса не знайдена</p>;
 
     return (
-        <div className="relative top-16 max-w-[80%] mx-auto p-6">
+        <div className="relative top-16 max-w-[90%] mx-auto p-6">
             <div className="flex flex-row gap-4 mb-8 mx-auto w-fit">
                 {races?.map((race, index) => (
                     <Link key={index} href={`/races/${race.id}`}
-                        className={`w-fit cursor-pointer group p-4 relative overflow-hidden bg-(--card-background) rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105
-                    ${race.id === id ? 'bg-(--text-second) text-(--card-background)' : 'bg-(--card-background)'} `}>
+                        className={`w-fit cursor-pointer group p-4 relative overflow-hidden rounded-2xl shadow-xl transition duration-300 hover:bg-(--accent-hover) hover:text-(--foreground) hover:scale-105
+                    ${race.id === id ? 'bg-(--active) text-(--foreground)' : 'bg-(--card-background) text-(--text-tips)'} `}>
                         <p className="">{race.name}</p>
                     </Link>
                 ))}

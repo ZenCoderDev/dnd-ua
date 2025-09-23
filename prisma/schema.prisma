@@ -33,7 +33,7 @@ model BackgroundFeature {
 
 model Class {
   id          String  @id
-  name        String
+  name        String  @unique
   description String
   image       String?
 
@@ -54,6 +54,11 @@ model ClassLong {
   description    String
   progression    Json
   features       Json
+
+  armor     Json @default("[]")
+  weapons   Json @default("[]")
+  tools     Json @default("[]")
+  equipment Json @default("[]")
 
   class Class @relation(fields: [id], references: [id])
 }
@@ -101,9 +106,12 @@ model Spell {
   range       String
   components  String
   duration    String
+  descShort   String?
   description String
+  effects     Json?
   damage      Json?
   classes     Class[] @relation("ClassSpells")
+  source      String  @default("PHB")
 }
 
 model Subclass {

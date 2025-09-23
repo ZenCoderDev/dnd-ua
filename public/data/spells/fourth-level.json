@@ -9,16 +9,12 @@
     "school_english": "Divination",
     "casting_time": "1 дія",
     "range": "30 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 год (конц.)",
     "classes": [
-      "Маг"
+      "wizard"
     ],
-    "description": "Створює невидиме магічне око, яке можна рухати та спостерігати крізь нього."
+    "description": "Створює невидиме wizardічне око, яке можна рухати та спостерігати крізь нього."
   },
   {
     "name": {
@@ -30,17 +26,13 @@
     "school_english": "Abjuration",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Клірик",
-      "Паладин",
-      "Чаклун",
-      "Маг"
+      "cleric",
+      "paladin",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Відправляє істоту в інший вимір або її рідний план."
   },
@@ -54,15 +46,12 @@
     "school_english": "Necromancy",
     "casting_time": "1 дія",
     "range": "30 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "Миттєво",
     "classes": [
-      "Друїд",
-      "Чаклун",
-      "Маг"
+      "druid",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Висмоктує життєву силу з рослин і істот.",
     "damage": {
@@ -87,17 +76,13 @@
     "school_english": "Enchantment",
     "casting_time": "1 дія",
     "range": "90 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Бард",
-      "Друїд",
-      "Чаклун",
-      "Маг"
+      "bard",
+      "druid",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Плутанина у свідомості істот змушує їх діяти хаотично."
   },
@@ -111,14 +96,11 @@
     "school_english": "Conjuration",
     "casting_time": "1 хв",
     "range": "90 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "До 1 год (конц.)",
     "classes": [
-      "Друїд",
-      "Маг"
+      "druid",
+      "wizard"
     ],
     "description": "Закликає кількох малих елементалів для допомоги у бою."
   },
@@ -132,15 +114,11 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 год (конц.)",
     "classes": [
-      "Друїд",
-      "Рейнджер"
+      "druid",
+      "ranger"
     ],
     "description": "Закликає духів фей у формі лісових істот, які діють на вашому боці."
   },
@@ -154,16 +132,12 @@
     "school_english": "Transmutation",
     "casting_time": "1 дія",
     "range": "300 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 10 хв (конц.)",
     "classes": [
-      "Клірик",
-      "Друїд",
-      "Маг"
+      "cleric",
+      "druid",
+      "wizard"
     ],
     "description": "Маніпулює водою: змінює течію, рівень або створює вир."
   },
@@ -177,14 +151,11 @@
     "school_english": "Abjuration",
     "casting_time": "1 дія",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "8 годин",
     "classes": [
-      "Клірик",
-      "Паладин"
+      "cleric",
+      "paladin"
     ],
     "description": "Захищає ціль від смерті, залишаючи її на 1 хп при зведенні до 0."
   },
@@ -198,14 +169,12 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "500 футів",
-    "components": [
-      "В"
-    ],
+    "components": "В",
     "duration": "Миттєво",
     "classes": [
-      "Бард",
-      "Чаклун",
-      "Маг"
+      "bard",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Телепортує вас і одного союзника у межах дальності."
   },
@@ -219,14 +188,10 @@
     "school_english": "Divination",
     "casting_time": "1 хв",
     "range": "Особисто",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "Миттєво",
     "classes": [
-      "Клірик"
+      "cleric"
     ],
     "description": "Задаєте питання божеству, отримуючи загальну відповідь."
   },
@@ -240,14 +205,11 @@
     "school_english": "Enchantment",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Друїд",
-      "Рейнджер"
+      "druid",
+      "ranger"
     ],
     "description": "Підпорядковуєте собі звіра, змушуючи його виконувати ваші накази."
   },
@@ -261,15 +223,11 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "90 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Чаклун",
-      "Маг"
+      "sorcerer",
+      "wizard"
     ],
     "description": "Викликає чорні щупальця, що хапають та завдають шкоди істотам.",
     "damage": {
@@ -288,13 +246,10 @@
     "school_english": "Transmutation",
     "casting_time": "10 хв",
     "range": "120 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "Миттєво",
     "classes": [
-      "Маг"
+      "wizard"
     ],
     "description": "Перетворює сировину на готові предмети."
   },
@@ -308,15 +263,11 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "Особисто",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "10 хвилин",
     "classes": [
-      "Чаклун",
-      "Маг"
+      "sorcerer",
+      "wizard"
     ],
     "description": "Оточує вас полум’ям, яке шкодить нападникам і захищає від вогню або холоду."
   },
@@ -330,17 +281,13 @@
     "school_english": "Abjuration",
     "casting_time": "1 дія",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "1 година",
     "classes": [
-      "Бард",
-      "Клірик",
-      "Друїд",
-      "Рейнджер"
+      "bard",
+      "cleric",
+      "druid",
+      "ranger"
     ],
     "description": "Ціль не може бути обмежена: ігнорує складну місцевість і ефекти, що сковують рух."
   },
@@ -354,13 +301,10 @@
     "school_english": "Transmutation",
     "casting_time": "1 дія",
     "range": "30 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "До 10 хв (конц.)",
     "classes": [
-      "Друїд"
+      "druid"
     ],
     "description": "Перетворює кілька звичайних комах на гігантських союзників."
   },
@@ -374,14 +318,11 @@
     "school_english": "Conjuration",
     "casting_time": "1 бонусна дія",
     "range": "30 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Друїд",
-      "Рейнджер"
+      "druid",
+      "ranger"
     ],
     "description": "Створює лозу, що хапає істот і притягує їх."
   },
@@ -395,15 +336,12 @@
     "school_english": "Illusion",
     "casting_time": "1 дія",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Бард",
-      "Чаклун",
-      "Маг"
+      "bard",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Робить істоту повністю невидимою на час закляття."
   },
@@ -417,12 +355,10 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "30 футів",
-    "components": [
-      "В"
-    ],
+    "components": "В",
     "duration": "До 8 годин",
     "classes": [
-      "Клірик"
+      "cleric"
     ],
     "description": "Закликає ефірного стража, що завдає радіантної шкоди ворогам.",
     "damage": {
@@ -441,15 +377,12 @@
     "school_english": "Illusion",
     "casting_time": "10 хв",
     "range": "300 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "24 години",
     "classes": [
-      "Бард",
-      "Друїд",
-      "Маг"
+      "bard",
+      "druid",
+      "wizard"
     ],
     "description": "Створює велику ілюзію, що змінює вигляд місцевості."
   },
@@ -463,16 +396,12 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "300 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "Миттєво",
     "classes": [
-      "Друїд",
-      "Чаклун",
-      "Маг"
+      "druid",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Закликає крижаний град, що завдає шкоди і робить землю складною.",
     "damage": {
@@ -497,16 +426,12 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 60 днів",
     "classes": [
-      "Маг"
+      "wizard"
     ],
-    "description": "Сховуєте магічну скриню на ефірному плані, з можливістю викликати її назад."
+    "description": "Сховуєте wizardічну скриню на ефірному плані, з можливістю викликати її назад."
   },
   {
     "name": {
@@ -518,17 +443,13 @@
     "school_english": "Divination",
     "casting_time": "1 дія",
     "range": "Особисто",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 год (конц.)",
     "classes": [
-      "Бард",
-      "Клірик",
-      "Друїд",
-      "Рейнджер"
+      "bard",
+      "cleric",
+      "druid",
+      "ranger"
     ],
     "description": "Відчуваєте напрямок на істоту, якщо вона в межах 1000 футів."
   },
@@ -542,14 +463,10 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "30 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "8 годин",
     "classes": [
-      "Маг"
+      "wizard"
     ],
     "description": "Закликає невидимого пса-охоронця, що гавкає та кусає ворогів."
   },
@@ -563,16 +480,12 @@
     "school_english": "Abjuration",
     "casting_time": "10 хв",
     "range": "120 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "24 години",
     "classes": [
-      "Маг"
+      "wizard"
     ],
-    "description": "Створює захищену область, що блокує магічне виявлення та телепортацію."
+    "description": "Створює захищену область, що блокує wizardічне виявлення та телепортацію."
   },
   {
     "name": {
@@ -584,14 +497,10 @@
     "school_english": "Abjuration",
     "casting_time": "1 дія",
     "range": "30 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Маг"
+      "wizard"
     ],
     "description": "Укладає істоту у непроникну сферу сили, що захищає її від зовнішнього впливу."
   },
@@ -605,14 +514,11 @@
     "school_english": "Illusion",
     "casting_time": "1 дія",
     "range": "120 футів",
-    "components": [
-      "В",
-      "С"
-    ],
+    "components": "В,С",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Чаклун",
-      "Маг"
+      "sorcerer",
+      "wizard"
     ],
     "description": "Викликає найгірший кошмар істоти, змушуючи її відчувати смертельний страх.",
     "damage": {
@@ -631,17 +537,13 @@
     "school_english": "Transmutation",
     "casting_time": "1 дія",
     "range": "60 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 год (конц.)",
     "classes": [
-      "Бард",
-      "Друїд",
-      "Чаклун",
-      "Маг"
+      "bard",
+      "druid",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Перетворює істоту на іншу форму, наприклад тварину."
   },
@@ -655,16 +557,12 @@
     "school_english": "Transmutation",
     "casting_time": "1 дія",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "Миттєво",
     "classes": [
-      "Клірик",
-      "Друїд",
-      "Маг"
+      "cleric",
+      "druid",
+      "wizard"
     ],
     "description": "Формуєте об’єм каменю у потрібну форму."
   },
@@ -678,19 +576,15 @@
     "school_english": "Abjuration",
     "casting_time": "1 дія",
     "range": "Дотик",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 год (конц.)",
     "classes": [
-      "Друїд",
-      "Паладин",
-      "Рейнджер",
-      "Маг"
+      "druid",
+      "paladin",
+      "ranger",
+      "wizard"
     ],
-    "description": "Шкіра істоти стає твердою як камінь, даючи опір немагічній шкоді від зброї."
+    "description": "Шкіра істоти стає твердою як камінь, даючи опір неwizardічній шкоді від зброї."
   },
   {
     "name": {
@@ -702,16 +596,12 @@
     "school_english": "Evocation",
     "casting_time": "1 дія",
     "range": "120 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Друїд",
-      "Чаклун",
-      "Маг"
+      "druid",
+      "sorcerer",
+      "wizard"
     ],
     "description": "Створює стіну полум’я, яка завдає шкоди тим, хто проходить крізь неї.",
     "damage": {
@@ -736,15 +626,11 @@
     "school_english": "Conjuration",
     "casting_time": "1 дія",
     "range": "90 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 1 хв (конц.)",
     "classes": [
-      "Друїд",
-      "Маг"
+      "druid",
+      "wizard"
     ],
     "description": "Створює сферу води, яка може захоплювати і затримувати істот."
   },
@@ -758,15 +644,11 @@
     "school_english": "Transmutation",
     "casting_time": "10 хв",
     "range": "Особисто (2 милі радіус)",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "До 8 годин",
     "classes": [
-      "Друїд",
-      "Маг"
+      "druid",
+      "wizard"
     ],
     "description": "Змінює погодні умови у великому регіоні."
   },
@@ -780,15 +662,11 @@
     "school_english": "Abjuration",
     "casting_time": "1 хв",
     "range": "10 футів",
-    "components": [
-      "В",
-      "С",
-      "М"
-    ],
+    "components": "В,С,М",
     "duration": "1 година",
     "classes": [
-      "Клірик",
-      "Паладин"
+      "cleric",
+      "paladin"
     ],
     "description": "Створює захисне коло проти демонів, фей, небожителів та нежиті."
   }
