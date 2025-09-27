@@ -11,7 +11,7 @@ export default function Home() {
     if (error) return <p>Помилка завантаження</p>;
 
     return (
-        <div className=" max-w-[90%] relative top-16 mx-auto grid grid-cols-4 gap-6 p-6">
+        <div className=" max-w-[90%] relative mx-auto grid grid-cols-4 gap-6 p-6">
             {classes?.map((classes, index) => (
                 <Link
                     key={classes.id}

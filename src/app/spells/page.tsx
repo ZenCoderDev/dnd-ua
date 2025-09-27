@@ -64,9 +64,8 @@ export default function Home() {
     const entries = Array.from(spellsByLevel.entries()).sort(([a], [b]) => a - b);
 
     return (
-        <div className="max-w-[90%] relative top-20 mx-auto grid grid-cols-2 gap-6 p-6">
+        <div className="max-w-[90%] relative mx-auto grid grid-cols-2 gap-6 p-6">
             <div className="col-span-2 flex gap-4 mb-6">
-
                 <input
                     type="text"
                     placeholder="Пошук..."
@@ -113,11 +112,10 @@ export default function Home() {
 
             </div>
 
-            {/* === Список спелов === */}
             {entries.map(([level, list]) => (
                 <div key={level} className="bg-(--card-background) p-4 rounded-lg">
                     <h2
-                        className="sticky top-20 z-20
+                        className="sticky top-20 z-10
                          bg-gradient-to-r from-(--card-background) to-(--border)
                          text-(--accent)
                          font-extrabold text-xl 
@@ -138,7 +136,7 @@ export default function Home() {
                                     style={{ animationDelay: `${index * 50}ms` }}
                                 >
 
-                                    <h2 className="text-lg font-bold cursor-pointer hover:bg-(--accent-hover) p-4 transition duration-300" onClick={() =>
+                                    <h2 className="text-lg font-bold cursor-pointer hover:bg-(--accent-hover) hover:text-(--text-accent) p-4 transition duration-300" onClick={() =>
                                         setExpanded(isOpen ? null : `${level}-${index}`)
                                     }>{renderName(spell)}</h2>
 
@@ -180,7 +178,7 @@ export default function Home() {
                                                     </p>
 
                                                     {spell.damage && (
-                                                        <div className="mt-2 p-2 rounded-lg bg-(--accent) border border-(--border)">
+                                                        <div className="mt-2 p-2 rounded-lg bg-(--accent) text-(--text-accent) border border-(--border)">
                                                             <p>
                                                                 <strong>Базовий:</strong>{" "}
                                                                 {spell.damage.base}

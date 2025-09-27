@@ -4,7 +4,31 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import { useGetRaceByIdQuery, useGetRacesQuery } from "@/store/api/apiSlice";
 import Link from "next/link";
+import { TraitObject, TraitsType } from "@/types/RacesLong";
 
+export const getNormalizeTraitName = (name: string): string => {
+    switch (name) {
+        case "damageType":
+            return "Тип стихії";
+        case "breathWeapon":
+            return "Форма драконячогу дихання";
+        case "name":
+            return "Назва";
+        case "description":
+            return "Опис";
+    }
+    return name;
+}
+
+export const normalizeTraits = (traits: TraitsType | null): TraitObject[] => {
+    if (!traits) return [];
+
+    if (Array.isArray(traits)) {
+        return traits;
+    }
+
+    return Object.entries(traits).map(([key, value]) => ({ [key]: value }));
+};
 
 export default function RaceDetails() {
     const { id } = useParams<{ id: string }>();
@@ -16,25 +40,36 @@ export default function RaceDetails() {
     if (!race) return <p>Раса не знайдена</p>;
 
     return (
-        <div className="relative top-16 max-w-[90%] mx-auto p-6">
+        <div className="relative max-w-[90%] mx-auto p-6">
             <div className="flex flex-row gap-4 mb-8 mx-auto w-fit">
                 {races?.map((race, index) => (
                     <Link key={index} href={`/races/${race.id}`}
-                        className={`w-fit cursor-pointer group p-4 relative overflow-hidden rounded-2xl shadow-xl transition duration-300 hover:bg-(--accent-hover) hover:text-(--foreground) hover:scale-105
-                    ${race.id === id ? 'bg-(--active) text-(--foreground)' : 'bg-(--card-background) text-(--text-tips)'} `}>
+                        className={`w-fit cursor-pointer group p-4 relative overflow-hidden rounded-2xl shadow-xl transition duration-300 hover:bg-(--accent-hover) hover:text-(--text-accent) hover:scale-105
+                    ${race.id === id ? 'bg-(--active) text-(--foreground)' : 'bg-(--accent) text-(--text-accent)'} `}>
                         <p className="">{race.name}</p>
                     </Link>
                 ))}
             </div>
             <div className="flex flex-row gap-4">
                 <div className="flex-2 gap-4 flex flex-col">
-                    <Link href={`/`} className="text-3xl font-bold mt-4 cursor-pointer">← Назад</Link>
                     <h1 className="text-3xl font-bold mt-4">{race.name}</h1>
-                    <p className="mt-2">{race.languages}</p>
-                    <h1 className="text-2xl font-bold">Здібності</h1>
+                    <h3 className="text-2xl font-bold">Ви володієте наступними мовами:</h3>
+                    <div
+                        className="grid gap-4"
+                        style={{
+                            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                        }}
+                    >
+                        {race.languages.map((language, index) => (
+                            <div key={index} className="p-4 text-center rounded-md bg-(--card-background) text-(--accent) shadow">
+                                <p>{language}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <h1 className="text-2xl font-bold">Ваші видові здібності: </h1>
                     <div className="grid grid-cols-2 gap-6">
                         {race.traits.map((trait, index) => (
-                            <div key={index} className="flex flex-col p-4 gap-1 relative overflow-hidden bg-(--card-background) rounded-2xl shadow-xl">
+                            <div key={index} className="flex flex-col gap-4 p-4 text-left rounded-md bg-(--card-background) text-(--accent) shadow">
                                 <h2 className="text-xl font-bold">{trait.name}</h2>
                                 <p>{trait.description}</p>
                             </div>
@@ -52,18 +87,38 @@ export default function RaceDetails() {
             </div>
 
 
-            {race.subraces && (
+            {race.subraces && race.subraces.length > 0 && (
                 <div className="mt-6">
-                    <h2 className="text-2xl font-semibold">Підраси</h2>
-                    <div className="grid grid-cols-2 gap-4 mt-2">
+                    <h2 className="text-2xl font-bold">Підраси</h2>
+                    <div className="grid gap-4 mt-2"
+                        style={{
+                            gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+                        }}>
                         {race.subraces.map((sub) => (
-                            <div key={sub.id} className="rounded-md border p-3">
+                            <div key={sub.id} className="rounded-md border p-3 bg-(--card-background)">
                                 <img
                                     src={sub.image}
                                     alt={sub.name}
                                     className="w-full h-32 object-cover rounded"
                                 />
                                 <h3 className="font-medium mt-2">{sub.name}</h3>
+                                <h3 className="font-medium mt-2">{sub.ability_bonuses}</h3>
+                                {sub.traits && (
+                                    <div className="bg-(--active) flex flex-col gap-4 rounded-md p-4">
+                                        {normalizeTraits(sub.traits).map((trait, index) => (
+                                            <div
+                                                key={index}
+                                                className=" text-left"
+                                            >
+                                                {Object.entries(trait).map(([key, value]) => (
+                                                    <div key={key}>
+                                                        <strong className="">{getNormalizeTraitName(key)}:</strong> {value}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>

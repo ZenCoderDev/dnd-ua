@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tailwindcss-animated";
 
-:root {
+/* :root {
   --background: #0F0A1F;
   --foreground: #FFFFFF;
 
@@ -26,7 +26,49 @@
     --background: #0F0A1F;
     --foreground: #FFFFFF;
   }
+} */
+
+/* :root {
+  --background: #030303;      
+  --foreground: #F7CE65;      
+
+  --card-background: #290000; 
+  --active: #930C10;          
+
+  --accent: #C41E2E;          
+  --accent-hover: #FFDD66;    
+
+  --border: #930C10;          
+  --text-second: #F7CE65;     
+  --text-tips: #FFF8BD;       
+} */
+:root {
+  --background: #ebedc1;
+  --foreground: #2e250a;
+
+  --card-background: #e1d5a6;
+  --active: #dcad5b;
+
+  --accent: #290000;
+  --accent-hover: #550c07;
+
+  --border: #550c07;
+  --text-second: #4a3a16;
+  --text-tips: #6b5a2c;
+  --text-accent: #ebedc1;
 }
+
+/* :root {
+  --background: #030303;
+  --foreground: #ebedc1;
+  --card-background: #290000;
+  --active: #930C10;
+  --accent: #b46934;
+  --accent-hover: #FFDD66;
+  --border: #930C10;
+  --text-second: #F7CE65;
+  --text-tips: #FFF8BD;
+} */
 
 .hide-scrollbar::-webkit-scrollbar {
   width: 0px;
@@ -44,7 +86,15 @@
 }
 
 body {
-  background: var(--background);
+  background: url("/images/texture.png") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.default-background {
+  background: url("/images/texture.png") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
 }

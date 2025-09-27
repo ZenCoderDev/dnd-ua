@@ -10,6 +10,14 @@ import DruidSilhouette from "./silhouettes/DruidSilhouette";
 import ClassSlider from "./ClassSlider";
 import DiceRoller from "./DiceRoller";
 import { prisma } from "../../lib/prisma";
+import TownSVG from "./backgrounds/TownBackground";
+import BlobSVG from "./backgrounds/BlobBackground";
+import PeaksSVG from "./backgrounds/PeaksBackground";
+import DragonSilhouette from "./silhouettes/Dragon";
+import DragonTalonSilhouette from "./silhouettes/DragonClaw";
+import MageHandSilhouette from "./silhouettes/HandSilhouette";
+import BlacksmithSilhouette from "./silhouettes/BlacksmithSilhouette";
+import LHandSilhoutte from "./silhouettes/LHandSilhouette";
 
 export default function HomePage() {
     const { scrollYProgress } = useScroll();
@@ -18,9 +26,9 @@ export default function HomePage() {
         scrollYProgress,
         [0, 0.5, 1],
         [
-            "linear-gradient(to bottom, #0F0A1F, #7C3AED)",
-            "linear-gradient(to bottom, #7C3AED, #0F0A1F)",
-            "linear-gradient(to bottom, #0F0A1F, #7C3AED)"
+            "linear-gradient(to bottom, #FDF6E300, #A4714800)",
+            "linear-gradient(to bottom, #FDF6E300, #A4714800)",
+            "linear-gradient(to bottom, #FDF6E300, #A4714800)"
         ]
     );
 
@@ -39,137 +47,129 @@ export default function HomePage() {
             style={{ background }}
             className="relative min-h-[300vh] overflow-hidden"
         >
+
+            <DragonSilhouette />
             <motion.div
-                initial={{ opacity: 0.6, }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ amount: 0.3, once: false }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                style={{
-                    transformOrigin: "center",
-                    backgroundImage: "url('/backgrounds/town.svg')",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                }}
-                className="relative flex items-center justify-center text-white text-5xl h-screen ">
-
-                <motion.div
+                className="relative flex items-center z-10 justify-center text-(--foreground) w-full text-5xl h-screen ">
+                <TownSVG />
+                <div className="absolute -bottom-20 w-full max-w-[50%] max-h-[60%] right-20">
+                    <DragonTalonSilhouette />
+                </div>
+                {/* <motion.div
                     initial={{ x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="absolute flex-1/2 left-12 -bottom-10  z-6 ">
+                    className="absolute bottom-0 left-0 z-6">
                     <BardSilhouette />
-                </motion.div>
-                <motion.div
+                </motion.div> */}
+                {/* <motion.div
                     initial={{ x: 200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="absolute flex-1/2 right-12 -bottom-10 z-6">
+                    className="absolute bottom-0 right-0 z-6">
                     <SorcSilhouette />
-                </motion.div>
+                </motion.div> */}
                 <motion.div
                     initial={{ y: 200, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="absolute w-full z-6 mx-0 flex flex-col justify-center text-center top-40 max-w-[60%] gap-8">
-                    <h1 className="animate-fade-up animate-duration-1000 animate-delay-100 self-center uppercase">Підземелля та Дракони</h1>
-                    <h1 className="animate-fade-up animate-duration-1000 animate-delay-100 self-center uppercase">твій портал у світ пригод</h1>
-                    <h3 className="animate-fade-down text-2xl animate-duration-1000 animate-delay-300 self-center">Створи власну історію, кинь кубик долі та занурся у безмежний світ фантазії.</h3>
-                    <DiceRoller />
+                    className="absolute w-full z-6 mx-0 flex flex-col justify-center text-center top-20 left-0 max-w-[60%] gap-8">
+                    <h1 className="animate-fade-up animate-duration-1000 animate-delay-100 self-center uppercase text-6xl font-bold text-(--accent)" style={{ textShadow: "-2px 2px 4px var(--background)" }}>Table Dices</h1>
+                    <h1 className="animate-fade-up animate-duration-1000 animate-delay-100 self-center uppercase" style={{ textShadow: "-2px 2px 4px var(--background)" }}>твій портал у світ пригод</h1>
+                    <h3 className="animate-fade-down animate-duration-1000 animate-delay-300 self-center text-xl mt-4 " style={{ textShadow: "-2px 2px 4px var(--background)" }}>Створи власну історію, кинь кубик долі та занурся у безмежний світ фантазії.</h3>
+                    <div className="w-full items-center flex justify-center">
+                        <DiceRoller />
+                    </div>
                 </motion.div>
 
             </motion.div>
-            <div className="h-8">
+            <div className="h-80 bg-(--accent) z-6 relative">
 
             </div>
             <motion.div
-                initial={{ opacity: 0.6, }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ amount: 0.3, once: false }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                style={{
-                    transformOrigin: "center",
-                    backgroundImage: "url('/backgrounds/blob.svg')",
-                    backgroundSize: "cover",   // или "contain"
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                }}
-                className="relative  h-screen flex items-center justify-end text-white text-5xl">
+                className="relative flex items-center z-10 justify-center text-(--foreground) w-full text-5xl h-screen default-background">
                 <motion.div
                     initial={{ x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="absolute flex-1/2 left-12 top-10 z-6"
+                    className="absolute w-full left-12 bottom-0 z-6"
                 >
-                    <PriestSilhouette />
+                    <MageHandSilhouette />
                 </motion.div>
                 <motion.div
                     initial={{ x: 200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="z-6 text-center gap-8">
+                    className="absolute right-0 left-0 flex justify-center z-6 text-center gap-8">
+                </motion.div>
+                <motion.div
+                    initial={{ x: 200, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                    className="absolute z-6 w-full max-w-[60%]  mx-0 flex flex-col justify-center text-center top-20 gap-8">
+                    <h1 className="self-center font-bold uppercase" style={{ textShadow: "-2px 2px 4px var(--background)" }}>Для граців</h1>
+                    <h3 className="self-center text-xl" style={{ textShadow: "0px 2px 4px var(--background)" }}>Розпочни свій шлях героя: обери расу, клас та здібності. Тут ти знайдеш усе необхідне для створення персонажа та участі в кампанії.</h3>
                     <ClassSlider />
                 </motion.div>
                 <motion.div
-                    initial={{ x: 200, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="absolute z-6 w-full mx-0 flex flex-col justify-center text-center top-30 gap-8">
-                    <h1 className="self-center uppercase">Для граців</h1>
-                </motion.div>
-                <motion.div
                     initial={{ x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="absolute w-full z-6 mx-0 flex flex-col justify-center bottom-30 max-w-[40%] gap-8 left-40">
-                    <h3 className="self-center text-3xl">Розпочни свій шлях героя: обери расу, клас та здібності. Тут ти знайдеш усе необхідне для створення персонажа та участі в кампанії.</h3>
+                    className="absolute w-full z-6 mx-0 flex flex-col justify-center bottom-30 max-w-[40%] gap-8 right-0">
                 </motion.div>
             </motion.div>
-            <div className="h-8">
+            <div className="h-96 bg-(--accent) z-6 relative">
 
             </div>
             <motion.div
-                initial={{ opacity: 0.6, }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ amount: 0.5, once: false }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                style={{
-                    transformOrigin: "center",
-                    backgroundImage: "url('/backgrounds/peaks.svg')",
-                    backgroundSize: "cover",   // или "contain"
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                }}
-                className="relative flex items-center justify-center text-white text-5xl h-screen">
-                <motion.div
-                    initial={{ x: 400, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="absolute flex-1/2 left-12  bottom-0 z-6 ">
-                    <BarbSilhouette />
-                </motion.div>
+                className="relative default-background w-full flex items-center z-6 justify-center text-(--foreground) text-5xl h-screen">
+
                 <motion.div
                     initial={{ x: -400, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="absolute flex-1/2 right-12 top-10 z-6 ">
-                    <PalSilhouette />
+                    className="absolute h-screen flex justify-end w-full -right-20 top-0 z-6 ">
+                    <div className="rotate-270 w-[40%]">
+                        <LHandSilhoutte />
+                    </div>
                 </motion.div>
+
                 <motion.div
-                    initial={{ x: -200, opacity: 0 }}
+                    initial={{ x: 400, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="absolute w-full z-6 mx-0 flex flex-col justify-center text-center top-40 max-w-[60%] gap-8 left-0">
-                    <h1 className="self-center uppercase">Для майстрів</h1>
+                    className="absolute  h-screen w-full -left-20 top-20 z-6 ">
+                    <div className="rotate-90 w-[40%]">
+                        <LHandSilhoutte />
+                    </div>
+                </motion.div>
+                <motion.div
+                    initial={{ y: 400, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                    className="w-full z-6 h-full mx-0 flex flex-col justify-between pb-20 text-center mt-40 max-w-[60%] gap-8 left-0 right-0">
+                    <div className="flex flex-col gap-8">
+                        <h1 className="self-center uppercase text-(--accent)" style={{ textShadow: "0px 2px 4px var(--background)" }}>Для майстрів</h1>
+                        <h3 className="self-center text-xl text-(--accent)" style={{ textShadow: "0px 0px 0px var(--background)" }}>Створіть свій світ, насичуйте його подіями і грайте разом зі своїми друзями! Створють найкращі пригоди як для себе, так і для них. І пам'ятайте: Найкраща пригода це та, де усім знайшлося місце!</h3>
+                    </div>
+                    <BlacksmithSilhouette />
                 </motion.div>
                 <motion.div
                     initial={{ x: 200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
                     className="absolute w-full z-6 mx-0 flex flex-col justify-center text-right bottom-30 max-w-[40%] gap-8 right-40">
-                    <h3 className="self-center text-3xl">Провідник історії, світобудівник, хранитель таємниць. Якщо ти майстер гри — тут на тебе чекають інструменти, сюжети й поради для проведення незабутніх пригод.</h3>
                 </motion.div>
             </motion.div>
-        </motion.main>
+        </motion.main >
     );
 }

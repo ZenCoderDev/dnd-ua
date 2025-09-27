@@ -18,10 +18,14 @@ interface TraitsLong {
   description: string;
 }
 
+export type TraitObject = { [key: string]: string };
+
+export type TraitsType = TraitObject | TraitObject[];
+
 interface SubRacesLong {
   id: string;
   name: string;
   image: string;
   ability_bonuses: string;
-  traits: TraitsLong[];
+  traits: TraitsType | null;
 }

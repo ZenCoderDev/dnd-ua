@@ -41,7 +41,7 @@ export default function DiceRoller() {
 
             <button
                 onClick={handleRoll}
-                className="bg-(--accent) shadow-2xl hover:bg-(--accent-hover) hover:text-(--active) cursor-pointer transition duration-300 py-2 px-4 text-(--foreground) rounded-xl mb-3"
+                className="bg-(--accent) shadow-2xl hover:bg-(--accent-hover) hover:text-(--active) border border-(--active) cursor-pointer transition duration-300 py-2 px-4 text-(--active) rounded-xl mb-3"
             >
                 🎲 Кинути кубик!
             </button>

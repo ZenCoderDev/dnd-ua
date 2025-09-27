@@ -126,10 +126,144 @@ model Subclass {
 
 model MagicItem {
   id          Int     @id @default(autoincrement())
-  name        String
+  nameUa      String
+  nameEn      String
   rarity      String
   type        String
   attunement  Boolean
   description String
   effects     Json
 }
+
+model Weapon {
+  id          Int              @id @default(autoincrement())
+  name        String
+  type        String           
+  cost        String           
+  damage      String           
+  damageType  String          
+  weight      Float
+  properties  WeaponOnProperty[]
+
+  @@map("weapons")
+}
+
+model Property {
+  id          String            @id   
+  name        String
+  description String
+  weapons     WeaponOnProperty[]
+
+  @@map("properties")
+}
+
+model WeaponOnProperty {
+  weaponId   Int
+  propertyId String
+
+  weapon     Weapon   @relation(fields: [weaponId], references: [id])
+  property   Property @relation(fields: [propertyId], references: [id])
+
+  @@id([weaponId, propertyId])
+  @@map("weapons_on_properties")
+}
+
+
+model Armor {
+  id                  Int     @id @default(autoincrement())
+  name                String  @unique
+  type                String  // light_armor | medium_armor | heavy_armor | shield
+  cost                String
+  ac                  Int
+  dexBonus            Boolean?
+  dexBonusMax         Int?
+  strengthReq         Int?
+  stealthDisadvantage Boolean
+  weight              Float
+
+  @@map("armor")
+}
+
+model Ammunition {
+  id       Int    @id @default(autoincrement())
+  name     String @unique
+  type     String   // ammunition_arrow | ammunition_bolt | ammunition_sling_bullet | ammunition_blowgun_needle
+  cost     String
+  weight   Float
+  quantity Int
+
+  @@map("ammunition")
+}
+
+model Tool {
+  id       Int      @id @default(autoincrement())
+  name     String   @unique
+  type     String
+  cost     String
+  weight   Float
+  contents String[] // масив рядків
+
+  @@map("tools")
+}
+
+model Gear {
+  id          Int     @id @default(autoincrement())
+  name        String  @unique
+  type        String
+  cost        String
+  weight      Float
+  description String?
+
+  @@map("gear")
+}
+
+model MountOrVehicle {
+  id               Int     @id @default(autoincrement())
+  name             String  @unique
+  type             String  // mount | vehicle_land | vehicle_water
+  cost             String
+  speed            Int     // для транспорту без власного руху = 0
+  carryingCapacity Int
+  description      String?
+
+  @@map("mounts_vehicles")
+}
+
+model TradeGood {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  type        String
+  cost        String
+  description String?
+
+  @@map("trade_goods")
+}
+
+model Tack {
+  id          Int     @id @default(autoincrement())
+  name        String  @unique
+  type        String  // tack_saddle_riding, tack_harness, vehicle_cart тощо
+  cost        String
+  weight      Float
+  description String?
+
+  @@map("tack")
+}
+
+model GameRule {
+  id          Int     @id @default(autoincrement())
+  ruleId      String  @unique           // унікальний технічний id, напр. "action_attack"
+  category    String                    // Core | Combat | Exploration | Magic | Economy | Social
+  subCategory String?                   // Actions, Turn Order, Spellcasting etc.
+  name        String
+  description String
+  source      String?                   // опційно: "PHB p. XXX" або "SRD"
+  createdAt   DateTime @default(now())
+
+  @@map("game_rules")
+}
+
+
+
+
+

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Sword } from "lucide-react";
 import { useGetClassesQuery } from "@/store/api/apiClasses";
 
 export default function ClassSlider() {
@@ -19,10 +20,10 @@ export default function ClassSlider() {
     };
 
     return (
-        <div className="relative w-[600px] flex flex-col items-center justify-center overflow-hidden">
-            <h2 className="text-3xl font-bold mb-6">Хто ти сьогодні?</h2>
+        <div className="relative mx-auto w-[600px] flex h-full flex-col items-center justify-center overflow-hidden">
+            <h2 className="text-3xl font-bold mb-6" style={{ textShadow: "0px 2px 4px var(--background)" }}>Хто ти сьогодні?</h2>
 
-            <div className="relative flex w-full h-[420px] items-center justify-center">
+            <div className="relative flex w-full h-full items-center justify-center">
                 <motion.div
                     className="absolute left-0 w-[200px] h-[300px] opacity-60 scale-75"
                     initial={{ x: -200, opacity: 0 }}
@@ -39,7 +40,7 @@ export default function ClassSlider() {
 
                 <motion.div
                     key={classes[index].id}
-                    className="relative w-[300px] h-[420px] z-8 bg-purple-800/40 border border-purple-500 rounded-2xl shadow-xl overflow-hidden"
+                    className="relative w-[300px] h-[420px] z-8 bg-(--accent) border border-(--border) rounded-2xl shadow-xl overflow-hidden"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -52,8 +53,8 @@ export default function ClassSlider() {
                         className="object-cover object-top rounded-2xl"
                     />
                     <div className="absolute bottom-0 p-4 text-center bg-black/40">
-                        <h3 className="text-xl font-semibold mb-1">{classes[index].name}</h3>
-                        <p className="text-sm opacity-80">{classes[index].description}</p>
+                        <h3 className="text-xl font-semibold mb-1 text-(--text-accent)">{classes[index].name}</h3>
+                        <p className="text-sm opacity-80 text-(--text-accent)">{classes[index].description}</p>
                     </div>
                 </motion.div>
 
@@ -75,15 +76,16 @@ export default function ClassSlider() {
             <div className="flex gap-6 mt-6">
                 <button
                     onClick={prev}
-                    className="px-4 py-2 bg-purple-700 hover:bg-purple-600 rounded-lg shadow-md"
+                    className="px-4 py-2 bg-(--active) text-(--text-accent) hover:bg-(--accent-hover) transition duration-300 rounded-lg shadow-md flex items-center justify-center"
                 >
-                    ◀
+                    <Sword className="w-10 h-10 rotate-315" />
                 </button>
+
                 <button
                     onClick={next}
-                    className="px-4 py-2 bg-purple-700 hover:bg-purple-600 rounded-lg shadow-md"
+                    className="px-4 py-2 bg-(--active) text-(--text-accent) hover:bg-(--accent-hover) transition duration-300 rounded-lg shadow-md flex items-center justify-center"
                 >
-                    ▶
+                    <Sword className="w-10 h-10 rotate-135" />
                 </button>
             </div>
         </div>

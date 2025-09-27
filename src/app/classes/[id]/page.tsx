@@ -62,8 +62,8 @@ export default function RaceDetails() {
             <div className="flex flex-row gap-4 mb-8 mx-auto w-fit">
                 {classes?.map((dndClass, index) => (
                     <Link key={index} href={`/classes/${dndClass.id}`}
-                        className={`w-fit cursor-pointer group p-4 relative overflow-hidden rounded-2xl shadow-xl transition duration-300 hover:bg-(--accent-hover) hover:text-(--foreground) hover:scale-105
-                    ${dndClass.id === id ? 'bg-(--active) text-(--foreground)' : 'bg-(--card-background) text-(--text-tips)'} `}>
+                        className={`w-fit cursor-pointer group p-4 relative overflow-hidden rounded-2xl shadow-xl transition duration-300 hover:bg-(--accent-hover) hover:text-(--text-accent) hover:scale-105
+                    ${dndClass.id === id ? 'bg-(--active) text-(--foreground)' : 'bg-(--accent) text-(--text-accent)'} `}>
                         <p className="">{dndClass.name}</p>
                     </Link>
                 ))}
@@ -85,8 +85,8 @@ export default function RaceDetails() {
                                             prev === subclass.id ? null : subclass.id
                                         )
                                     }
-                                    className={`rounded-md flex m-2 flex-col border transition duration-300 text-center hover:bg-(--accent-hover) items-center cursor-pointer p-4
-        ${selectedSubclassId === subclass.id ? "bg-(--accent)" : "bg-(--card-background)"}`}
+                                    className={`rounded-md flex m-2 flex-col border transition duration-300 text-center hover:bg-(--accent-hover) hover:text-(--text-accent) items-center cursor-pointer p-4
+                                    ${selectedSubclassId === subclass.id ? "bg-(--active) text-(--foreground)" : "bg-(--accent) text-(--text-accent)"}`}
                                 >
                                     <div className="flex flex-col">
                                         <h3 className="font-medium">{subclass.nameUk}</h3>
@@ -103,63 +103,101 @@ export default function RaceDetails() {
                     {/* твой старый блок */}
                     <div className="flex flex-row gap-4">
                         <div className="flex-2 gap-4 flex flex-col">
-                            <h1 className="text-2xl font-bold">Здібності</h1>
+                            <h1 className="text-2xl font-bold">Спаскидки</h1>
                             <div className="grid grid-cols-2 gap-6">
-                                {selectedClass.primaryAbility.map((ability, index) => (
-                                    <div key={index} className="bg-(--accent) flex flex-col p-4 gap-1 relative overflow-hidden border border-(--border) rounded-2xl shadow-xl">
-                                        <h2 className="text-xl font-bold">{ability}</h2>
+                                {selectedClass.savingThrows.map((ability, index) => (
+                                    <div key={index} className="bg-(--card-background) text-(--accent) flex flex-col p-4 gap-1 relative overflow-hidden rounded-md shadow">
+                                        <h2 className="text-base">{ability}</h2>
                                     </div>
                                 ))}
                             </div>
-                            <h3 className="font-medium mt-2">Choose: {selectedClass.skillsChoose}</h3>
-                            {selectedClass.skillsFrom.map((skill, index) => (
-                                <div key={index}>
-                                    <p>{skill}</p>
+                            <h3 className="text-2xl font-bold">Оберіть вміння: {selectedClass.skillsChoose} серед</h3>
+                            <div
+                                className="grid gap-4"
+                                style={{
+                                    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                                }}
+                            >
+                                {selectedClass.skillsFrom.map((skill, index) => (
+                                    <div key={index} className="p-4 text-center rounded-md bg-(--card-background) text-(--accent) shadow">
+                                        <p>{skill}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            {selectedClass.armor && selectedClass.armor.length > 0 &&
+                                <div>
+                                    <h3 className="text-2xl font-bold">Ви маєте навички володіння наступними видами броні</h3>
+                                    <div
+                                        className="grid gap-4"
+                                        style={{
+                                            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                                        }}>
+                                        {selectedClass.armor.map((armor, index) => {
+                                            const value = Object.values(armor)[0];
+                                            return (
+                                                <div
+                                                    key={index}
+                                                    className="p-4 text-center rounded-md bg-(--card-background) text-(--accent) shadow"
+                                                >
+                                                    <p>{value}</p>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
-                            ))}
-                            {selectedClass.armor.map((armor, index) => {
-                                const value = Object.values(armor)[0]; // достаём "Проста зброя"
-                                return (
+                            }
+                            {selectedClass.armor && selectedClass.armor.length > 0 &&
+                                <div>
+                                    <h3 className="text-2xl font-bold">Ви маєте навички володіння наступними видами зброї</h3>
                                     <div
-                                        key={index}
-                                        className="rounded-md flex bg-(--card-background) border-(--border) flex-row border gap-6 p-3 text-center items-center"
-                                    >
-                                        <h3 className="font-medium mt-2">{value}</h3>
+                                        className="grid gap-4"
+                                        style={{
+                                            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                                        }}>
+                                        {selectedClass.weapons.map((weapon, index) => {
+                                            const value = Object.values(weapon)[0];
+                                            return (
+                                                <div
+                                                    key={index}
+                                                    className="p-4 my-auto text-center rounded-md bg-(--card-background) text-(--accent) shadow"
+                                                >
+                                                    <p>{value}</p>
+                                                </div>
+                                            );
+                                        })}
                                     </div>
-                                );
-                            })}
-                            {selectedClass.weapons.map((weapon, index) => {
-                                const value = Object.values(weapon)[0]; // достаём "Проста зброя"
-                                return (
+                                </div>
+                            }
+                            {selectedClass.tools && selectedClass.tools.length > 0 &&
+                                <div>
+                                    <h3 className="text-2xl font-bold">Ви маєте навички володіння наступними видами інструментів</h3>
                                     <div
-                                        key={index}
-                                        className="rounded-md flex bg-(--card-background) border-(--border) flex-row border gap-6 p-3 text-center items-center"
-                                    >
-                                        <h3 className="font-medium mt-2">{value}</h3>
+                                        className="grid gap-4"
+                                        style={{
+                                            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                                        }}>
+                                        {selectedClass.tools.map((tools, index) => {
+                                            const value = Object.values(tools)[0];
+                                            return (
+                                                <div
+                                                    key={index}
+                                                    className="p-4 my-auto text-center rounded-md bg-(--card-background) text-(--accent) shadow"
+                                                >
+                                                    <p>{value}</p>
+                                                </div>
+                                            );
+                                        })}
                                     </div>
-                                );
-                            })}
-                            {selectedClass.tools.map((tools, index) => {
-                                const value = Object.values(tools)[0]; // достаём "Проста зброя"
-                                return (
-                                    <div
-                                        key={index}
-                                        className="rounded-md flex bg-(--card-background) border-(--border) flex-row border gap-6 p-3 text-center items-center"
-                                    >
-                                        <h3 className="font-medium mt-2">{value}</h3>
-                                    </div>
-                                );
-                            })}
+                                </div>
+                            }
+                            <h3 className="text-2xl font-bold">Ви отримуєте наступне початкове спорядження: </h3>
                             {selectedClass.equipment && (
-                                <div className="mt-6">
-                                    <h2 className="text-2xl font-semibold">progression</h2>
-                                    <div className="flex flex-col gap-4 mt-2">
-                                        {selectedClass.equipment.map((equipment, index) => (
-                                            <div key={index} className="rounded-md flex bg-(--card-background) border-(--border) flex-row border gap-6 p-3 text-center items-center">
-                                                <h3 className="font-medium mt-2">{equipment}</h3>
-                                            </div>
-                                        ))}
-                                    </div>
+                                <div className="flex flex-col gap-4 mt-2">
+                                    {selectedClass.equipment.map((equipment, index) => (
+                                        <div key={index} className="p-4 my-auto text-center rounded-md bg-(--card-background) text-(--accent) shadow">
+                                            <p>{equipment}</p>
+                                        </div>
+                                    ))}
                                 </div>
                             )}
                         </div>
@@ -180,10 +218,10 @@ export default function RaceDetails() {
                             <div className="flex flex-col gap-4 mt-2">
                                 {mergedFeatures.map((feature, index) => (
                                     <div key={index}
-                                        className={`rounded-md flex flex-row border gap-6 p-3 text-left 
-                                        bg-(--card-background)`}
+                                        className={`rounded-md flex flex-row gap-6 p-3 text-left 
+                                        ${feature.source === "subclass" ? "bg-(--active)" : "bg-(--card-background)"}`}
                                     >
-                                        <h3 className="font-medium">{feature.level} lvl</h3>
+                                        <h3 className="font-medium my-auto w-10 whitespace-nowrap">{feature.level} lvl</h3>
                                         <div>
                                             <p className="font-semibold">{feature.name}</p>
                                             <p className="text-sm whitespace-pre-line">{feature.description}</p>
