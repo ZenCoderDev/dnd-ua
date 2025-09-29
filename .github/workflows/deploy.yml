@@ -43,9 +43,10 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           source: |
-            .next
-            package.json
-            package-lock.json
+            ./package.json
+            ./package-lock.json
+            ./.next
+            ./public
           target: /var/www/tbdices_com_usr/data/www/tbdices.com
 
       - name: Deploy
@@ -57,7 +58,6 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ env.REGISTRY_OWNER }} --password-stdin
-            cd /var/www/tbdices_com_usr/data/www/tbdices.com
             
             set -e  # Прерывать при любой ошибке
             cd /var/www/tbdices_com_usr/data/www/tbdices.com
