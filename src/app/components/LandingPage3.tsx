@@ -1,18 +1,9 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import BardSilhouette from "./silhouettes/BardSilhouette";
-import SorcSilhouette from "./silhouettes/SorcSilhouette";
-import PalSilhouette from "./silhouettes/PalSilhouette";
-import BarbSilhouette from "./silhouettes/BarbSilhouette";
-import PriestSilhouette from "./silhouettes/PriestSilhouette";
-import DruidSilhouette from "./silhouettes/DruidSilhouette";
 import ClassSlider from "./ClassSlider";
 import DiceRoller from "./DiceRoller";
-import { prisma } from "../../lib/prisma";
 import TownSVG from "./backgrounds/TownBackground";
-import BlobSVG from "./backgrounds/BlobBackground";
-import PeaksSVG from "./backgrounds/PeaksBackground";
 import DragonSilhouette from "./silhouettes/Dragon";
 import DragonTalonSilhouette from "./silhouettes/DragonClaw";
 import MageHandSilhouette from "./silhouettes/HandSilhouette";
