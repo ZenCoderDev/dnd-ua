@@ -31,10 +31,19 @@ interface ItemInter {
 
 interface LevelProgressionShort {
   level: number;
+  spellsKnown: SpellKnown;
   proficiencyBonus: string;
   features: string[];
+  spellSlots: ItemInter;
 }
 
+interface SpellKnown {
+  cantrips: number;
+  spells: number;
+  slot: number;
+  level: number;
+  invocation: number;
+}
 interface LevelProgressionLong {
   level: number;
   name: string;

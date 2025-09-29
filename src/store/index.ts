@@ -7,6 +7,7 @@ import { magicItemsApi } from "./api/apiMagicItems";
 import { equipmentApi } from "./api/apiEquipment";
 import { propertiesApi } from "./api/apiProperties";
 import { rulesApi } from "./api/apiRules"
+import { roadmapApi } from "./api/apiRoadmap";
 
 export const store = configureStore({
   reducer: {
@@ -17,7 +18,8 @@ export const store = configureStore({
     [magicItemsApi.reducerPath] : magicItemsApi.reducer,
     [equipmentApi.reducerPath] : equipmentApi.reducer,
     [propertiesApi.reducerPath] : propertiesApi.reducer,
-    [rulesApi.reducerPath] : rulesApi.reducer
+    [rulesApi.reducerPath] : rulesApi.reducer,
+    [roadmapApi.reducerPath] : roadmapApi.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -28,7 +30,8 @@ export const store = configureStore({
       magicItemsApi.middleware,
       equipmentApi.middleware,
       propertiesApi.middleware,
-      rulesApi.middleware
+      rulesApi.middleware,
+      roadmapApi.middleware
     ),
 });
 

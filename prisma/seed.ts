@@ -4,21 +4,21 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-type RuleJson = {
-  id: string; // технічний ідентифікатор у файлах (стане ruleId)
-  category: string;
-  subCategory?: string | null;
-  name: string;
-  description: string;
-  source?: string | null;
+type ClassFeature = {
+  name_en: string;
+  name_uk: string;
+  description_en: string;
+  description_uk: string;
+  requirements?: string[];
 };
 
-async function loadRulesFromDir(dir: string) {
-  const files = fs.readdirSync(dir).filter(f => f.endsWith(".json"));
+async function loadFeaturesFromDir() {
+  const dir = path.join(process.cwd(), "public", "data");
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
   for (const file of files) {
     const filePath = path.join(dir, file);
     const raw = fs.readFileSync(filePath, "utf-8");
-    let parsed: RuleJson[] = [];
+    let parsed: ClassFeature[] = [];
     try {
       parsed = JSON.parse(raw);
       if (!Array.isArray(parsed)) {
@@ -31,46 +31,34 @@ async function loadRulesFromDir(dir: string) {
     }
 
     for (const r of parsed) {
-      // Невелика валідація
-      if (!r.id || !r.category || !r.name || !r.description) {
-        console.warn(`Пропускаю запис у ${file} — не вистачає обов'язкових полів:`, r);
-        continue;
-      }
-
       try {
-        await prisma.gameRule.upsert({
-          where: { ruleId: r.id },
-          update: {
-            category: r.category,
-            subCategory: r.subCategory ?? null,
-            name: r.name,
-            description: r.description,
-            source: r.source ?? null,
-          },
+        await prisma.feat.upsert({
+          where: { name_en: r.name_en },
           create: {
-            ruleId: r.id,
-            category: r.category,
-            subCategory: r.subCategory ?? null,
-            name: r.name,
-            description: r.description,
-            source: r.source ?? null,
+            name_en: r.name_en,
+            name_uk: r.name_uk,
+            description_en: r.description_en,
+            description_uk: r.description_uk,
+            requirements: r.requirements ? r.requirements : [],
+          },
+          update: {
+            name_en: r.name_en,
+            name_uk: r.name_uk,
+            description_en: r.description_en,
+            description_uk: r.description_uk,
+            requirements: r.requirements ?? [],
           },
         });
-        console.log(`✅ Imported rule: ${r.id} (${r.name})`);
+        console.log(`✅ Imported feature : ${r.name_uk}`);
       } catch (err) {
-        console.error(`❌ Error importing rule ${r.id}:`, err);
+        console.error(`❌ Error importing rule ${r.name_uk}:`, err);
       }
     }
   }
 }
 
 async function main() {
-  const dir = path.join(process.cwd(), "public", "data", "rules");
-  if (!fs.existsSync(dir)) {
-    console.error(`Папка з правилами не знайдена: ${dir}`);
-    process.exit(1);
-  }
-  await loadRulesFromDir(dir);
+  await loadFeaturesFromDir();
   console.log("🎉 Усі правила з папки import-овані.");
 }
 

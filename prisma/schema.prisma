@@ -136,20 +136,20 @@ model MagicItem {
 }
 
 model Weapon {
-  id          Int              @id @default(autoincrement())
-  name        String
-  type        String           
-  cost        String           
-  damage      String           
-  damageType  String          
-  weight      Float
-  properties  WeaponOnProperty[]
+  id         Int                @id @default(autoincrement())
+  name       String
+  type       String
+  cost       String
+  damage     String
+  damageType String
+  weight     Float
+  properties WeaponOnProperty[]
 
   @@map("weapons")
 }
 
 model Property {
-  id          String            @id   
+  id          String             @id
   name        String
   description String
   weapons     WeaponOnProperty[]
@@ -161,18 +161,17 @@ model WeaponOnProperty {
   weaponId   Int
   propertyId String
 
-  weapon     Weapon   @relation(fields: [weaponId], references: [id])
-  property   Property @relation(fields: [propertyId], references: [id])
+  weapon   Weapon   @relation(fields: [weaponId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
 
   @@id([weaponId, propertyId])
   @@map("weapons_on_properties")
 }
 
-
 model Armor {
-  id                  Int     @id @default(autoincrement())
-  name                String  @unique
-  type                String  // light_armor | medium_armor | heavy_armor | shield
+  id                  Int      @id @default(autoincrement())
+  name                String   @unique
+  type                String // light_armor | medium_armor | heavy_armor | shield
   cost                String
   ac                  Int
   dexBonus            Boolean?
@@ -187,7 +186,7 @@ model Armor {
 model Ammunition {
   id       Int    @id @default(autoincrement())
   name     String @unique
-  type     String   // ammunition_arrow | ammunition_bolt | ammunition_sling_bullet | ammunition_blowgun_needle
+  type     String // ammunition_arrow | ammunition_bolt | ammunition_sling_bullet | ammunition_blowgun_needle
   cost     String
   weight   Float
   quantity Int
@@ -220,9 +219,9 @@ model Gear {
 model MountOrVehicle {
   id               Int     @id @default(autoincrement())
   name             String  @unique
-  type             String  // mount | vehicle_land | vehicle_water
+  type             String // mount | vehicle_land | vehicle_water
   cost             String
-  speed            Int     // для транспорту без власного руху = 0
+  speed            Int // для транспорту без власного руху = 0
   carryingCapacity Int
   description      String?
 
@@ -230,8 +229,8 @@ model MountOrVehicle {
 }
 
 model TradeGood {
-  id          Int    @id @default(autoincrement())
-  name        String @unique
+  id          Int     @id @default(autoincrement())
+  name        String  @unique
   type        String
   cost        String
   description String?
@@ -242,7 +241,7 @@ model TradeGood {
 model Tack {
   id          Int     @id @default(autoincrement())
   name        String  @unique
-  type        String  // tack_saddle_riding, tack_harness, vehicle_cart тощо
+  type        String // tack_saddle_riding, tack_harness, vehicle_cart тощо
   cost        String
   weight      Float
   description String?
@@ -251,19 +250,41 @@ model Tack {
 }
 
 model GameRule {
-  id          Int     @id @default(autoincrement())
-  ruleId      String  @unique           // унікальний технічний id, напр. "action_attack"
-  category    String                    // Core | Combat | Exploration | Magic | Economy | Social
-  subCategory String?                   // Actions, Turn Order, Spellcasting etc.
+  id          Int      @id @default(autoincrement())
+  ruleId      String   @unique // унікальний технічний id, напр. "action_attack"
+  category    String // Core | Combat | Exploration | Magic | Economy | Social
+  subCategory String? // Actions, Turn Order, Spellcasting etc.
   name        String
   description String
-  source      String?                   // опційно: "PHB p. XXX" або "SRD"
+  source      String? // опційно: "PHB p. XXX" або "SRD"
   createdAt   DateTime @default(now())
 
   @@map("game_rules")
 }
 
+model ClassFeature {
+  id             String @id @default(cuid())
+  class          String
+  type           String
+  name_en        String
+  name_uk        String
+  description_en String
+  description_uk String
+  requirements   Json
+}
 
+model Feat {
+  id             Int      @id @default(autoincrement())
+  name_en        String   @unique
+  name_uk        String   @unique
+  requirements   String[]
+  description_en String
+  description_uk String
+}
 
-
-
+model RoadMap {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String
+  date        String
+}

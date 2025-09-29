@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { BookOpen, User, Scroll, Backpack, Sparkles, Gem, Scale } from "lucide-react";
+import { BookOpen, User, Scroll, Backpack, Sparkles, Gem, Scale, Award, Route, HandCoins } from "lucide-react";
 import Link from "next/link";
 
 const menuItems = [
@@ -12,8 +12,11 @@ const menuItems = [
     { icon: <Backpack size={24} className="w-5 h-5" />, label: "Інвентар", href: "/equipment" },
     { icon: <Sparkles size={24} className="w-5 h-5" />, label: "Закляття", href: "/spells" },
     { icon: <Gem size={24} className="w-5 h-5" />, label: "Маг. предмети", href: "/magic-items" },
+    { icon: <Award size={24} className="w-5 h-5" />, label: "Риси", href: "/feats" },
     { icon: <Scale size={24} className="w-5 h-5" />, label: "Правила", href: "/rules" },
+    { icon: <Route size={24} className="w-5 h-5" />, label: "Наш шлях", href: "/roadmap" },
 ];
+
 
 export default function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -68,31 +71,53 @@ export default function Sidebar() {
                 </Link>
 
             </div>
-            <nav className="flex-1 mt-4 flex flex-col gap-4 px-4">
-                {menuItems.map((item, i) => (
-                    <Link
-                        key={i}
-                        href={item.href}>
-                        <motion.div
-                            className="flex items-center transition duration-300 p-2 gap-3 cursor-pointer hover:bg-(--accent-hover) hover:text-(--text-accent) rounded-md">
-                            <div className="w-6 h-6 flex items-center justify-center">
-                                {item.icon}
-                            </div>
-                            {isOpen && (
-                                <motion.span
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: isOpen ? 1 : 0 }}
-                                    transition={{ duration: 0.6 }}
-                                    className="text-base"
-                                >
-                                    {item.label}
-                                </motion.span>
-                            )}
-                        </motion.div>
-                    </Link>
+            <div className="flex h-full flex-col justify-between">
+                <nav className="flex-1 mt-4 flex flex-col gap-4 px-4">
+                    {menuItems.map((item, i) => (
+                        <Link
+                            key={i}
+                            href={item.href}>
+                            <motion.div
+                                className="flex items-center transition duration-300 p-2 gap-3 cursor-pointer hover:bg-(--accent-hover) hover:text-(--text-accent) rounded-md">
+                                <div className="w-6 h-6 flex items-center justify-center">
+                                    {item.icon}
+                                </div>
+                                {isOpen && (
+                                    <motion.span
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: isOpen ? 1 : 0 }}
+                                        transition={{ duration: 0.6 }}
+                                        className="text-base"
+                                    >
+                                        {item.label}
+                                    </motion.span>
+                                )}
+                            </motion.div>
+                        </Link>
 
-                ))}
-            </nav>
+                    ))}
+                </nav>
+                <Link
+                    href={"https://send.monobank.ua/jar/AHEjY15aq8"}>
+                    <motion.div
+                        className="mx-4 flex items-center transition duration-300 p-2 gap-3 cursor-pointer hover:bg-(--accent-hover) hover:text-(--text-accent) rounded-md">
+                        <div className="w-6 h-6 flex items-center justify-center">
+                            <HandCoins size={24} className="w-5 h-5"/>
+                        </div>
+                        {isOpen && (
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: isOpen ? 1 : 0 }}
+                                transition={{ duration: 0.6 }}
+                                className="text-base"
+                            >
+                                Підтримати проект
+                            </motion.span>
+                        )}
+                    </motion.div>
+                </Link>
+            </div>
+
         </motion.aside>
     );
 }

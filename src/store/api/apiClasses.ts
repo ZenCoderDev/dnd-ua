@@ -12,8 +12,11 @@ export const classesApi = createApi({
     }),
     getSubclasses: builder.query<SubclassType[], string>({
       query: (id) => `subclasses/${id}`,
+    }),
+    getClassFeatures: builder.query<SubclassType[], string>({
+      query: (id) => `features/${id}`,
     })
   }),
 });
 
-export const { useGetClassesQuery, useGetClassByIdQuery, useGetSubclassesQuery } = classesApi;
+export const { useGetClassesQuery, useGetClassByIdQuery, useGetSubclassesQuery, useGetClassFeaturesQuery } = classesApi;

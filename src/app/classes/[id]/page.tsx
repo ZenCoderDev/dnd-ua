@@ -4,8 +4,9 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useMemo } from "react"; // ⬅️ добавляем хуки
-import { useGetClassesQuery, useGetClassByIdQuery, useGetSubclassesQuery } from "@/store/api/apiClasses";
+import { useGetClassesQuery, useGetClassByIdQuery, useGetSubclassesQuery, useGetClassFeaturesQuery } from "@/store/api/apiClasses";
 import { data } from "framer-motion/client";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface MergedFeature {
     level: number;
@@ -15,13 +16,32 @@ interface MergedFeature {
     subclassId?: string;
 }
 
+export const getNormalizeFeatureName = (name: string): string => {
+    switch (name) {
+        case "invocation":
+            return "Інвокація";
+        case "maneuver":
+            return "Маневр";
+        case "metamagic":
+            return "Мета-магiя";
+    }
+    return name;
+}
+
+
 export default function RaceDetails() {
     const { id } = useParams<{ id: string }>();
     const { data: classes } = useGetClassesQuery();
     const { data: selectedClass, isLoading, error } = useGetClassByIdQuery(id);
     const { data: subclasses } = useGetSubclassesQuery(id);
+    const { data: features } = useGetClassFeaturesQuery(id);
 
-    console.log(selectedClass?.armor)
+
+    const [expanded, setExpanded] = useState<boolean | null>(null);
+
+    const handleToggle = () => {
+        setExpanded(!expanded);
+    };
 
     const [selectedSubclassId, setSelectedSubclassId] = useState<string | null>(null);
 
@@ -103,7 +123,22 @@ export default function RaceDetails() {
                     {/* твой старый блок */}
                     <div className="flex flex-row gap-4">
                         <div className="flex-2 gap-4 flex flex-col">
-                            <h1 className="text-2xl font-bold">Спаскидки</h1>
+                            <h1 className="text-2xl font-bold">Кістки здоров'я</h1>
+                            <div
+                                className="grid gap-4"
+                                style={{
+                                    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                                }}
+                            >
+                                <div className="bg-(--card-background) text-(--accent) flex flex-col p-4 gap-1 relative overflow-hidden rounded-md shadow">
+                                    <h2 className="text-base">Стандарт : {selectedClass.hitDice}</h2>
+                                </div>
+                                <div className="bg-(--card-background) text-(--accent) flex flex-col p-4 gap-1 relative overflow-hidden rounded-md shadow">
+                                    <h2 className="text-base">На початку та нових рівнях : {selectedClass.hitDice} + Статура</h2>
+                                </div>
+                            </div>
+
+                            <h1 className="text-2xl font-bold">Ряткидки</h1>
                             <div className="grid grid-cols-2 gap-6">
                                 {selectedClass.savingThrows.map((ability, index) => (
                                     <div key={index} className="bg-(--card-background) text-(--accent) flex flex-col p-4 gap-1 relative overflow-hidden rounded-md shadow">
@@ -168,6 +203,8 @@ export default function RaceDetails() {
                                     </div>
                                 </div>
                             }
+
+
                             {selectedClass.tools && selectedClass.tools.length > 0 &&
                                 <div>
                                     <h3 className="text-2xl font-bold">Ви маєте навички володіння наступними видами інструментів</h3>
@@ -190,6 +227,7 @@ export default function RaceDetails() {
                                     </div>
                                 </div>
                             }
+
                             <h3 className="text-2xl font-bold">Ви отримуєте наступне початкове спорядження: </h3>
                             {selectedClass.equipment && (
                                 <div className="flex flex-col gap-4 mt-2">
@@ -198,6 +236,56 @@ export default function RaceDetails() {
                                             <p>{equipment}</p>
                                         </div>
                                     ))}
+                                </div>
+                            )}
+                            {features && features.length > 0 && (
+                                <div>
+                                    <h3 className="text-2xl font-bold">Особливості класу</h3>
+                                    <div className="rounded-lg bg-(--card-background)">
+                                        <div
+                                            className="rounded-lg text-lg font-bold cursor-pointer hover:bg-(--accent-hover) hover:text-(--text-accent) p-4 transition duration-300"
+                                            onClick={() => handleToggle()} // toggle по уровню или другому id
+                                        >
+                                            {getNormalizeFeatureName(features[0].type)}
+                                        </div>
+
+                                        <AnimatePresence initial={false}>
+                                            {expanded && (
+                                                <motion.div
+                                                    key="content"
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                                    className="overflow-hidden px-4 pb-4"
+                                                >
+                                                    <ul className="mt-2 space-y-2">
+                                                        {features.map((f, i) => (
+                                                            <li
+                                                                key={i}
+                                                                className="p-2 rounded-lg border border-(--border) bg-(--card-background)"
+                                                            >
+                                                                <p className="font-semibold">{f.name_uk} ({f.name_en})</p>
+                                                                {f.requirements && (
+                                                                    <div>
+                                                                        {f.requirements.map((req, index) => (
+                                                                            <p key={index} className="text-sm text-(--text-secondary)">
+                                                                                Необхідно: {req}
+                                                                            </p>
+                                                                        ))}
+                                                                    </div>
+                                                                )}
+
+                                                                <p className="text-sm text-(--text-secondary)">
+                                                                    {f.description_uk}
+                                                                </p>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
                                 </div>
                             )}
                         </div>
@@ -211,7 +299,85 @@ export default function RaceDetails() {
                         />
                     </div>
 
-                    {/* 🔥 НОВЫЙ БЛОК: объединённые абилки */}
+                    {selectedClass.progression && (
+                        <table className="min-w-full border border-(--border) text-sm">
+                            <thead className="bg-(--active)">
+                                <tr>
+                                    <th className="border px-2 py-1 text-left">Рівень</th>
+                                    <th className="border px-2 py-1 text-left">Можливості</th>
+                                    <th className="border px-2 py-1 text-left">Бонус майстерності</th>
+
+                                    {selectedClass.progression.some((row) => row.spellsKnown?.cantrips !== undefined) && (
+                                        <th className="border px-2 py-1 text-left">Заговорів відомо</th>
+                                    )}
+
+                                    {selectedClass.progression.some((row) => row.spellsKnown?.spells !== undefined) && (
+                                        <th className="border px-2 py-1 text-left">Заклинань відомо</th>
+                                    )}
+                                    {selectedClass.progression.some((row) => row.spellsKnown?.slot !== undefined) && (
+                                        <th className="border px-2 py-1 text-left">Кіл-ть заклять</th>
+                                    )}
+                                    {selectedClass.progression.some((row) => row.spellsKnown?.level !== undefined) && (
+                                        <th className="border px-2 py-1 text-left">Рівень заклять</th>
+                                    )}
+                                    {selectedClass.progression.some((row) => row.spellsKnown?.invocation !== undefined) && (
+                                        <th className="border px-2 py-1 text-left">Відомі Інвокації</th>
+                                    )}
+                                    {/* Слоты заклинаний 1–9 */}
+                                    {[...Array(9)].map((_, i) => {
+                                        const slotLevel = (i + 1).toString();
+                                        return selectedClass.progression.some((row) => row.spellSlots?.[slotLevel] !== undefined) ? (
+                                            <th key={slotLevel} className="border px-2 py-1 text-left">
+                                                {slotLevel}-рів. слоти
+                                            </th>
+                                        ) : null;
+                                    })}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {selectedClass.progression.map((row) => (
+                                    <tr key={row.level} className="bg-(--card-background)">
+                                        <td className="border border-(--border) px-2 py-1">{row.level}</td>
+                                        <td className="border border-(--border) px-2 py-1">
+                                            {row.features.filter((f) => f !== "—").length > 0 ? row.features.join(", ") : "—"}
+                                        </td>
+                                        <td className="border border-(--border) px-2 py-1">{row.proficiencyBonus}</td>
+
+                                        {row.spellsKnown?.cantrips !== undefined && (
+                                            <td className="border border-(--border) px-2 py-1">{row.spellsKnown.cantrips}</td>
+                                        )}
+
+                                        {row.spellsKnown?.spells !== undefined && (
+                                            <td className="border border-(--border) px-2 py-1">{row.spellsKnown.spells}</td>
+                                        )}
+
+                                        {row.spellsKnown?.slot !== undefined && (
+                                            <td className="border border-(--border) px-2 py-1">{row.spellsKnown.slot}</td>
+                                        )}
+
+                                        {row.spellsKnown?.slot !== undefined && (
+                                            <td className="border border-(--border) px-2 py-1">{row.spellsKnown.level}</td>
+                                        )}
+
+                                        {row.spellsKnown?.slot !== undefined && (
+                                            <td className="border border-(--border) px-2 py-1">{row.spellsKnown.invocation}</td>
+                                        )}
+
+                                        {/* Ячейки для слотов */}
+                                        {[...Array(9)].map((_, i) => {
+                                            const slotLevel = (i + 1).toString();
+                                            return selectedClass.progression.some((r) => r.spellSlots?.[slotLevel] !== undefined) ? (
+                                                <td key={slotLevel} className="border border-(--border) px-2 py-1">
+                                                    {row.spellSlots?.[slotLevel] ?? "—"}
+                                                </td>
+                                            ) : null;
+                                        })}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
+
                     {mergedFeatures.length > 0 && (
                         <div className="mt-6">
                             <h2 className="text-2xl font-semibold">Уміння</h2>

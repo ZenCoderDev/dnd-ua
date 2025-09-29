@@ -7,7 +7,10 @@ export const backgroundsApi = createApi({
     getBackgrounds: builder.query<BackgroundsDesc[], void>({
       query: () => "backgrounds",
     }),
+    getFeats: builder.query<FeatDesc[], void>({
+      query: () => "feats",
+    }),
   }),
 });
 
-export const { useGetBackgroundsQuery } = backgroundsApi;
+export const { useGetBackgroundsQuery, useGetFeatsQuery } = backgroundsApi;

@@ -37,7 +37,7 @@ export function ReduxProvider({ children }: { children: React.ReactNode }) {
     const effect = animations.fade;
 
     return (
-        <Provider store={store}>
+        <Provider store={store} >
             {children}
         </Provider>
     );
