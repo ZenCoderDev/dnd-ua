@@ -43,11 +43,11 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           source: |
-            ./package.json
-            ./package-lock.json
-            ./.next
-            ./public
+            package.json
+            package-lock.json
+            .next/**
           target: /var/www/tbdices_com_usr/data/www/tbdices.com
+          strip_components: 0
 
       - name: Deploy
         uses: appleboy/ssh-action@master
