@@ -13,7 +13,7 @@ export const classesApi = createApi({
     getSubclasses: builder.query<SubclassType[], string>({
       query: (id) => `subclasses/${id}`,
     }),
-    getClassFeatures: builder.query<SubclassType[], string>({
+    getClassFeatures: builder.query<ClassFeature[], string>({
       query: (id) => `features/${id}`,
     })
   }),

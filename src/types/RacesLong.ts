@@ -18,9 +18,9 @@ interface TraitsLong {
   description: string;
 }
 
-export type TraitObject = { [key: string]: string };
+type TraitObject = { [key: string]: string };
 
-export type TraitsType = TraitObject | TraitObject[];
+type TraitsType = TraitObject | TraitObject[];
 
 interface SubRacesLong {
   id: string;

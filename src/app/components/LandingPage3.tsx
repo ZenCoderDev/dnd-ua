@@ -150,7 +150,7 @@ export default function HomePage() {
                     className="w-full z-6 h-full mx-0 flex flex-col justify-between pb-20 text-center mt-40 max-w-[60%] gap-8 left-0 right-0">
                     <div className="flex flex-col gap-8">
                         <h1 className="self-center uppercase text-(--accent)" style={{ textShadow: "0px 2px 4px var(--background)" }}>Для майстрів</h1>
-                        <h3 className="self-center text-xl text-(--accent)" style={{ textShadow: "0px 0px 0px var(--background)" }}>Створіть свій світ, насичуйте його подіями і грайте разом зі своїми друзями! Створють найкращі пригоди як для себе, так і для них. І пам'ятайте: Найкраща пригода це та, де усім знайшлося місце!</h3>
+                        <h3 className="self-center text-xl text-(--accent)" style={{ textShadow: "0px 0px 0px var(--background)" }}>Створіть свій світ, насичуйте його подіями і грайте разом зі своїми друзями! Створють найкращі пригоди як для себе, так і для них. І пам`&apos;ятайте: Найкраща пригода це та, де усім знайшлося місце!</h3>
                     </div>
                     <BlacksmithSilhouette />
                 </motion.div>

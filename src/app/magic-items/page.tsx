@@ -141,10 +141,10 @@ export default function ItemsPage() {
                                                     <p>
                                                         <strong>Рідкість:</strong> {item.rarity}
                                                     </p>
-                                                    {item.requires_attunement && (
+                                                    {item.attunement && (
                                                         <p>
                                                             <strong>Необхідна прив’язка:</strong>{" "}
-                                                            {item.requires_attunement}
+                                                            {item.attunement ? "Так" : "Ні"}
                                                         </p>
                                                     )}
 

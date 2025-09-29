@@ -14,3 +14,4 @@ interface SubRacesShort {
   name: string;
   image: string;
 }
+

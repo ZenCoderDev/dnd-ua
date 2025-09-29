@@ -4,9 +4,8 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import { useGetRaceByIdQuery, useGetRacesQuery } from "@/store/api/apiSlice";
 import Link from "next/link";
-import { TraitObject, TraitsType } from "@/types/RacesLong";
 
-export const getNormalizeTraitName = (name: string): string => {
+const getNormalizeTraitName = (name: string): string => {
     switch (name) {
         case "damageType":
             return "Тип стихії";
@@ -20,7 +19,7 @@ export const getNormalizeTraitName = (name: string): string => {
     return name;
 }
 
-export const normalizeTraits = (traits: TraitsType | null): TraitObject[] => {
+const normalizeTraits = (traits: TraitsType | null): TraitObject[] => {
     if (!traits) return [];
 
     if (Array.isArray(traits)) {

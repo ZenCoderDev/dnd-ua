@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useMemo } from "react"; // ⬅️ добавляем хуки
 import { useGetClassesQuery, useGetClassByIdQuery, useGetSubclassesQuery, useGetClassFeaturesQuery } from "@/store/api/apiClasses";
-import { data } from "framer-motion/client";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface MergedFeature {
@@ -16,7 +15,7 @@ interface MergedFeature {
     subclassId?: string;
 }
 
-export const getNormalizeFeatureName = (name: string): string => {
+const getNormalizeFeatureName = (name: string): string => {
     switch (name) {
         case "invocation":
             return "Інвокація";
@@ -27,7 +26,6 @@ export const getNormalizeFeatureName = (name: string): string => {
     }
     return name;
 }
-
 
 export default function RaceDetails() {
     const { id } = useParams<{ id: string }>();
@@ -123,7 +121,7 @@ export default function RaceDetails() {
                     {/* твой старый блок */}
                     <div className="flex flex-row gap-4">
                         <div className="flex-2 gap-4 flex flex-col">
-                            <h1 className="text-2xl font-bold">Кістки здоров'я</h1>
+                            <h1 className="text-2xl font-bold">Кістки здоров`&apos;я</h1>
                             <div
                                 className="grid gap-4"
                                 style={{
