@@ -45,7 +45,7 @@ jobs:
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ env.REGISTRY_OWNER }} --password-stdin
             cd /var/www/tbdices_com_usr/data/www/tbdices.com
             
-            docker compose -f docker-compose.prod.yml up -d db
+            docker compose -f docker-compose.yml up -d postgres
 
             sleep 5
 
