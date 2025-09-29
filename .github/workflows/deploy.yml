@@ -4,6 +4,14 @@ on:
   push:
     branches: [ main ]
 
+env:
+  REGISTRY: ghcr.io
+  REGISTRY_OWNER: zencoderdev
+
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   deploy:
     runs-on: ubuntu-22.04
@@ -24,6 +32,7 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           source: "docker-compose.prod.yml"
           target: "/var/www/tbdices_com_usr/data/www/tbdices.com"
+          strip_components: 0
 
       - name: Deploy
         uses: appleboy/ssh-action@master
@@ -33,14 +42,12 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           script: |
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ env.REGISTRY_OWNER }} --password-stdin
             cd /var/www/tbdices_com_usr/data/www/tbdices.com
-
+            
             docker compose -f docker-compose.prod.yml up -d db
 
-            until docker compose -f docker-compose.prod.yml exec -T db pg_isready -U $POSTGRES_USER; do
-              echo "Waiting for DB to be ready..."
-              sleep 2
-            done
+            sleep 5
 
             npm install
 
