@@ -17,4 +17,3 @@ services:
 volumes:
   postgres_data:
     external: true
-    name: tbdicescom_postgres_data
