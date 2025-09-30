@@ -81,7 +81,7 @@ jobs:
             if pm2 list | grep -q "tbdices"; then
               pm2 restart tbdices
             else
-              pm2 start npm --name "tbdices" -- start
+              pm2 start "npm run start" --name "tbdices" --cwd /var/www/tbdices_com_usr/data/www/tbdices.com
             fi
 
             echo "Starting Prisma Studio..."
