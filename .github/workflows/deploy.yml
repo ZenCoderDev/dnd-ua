@@ -88,8 +88,8 @@ jobs:
             docker compose -f docker-compose.yml up -d postgres
 
             echo "Waiting for PostgreSQL to be ready..."
-            until docker exec $(docker ps -qf "name=postgres") pg_isready -U postgres > /dev/null 2>&1; do
-              sleep 1
+              until docker exec -i dnd_postgres pg_isready -U postgres -q; do
+            sleep 1
             done
             echo "PostgreSQL is ready!"
 
