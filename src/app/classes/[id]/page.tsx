@@ -75,9 +75,9 @@ export default function RaceDetails() {
     if (!selectedClass) return <p>Раса не знайдена</p>;
 
     return (
-        <div className="relative max-w-[90%] mx-auto p-6">
+        <div className="relative md:max-w-[90%] mt-14 md:mt-6 w-full mx-auto md:p-6">
             {/* твой код — список классов */}
-            <div className="flex flex-row gap-4 mb-8 mx-auto w-fit">
+            <div className="hidden md:flex flex-row gap-4 mb-8 mx-auto w-fit">
                 {classes?.map((dndClass, index) => (
                     <Link key={index} href={`/classes/${dndClass.id}`}
                         className={`w-fit cursor-pointer group p-4 relative overflow-hidden rounded-2xl shadow-xl transition duration-300 hover:bg-(--accent-hover) hover:text-(--text-accent) hover:scale-105
@@ -87,11 +87,11 @@ export default function RaceDetails() {
                 ))}
             </div>
 
-            <div className="flex flex-row gap-2 justify-between">
+            <div className="flex flex-col md:flex-row gap-2 justify-between">
                 {subclasses && (
                     <div className="relative h-fit">
-                        <div className="flex bg-(--card-background) rounded-xl border-(--border) border flex-col gap-4 max-h-[80%] fixed w-[16%] hide-scrollbar overflow-y-auto pr-2">
-
+                        {/* --- Desktop Sidebar --- */}
+                        <div className="hidden md:flex bg-(--card-background) rounded-xl border-(--border) border flex-col gap-4 max-h-[80%] fixed w-[16%] hide-scrollbar overflow-y-auto pr-2">
                             <h2 className="text-2xl font-semibold sticky top-0 bg-(--card-background) p-4 z-10">
                                 Підкласи
                             </h2>
@@ -104,7 +104,7 @@ export default function RaceDetails() {
                                         )
                                     }
                                     className={`rounded-md flex m-2 flex-col border transition duration-300 text-center hover:bg-(--accent-hover) hover:text-(--text-accent) items-center cursor-pointer p-4
-                                    ${selectedSubclassId === subclass.id ? "bg-(--active) text-(--foreground)" : "bg-(--accent) text-(--text-accent)"}`}
+        ${selectedSubclassId === subclass.id ? "bg-(--active) text-(--foreground)" : "bg-(--accent) text-(--text-accent)"}`}
                                 >
                                     <div className="flex flex-col">
                                         <h3 className="font-medium">{subclass.nameUk}</h3>
@@ -113,13 +113,30 @@ export default function RaceDetails() {
                                 </div>
                             ))}
                         </div>
+
+                        {/* --- Mobile Dropdown --- */}
+                        <div className="fixed block md:hidden w-full bg-(--card-background) mb-4 p-4 z-8">
+                            <label className="block text-2xl font-bold mb-2">Підкласи</label>
+                            <select
+                                value={selectedSubclassId ?? ""}
+                                onChange={(e) => setSelectedSubclassId(e.target.value || null)}
+                                className="w-full rounded-md border p-2 bg-(--card-background)"
+                            >
+                                <option value="">Оберіть підклас</option>
+                                {subclasses.map((subclass) => (
+                                    <option key={subclass.id} value={subclass.id}>
+                                        {subclass.nameUk}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
                     </div>
                 )}
 
-                <div className="flex flex-col gap-4 w-[80%]">
+                <div className="flex flex-col mt-32 md:mt-0 gap-4 md:w-[80%] p-4 md:p-0">
 
                     {/* твой старый блок */}
-                    <div className="flex flex-row gap-4">
+                    <div className="flex flex-col-reverse md:flex-row gap-4">
                         <div className="flex-2 gap-4 flex flex-col">
                             <h1 className="text-2xl font-bold">Кістки здоров`&apos;я</h1>
                             <div
@@ -298,82 +315,80 @@ export default function RaceDetails() {
                     </div>
 
                     {selectedClass.progression && (
-                        <table className="min-w-full border border-(--border) text-sm">
-                            <thead className="bg-(--active)">
-                                <tr>
-                                    <th className="border px-2 py-1 text-left">Рівень</th>
-                                    <th className="border px-2 py-1 text-left">Можливості</th>
-                                    <th className="border px-2 py-1 text-left">Бонус майстерності</th>
-
-                                    {selectedClass.progression.some((row) => row.spellsKnown?.cantrips !== undefined) && (
-                                        <th className="border px-2 py-1 text-left">Заговорів відомо</th>
-                                    )}
-
-                                    {selectedClass.progression.some((row) => row.spellsKnown?.spells !== undefined) && (
-                                        <th className="border px-2 py-1 text-left">Заклинань відомо</th>
-                                    )}
-                                    {selectedClass.progression.some((row) => row.spellsKnown?.slot !== undefined) && (
-                                        <th className="border px-2 py-1 text-left">Кіл-ть заклять</th>
-                                    )}
-                                    {selectedClass.progression.some((row) => row.spellsKnown?.level !== undefined) && (
-                                        <th className="border px-2 py-1 text-left">Рівень заклять</th>
-                                    )}
-                                    {selectedClass.progression.some((row) => row.spellsKnown?.invocation !== undefined) && (
-                                        <th className="border px-2 py-1 text-left">Відомі Інвокації</th>
-                                    )}
-                                    {/* Слоты заклинаний 1–9 */}
-                                    {[...Array(9)].map((_, i) => {
-                                        const slotLevel = (i + 1).toString();
-                                        return selectedClass.progression.some((row) => row.spellSlots?.[slotLevel] !== undefined) ? (
-                                            <th key={slotLevel} className="border px-2 py-1 text-left">
-                                                {slotLevel}-рів. слоти
-                                            </th>
-                                        ) : null;
-                                    })}
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {selectedClass.progression.map((row) => (
-                                    <tr key={row.level} className="bg-(--card-background)">
-                                        <td className="border border-(--border) px-2 py-1">{row.level}</td>
-                                        <td className="border border-(--border) px-2 py-1">
-                                            {row.features.filter((f) => f !== "—").length > 0 ? row.features.join(", ") : "—"}
-                                        </td>
-                                        <td className="border border-(--border) px-2 py-1">{row.proficiencyBonus}</td>
-
-                                        {row.spellsKnown?.cantrips !== undefined && (
-                                            <td className="border border-(--border) px-2 py-1">{row.spellsKnown.cantrips}</td>
+                        <div className="overflow-y-auto "> {/* здесь задаешь нужную высоту */}
+                            <table className="min-w-full border border-(--border) text-sm">
+                                <thead className="bg-(--background)">
+                                    <tr>
+                                        <th className="border px-2 py-1 text-left">Рівень</th>
+                                        <th className="border px-2 py-1 text-left">Можливості</th>
+                                        <th className="border px-2 py-1 text-left">Бонус майстерності</th>
+                                        {selectedClass.progression.some((row) => row.spellsKnown?.cantrips !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Заговорів відомо</th>
                                         )}
-
-                                        {row.spellsKnown?.spells !== undefined && (
-                                            <td className="border border-(--border) px-2 py-1">{row.spellsKnown.spells}</td>
+                                        {selectedClass.progression.some((row) => row.spellsKnown?.spells !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Заклинань відомо</th>
                                         )}
-
-                                        {row.spellsKnown?.slot !== undefined && (
-                                            <td className="border border-(--border) px-2 py-1">{row.spellsKnown.slot}</td>
+                                        {selectedClass.progression.some((row) => row.spellsKnown?.slot !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Кіл-ть заклять</th>
                                         )}
-
-                                        {row.spellsKnown?.slot !== undefined && (
-                                            <td className="border border-(--border) px-2 py-1">{row.spellsKnown.level}</td>
+                                        {selectedClass.progression.some((row) => row.spellsKnown?.level !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Рівень заклять</th>
                                         )}
-
-                                        {row.spellsKnown?.slot !== undefined && (
-                                            <td className="border border-(--border) px-2 py-1">{row.spellsKnown.invocation}</td>
+                                        {selectedClass.progression.some((row) => row.spellsKnown?.invocation !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Відомі Інвокації</th>
                                         )}
-
-                                        {/* Ячейки для слотов */}
                                         {[...Array(9)].map((_, i) => {
                                             const slotLevel = (i + 1).toString();
-                                            return selectedClass.progression.some((r) => r.spellSlots?.[slotLevel] !== undefined) ? (
-                                                <td key={slotLevel} className="border border-(--border) px-2 py-1">
-                                                    {row.spellSlots?.[slotLevel] ?? "—"}
-                                                </td>
+                                            return selectedClass.progression.some((row) => row.spellSlots?.[slotLevel] !== undefined) ? (
+                                                <th key={slotLevel} className="border px-2 py-1 text-left">
+                                                    {slotLevel}-рів. слоти
+                                                </th>
                                             ) : null;
                                         })}
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {selectedClass.progression.map((row) => (
+                                        <tr key={row.level} className="bg-(--card-background)">
+                                            <td className="border border-(--border) px-2 py-1">{row.level}</td>
+                                            <td className="border border-(--border) px-2 py-1">
+                                                {row.features.filter((f) => f !== "—").length > 0 ? row.features.join(", ") : "—"}
+                                            </td>
+                                            <td className="border border-(--border) px-2 py-1">{row.proficiencyBonus}</td>
+
+                                            {row.spellsKnown?.cantrips !== undefined && (
+                                                <td className="border border-(--border) px-2 py-1">{row.spellsKnown.cantrips}</td>
+                                            )}
+
+                                            {row.spellsKnown?.spells !== undefined && (
+                                                <td className="border border-(--border) px-2 py-1">{row.spellsKnown.spells}</td>
+                                            )}
+
+                                            {row.spellsKnown?.slot !== undefined && (
+                                                <td className="border border-(--border) px-2 py-1">{row.spellsKnown.slot}</td>
+                                            )}
+
+                                            {row.spellsKnown?.slot !== undefined && (
+                                                <td className="border border-(--border) px-2 py-1">{row.spellsKnown.level}</td>
+                                            )}
+
+                                            {row.spellsKnown?.slot !== undefined && (
+                                                <td className="border border-(--border) px-2 py-1">{row.spellsKnown.invocation}</td>
+                                            )}
+
+                                            {[...Array(9)].map((_, i) => {
+                                                const slotLevel = (i + 1).toString();
+                                                return selectedClass.progression.some((r) => r.spellSlots?.[slotLevel] !== undefined) ? (
+                                                    <td key={slotLevel} className="border border-(--border) px-2 py-1">
+                                                        {row.spellSlots?.[slotLevel] ?? "—"}
+                                                    </td>
+                                                ) : null;
+                                            })}
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     )}
 
                     {mergedFeatures.length > 0 && (

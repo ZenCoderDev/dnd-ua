@@ -36,9 +36,11 @@ export const getNormalizeTypeName = (name: string): string => {
             return "Наземний транспорт";
         case "vehicle_water":
             return "Водний транспорт";
+        case "gear":
+            return "Спорядження";
         case "trade":
             return "Торгові товари";
-        case "trade":
+        case "tack":
             return "Сідельне спорядження";
         case "vehicle":
             return "Транспорт";
@@ -106,7 +108,7 @@ export default function EquipmentCategoryClient({ id }: { id: string }) {
     })
 
     return (
-        <div className="max-w-[90%] mx-auto mt-4">
+        <div className="md:max-w-[90%] mx-auto mt-16 md:mt-4">
             {Array.from(grouped.entries()).map(([group, items]) => (
                 <div key={group} className="mb-6 bg-(--card-background) gap-4 flex flex-col p-4 rounded-2xl">
                     <h1 className="text-xl font-bold">

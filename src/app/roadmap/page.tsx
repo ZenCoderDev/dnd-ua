@@ -13,7 +13,7 @@ export default function RoadmapPage() {
     if (error) return <p>Помилка завантаження</p>;
 
     return (
-        <div className="relative max-w-[90%] mx-auto p-6 flex flex-col gap-2">
+        <div className="relative md:max-w-[90%] md:top-6 top-12 mx-auto p-6 flex flex-col gap-2">
             {roadmap && roadmap.length > 0 && (
                 <div className="mt-6">
                     <h2 className="text-2xl font-semibold">Шлях сайту до поліпшення</h2>
@@ -30,7 +30,7 @@ export default function RoadmapPage() {
                     </div>
                 </div>
             )}
-            <h2 className="text-2xl font-semibold mt-12">Для тих кому подобається проект так хочется аби контект виходив швидве</h2>
+            <h2 className="text-2xl font-semibold mt-12">Для тих кому подобається проект так хочется аби контект виходив швидше</h2>
             <h2 className="text-base">Ви можете підримати проект та давати нам більше мотивації і натхнення для роботи над ним за цим посиланням
                 <Link
                     href={"https://send.monobank.ua/jar/AHEjY15aq8"} 

@@ -1,5 +1,5 @@
 const DragonSilhouette = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg1" style={{ width: "50%", height: "100%", position: "fixed", right: "0", zIndex: "2" }} height="800" viewBox="0 0 1066.6667 600">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" className="fixed right-0 z-4 w-1/2 -bottom-2 md:bottom-0 md:h-[100%] h-[30%]" id="svg1" height="800" viewBox="0 0 1066.6667 600">
         <defs id="defs1" />
         <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">

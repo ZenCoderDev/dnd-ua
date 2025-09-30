@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="bg-(--card-background) text-(--text) mt-12 py-6 border-t border-(--border) bottom-0">
+        <footer className="bg-(--card-background) z-8 text-(--text) py-6 border-t border-(--border) bottom-0">
             <div className="max-w-[90%] mx-auto flex flex-col md:flex-row justify-between gap-4 text-sm">
 
                 {/* Ліва частина */}

@@ -1,7 +1,7 @@
 
 
 const MageHandSilhouette = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" style={{ width: "40%", height: "100%" }} version="1.1" id="svg1" viewBox="0 0 1066.6667 600">
+    <svg xmlns="http://www.w3.org/2000/svg" style={{ width: "30%", height: "100%" }} version="1.1" id="svg1" viewBox="0 0 1066.6667 600">
         <defs id="defs1" />
         <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">

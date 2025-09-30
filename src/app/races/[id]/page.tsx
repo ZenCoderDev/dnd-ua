@@ -39,8 +39,8 @@ export default function RaceDetails() {
     if (!race) return <p>Раса не знайдена</p>;
 
     return (
-        <div className="relative max-w-[90%] mx-auto p-6">
-            <div className="flex flex-row gap-4 mb-8 mx-auto w-fit">
+        <div className="relative md:max-w-[90%] mx-auto p-4 md:p-6 mt-16">
+            <div className="hidden md:flex flex-row gap-4 mb-8 mx-auto w-fit">
                 {races?.map((race, index) => (
                     <Link key={index} href={`/races/${race.id}`}
                         className={`w-fit cursor-pointer group p-4 relative overflow-hidden rounded-2xl shadow-xl transition duration-300 hover:bg-(--accent-hover) hover:text-(--text-accent) hover:scale-105
@@ -49,7 +49,7 @@ export default function RaceDetails() {
                     </Link>
                 ))}
             </div>
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-col-reverse md:flex-row gap-4">
                 <div className="flex-2 gap-4 flex flex-col">
                     <h1 className="text-3xl font-bold mt-4">{race.name}</h1>
                     <h3 className="text-2xl font-bold">Ви володієте наступними мовами:</h3>

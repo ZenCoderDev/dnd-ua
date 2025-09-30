@@ -8,12 +8,13 @@ export default function Home() {
     const { data: races, isLoading, error } = useGetRacesQuery();
 
     return (
-        <div className="relative max-w-[90%] mx-auto grid grid-cols-4 gap-6 p-6">
+        <div className="md:max-w-[90%] top-12 md:top-0 relative mx-auto grid gap-6 p-6 
+                grid-cols-[repeat(auto-fit,minmax(360px,1fr))]">
             {races?.map((race, index) => (
                 <Link
                     key={race.id}
                     href={`/races/${race.id}`}
-                    className={`cursor-pointer animate-fade-up border border-(--border) animate-duration-1000 group p-4 relative overflow-hidden bg-(--card-background) rounded-2xl shadow-xl transition duration-300 hover:scale-105`}  
+                    className={`cursor-pointer animate-fade-up border border-(--border) animate-duration-1000 group p-4 relative overflow-hidden bg-(--card-background) rounded-2xl shadow-xl transition duration-300 hover:scale-105`}
                     style={{ animationDelay: `${index * 100}ms` }}>
                     <Image
                         src={race.image}

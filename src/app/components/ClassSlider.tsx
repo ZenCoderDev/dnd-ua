@@ -20,7 +20,7 @@ export default function ClassSlider() {
     };
 
     return (
-        <div className="relative mx-auto w-[600px] flex h-full flex-col items-center justify-center overflow-hidden">
+        <div className="relative mx-auto w-full md:w-[600px] flex h-full flex-col items-center justify-center overflow-hidden">
             <h2 className="text-3xl font-bold mb-6" style={{ textShadow: "0px 2px 4px var(--background)" }}>Хто ти сьогодні?</h2>
 
             <div className="relative flex w-full h-full items-center justify-center">
@@ -33,6 +33,7 @@ export default function ClassSlider() {
                     <Image
                         src={classes[getIndex(-1)].image}
                         alt={classes[getIndex(-1)].name}
+                        onClick={prev}
                         fill
                         className="object-cover rounded-2xl"
                     />
@@ -40,7 +41,7 @@ export default function ClassSlider() {
 
                 <motion.div
                     key={classes[index].id}
-                    className="relative w-[300px] h-[420px] z-8 bg-(--accent) border border-(--border) rounded-2xl shadow-xl overflow-hidden"
+                    className="relative w-[200px] h-[300px] md:w-[300px] md:h-[420px] z-8 bg-(--accent) border border-(--border) rounded-2xl shadow-xl overflow-hidden"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -67,6 +68,7 @@ export default function ClassSlider() {
                     <Image
                         src={classes[getIndex(1)].image}
                         alt={classes[getIndex(1)].name}
+                        onClick={next}
                         fill
                         className="object-cover rounded-2xl"
                     />

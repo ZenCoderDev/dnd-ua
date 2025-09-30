@@ -6,7 +6,8 @@ export default function Home() {
     const { data: backgrounds } = useGetBackgroundsQuery();
 
     return (
-        <div className=" max-w-[90%] relative mx-auto grid grid-cols-3 gap-6 p-6">
+        <div className="md:max-w-[90%] top-12 md:top-0 relative mx-auto grid gap-6 p-6 
+                grid-cols-[repeat(auto-fit,minmax(360px,1fr))]">
             {backgrounds?.map((background, index) => (
                 <div
                     key={index}

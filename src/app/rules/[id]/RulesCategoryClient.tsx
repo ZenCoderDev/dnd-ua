@@ -35,7 +35,7 @@ export default function RulesCategoryClient({ id }: { id: string }) {
     })
 
     return (
-        <div className="max-w-[90%] mx-auto mt-4">
+        <div className="md:max-w-[90%] mx-auto mt-16 md:mt-4">
             {Array.from(grouped.entries()).map(([group, items]) => (
                 <div key={group} className="mb-6 bg-(--card-background) gap-4 flex flex-col p-4 rounded-2xl">
                     <h1 className="text-xl font-bold">

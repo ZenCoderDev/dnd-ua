@@ -5,7 +5,8 @@ import { equipmentCategories } from "./categories";
 
 export default function EquipmentIndexPage() {
     return (
-        <div className="max-w-[90%] mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+       <div className="md:max-w-[90%] top-12 md:top-0 relative mx-auto grid gap-6 p-6 
+                grid-cols-[repeat(auto-fit,minmax(360px,1fr))]">
             {equipmentCategories.map((cat, index) => {
                 const Icon = cat.icon;
                 return (

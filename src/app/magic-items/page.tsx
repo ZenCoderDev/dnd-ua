@@ -10,10 +10,85 @@ function renderName(item: MagicItem) {
     return `${item.nameUa} (${item.nameEn})`;
 }
 
+const getNormalizeEffectName = (name: string): string => {
+    switch (name) {
+        case "action":
+            return "Використання";
+        case "healing":
+            return "Лікування";
+        case "bonus":
+            return "Бонус";
+        case "speed":
+            return "Швидкість";
+        case "duration":
+            return "Тривалість";
+        case "note":
+            return "Примітка";
+        case "casting":
+            return "Накладання закляття";
+        case "special":
+            return "Особливість";
+        case "attack_bonus":
+            return "Бонус до Кидків Атаки";
+        case "damage_bonus":
+            return "Бонус до Кидків Шкоди";
+        case "ac_bonus":
+            return "Бонус Броні";
+        case "charges":
+            return "Заряди";
+        case "ignore":
+            return "Знехтувати";
+        case "resistance":
+            return "Опір";
+        case "regrowth":
+            return "Відновлення";
+        case "duration":
+            return "Тривалість";
+        case "risk":
+            return "Ризики";
+        case "alignment_restriction":
+            return "Обмежене використання";
+        case "cursed":
+            return "Прокляте";
+        case "spell":
+            return "Закляття";
+        case "sentient":
+            return "Має особистіть";
+    }
+    return name;
+}
+
+export const getNormalizeValueName = (name: string): string => {
+    switch (name) {
+        case "true":
+            return "Так";
+        case "false":
+            return "Ні";
+        case "null":
+            return "Відсутнє";
+    }
+    return name;
+}
+
+const rarityOrder = [
+    "Звичайний",
+    "Незвичайний",
+    "Рідкісний",
+    "Дуже рідкісний",
+    "Легендарний",
+    "Артефакт",
+];
+
+const rarityColors: Record<string, string> = {
+    Звичайний: "#ffffff",
+    Незвичайний: "#22c55e",
+    Рідкісний: "#3b82f6",
+    "Дуже рідкісний": "#a855f7",
+    Легендарний: "#f59e0b",
+    Артефакт: "#ef4444",
+};
+
 export default function ItemsPage() {
-    const [expanded, setExpanded] = useState<string | null>(null);
-
-
     const [filters, setFilters] = useState<{
         rarity?: string;
         type?: string;
@@ -23,6 +98,8 @@ export default function ItemsPage() {
         type: undefined,
         search: "",
     });
+
+    const [selected, setSelected] = useState<MagicItem | null>(null);
 
     const { data: items, isLoading, isError } = useGetAllMagicItemsQuery(filters);
 
@@ -48,12 +125,26 @@ export default function ItemsPage() {
 
     const itemsByRarity = useMemo(() => {
         if (!items) return new Map<string, MagicItem[]>();
+
         const map = new Map<string, MagicItem[]>();
+
+        // группируем
         items.forEach((item) => {
             if (!map.has(item.rarity)) map.set(item.rarity, []);
             map.get(item.rarity)!.push(item);
         });
-        return map;
+
+        // сортируем ключи по кастомному порядку
+        const sortedMap = new Map<string, MagicItem[]>();
+        rarityOrder.forEach((rarity) => {
+            if (map.has(rarity)) {
+                // если нужно ещё сортировать внутри группы (например, по id или name)
+                const group = map.get(rarity)!.sort((a, b) => a.id - b.id);
+                sortedMap.set(rarity, group);
+            }
+        });
+
+        return sortedMap;
     }, [items]);
 
     const entries = Array.from(itemsByRarity.entries()).sort(([a], [b]) =>
@@ -64,9 +155,12 @@ export default function ItemsPage() {
     if (isError) return <p>Помилка завантаження</p>;
 
     return (
-        <div className="max-w-[90%] relative mx-auto grid grid-cols-2 gap-6 p-6">
+        <div className="top-12 md:top-0 relative w-full mx-auto flex flex-col gap-4 ">
             {/* Фільтри */}
-            <div className="col-span-2 flex gap-4 mb-6">
+            <div className="hidden md:absolute default-background h-full z-8 right-0 w-[5%]">
+
+            </div>
+            <div className="flex flex-col md:flex-row gap-4 mb-6 p-6 w-full mx-auto items-start md:max-w-[90%] ">
                 <input
                     type="text"
                     placeholder="Пошук..."
@@ -93,85 +187,106 @@ export default function ItemsPage() {
             </div>
 
             {/* Список предметів */}
-            {entries.map(([rarity, list]) => (
-                <div key={rarity} className="bg-(--card-background) p-4 rounded-lg  gap-4">
-                    <h2
-                        className="sticky top-20 z-10
-        bg-gradient-to-r from-(--card-background) to-(--border)
-        text-(--accent)
-        font-extrabold text-xl 
-        px-4 py-2 mb-4 
-        rounded-xl shadow-md border-b border-(--border)"
-                    >
-                        Рідкість предметів: {rarity}
-                    </h2>
+            {Array.from(itemsByRarity.entries()).map(([rarity, list]) => {
+                const color = rarityColors[rarity] ?? "#fff";
+                return (
+                    <div key={rarity} className="bg-(--card-background) md:p-4 rounded-lg w-full mx-auto md:max-w-[90%] ">
+                        <h2
+                            className="top-20 z-10
+                         bg-gradient-to-r from-(--card-background) to-(--border)
+                         text-(--accent)
+                         font-extrabold text-xl 
+                         px-4 py-2 mb-4 
+                         rounded-xl shadow-md border-b border-(--border)"
+                            style={{
+                                backgroundImage: `linear-gradient(to right, var(--card-background), ${color})`
+                            }}>
+                            Рідкість предметів: {rarity}
+                        </h2>
+                        <div className="flex flex-row">
+                            <ul className={`relative md:grid flex-1 p-6 flex flex-col
+                md:grid-cols-[repeat(auto-fit,minmax(360px,1fr))] items-start gap-6 transition-all w-full duration-300 ${selected ? "md:w-2/3" : "w-full"}`}>
+                                {list.map((item, index) => {
+                                    const isSelected = selected?.id === item.id;
 
-                    <ul className="space-y-4">
-                        {list.map((item, index) => {
-                            const isOpen = expanded === `${rarity}-${index}`;
-                            return (
-                                <div
-                                    key={item.id}
-                                    className="group relative overflow-hidden rounded-2xl shadow-xl border border-(--border) transition-transform duration-300 bg-(--card-background)"
-                                    style={{ animationDelay: `${index * 50}ms` }}
-                                >
-                                    <h2
-                                        className="text-lg font-bold cursor-pointer hover:bg-(--accent-hover) hover:text-(--text-accent) p-4 transition duration-300"
-                                        onClick={() =>
-                                            setExpanded(isOpen ? null : `${rarity}-${index}`)
-                                        }
-                                    >
-                                        {renderName(item)}
-                                    </h2>
+                                    return (
+                                        <div
+                                            key={item.id}
+                                            className="group relative overflow-hidden rounded-2xl shadow-xl border border-(--border) transition-transform duration-300"
+                                            style={{
+                                                animationDelay: `${index * 50}ms`,
+                                            }}
+                                        >
+                                            <div className={`absolute w-5 z-6 h-full`}
+                                                style={{
+                                                    backgroundImage: `linear-gradient(to left, var(--card-background), ${color})`
+                                                }}>
 
-                                    <AnimatePresence initial={false}>
-                                        {isOpen && (
-                                            <motion.div
-                                                key="content"
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.3, ease: "easeInOut" }}
-                                                className="overflow-hidden px-4 pb-4"
+                                            </div>
+                                            <h2
+                                                className="relative text-lg z-6 font-bold cursor-pointer hover:bg-(--accent-hover) hover:text-(--text-accent) p-4 transition duration-300"
+                                                onClick={() => setSelected(isSelected ? null : item)}
                                             >
-                                                <div className="mt-3 text-sm space-y-1">
-                                                    <p>
-                                                        <strong>Тип:</strong> {item.type}
-                                                    </p>
-                                                    <p>
-                                                        <strong>Рідкість:</strong> {item.rarity}
-                                                    </p>
-                                                    {item.attunement && (
-                                                        <p>
-                                                            <strong>Необхідна прив’язка:</strong>{" "}
-                                                            {item.attunement ? "Так" : "Ні"}
-                                                        </p>
-                                                    )}
+                                                {renderName(item)}
+                                            </h2>
+                                        </div>
+                                    );
+                                })}
+                            </ul>
+                            <AnimatePresence>
+                                {selected && selected.rarity == rarity && (
+                                    <motion.div
+                                        key="details"
+                                        initial={{ x: 100, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        exit={{ x: 100, opacity: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="md:sticky z-8 h-full fixed w-full flex-1 top-12 md:top-6 overflow-y-auto md:w-1/3 rounded-2xl shadow-xl border border-(--border) bg-(--card-background) p-6"
+                                    >
+                                        <button
+                                            onClick={() => setSelected(null)}
+                                            className="hover:bg-(--accent-hover) text-lg hover:text-(--text-accent) cursor-pointer mb-4 px-3 py-1 rounded-md bg-transparent transition border border-(--border)"
+                                        >
+                                            Закрити
+                                        </button>
+                                        <h2 className="text-2xl font-bold mb-3">{renderName(selected)}</h2>
+                                        <div className="mt-3 text-sm space-y-1">
+                                            <p>
+                                                <strong>Тип:</strong> {selected.type}
+                                            </p>
+                                            <p>
+                                                <strong>Рідкість:</strong> {selected.rarity}
+                                            </p>
+                                            {selected.attunement && (
+                                                <p>
+                                                    <strong>Необхідна прив’язка:</strong>{" "}
+                                                    {selected.attunement ? "Так" : "Ні"}
+                                                </p>
+                                            )}
 
-                                                    {item.effects && (
-                                                        <div className="mt-2 p-2 rounded-lg bg-(--accent) text-(--text-accent) border border-(--border)">
-                                                            <p className="font-bold mb-1">Властивості:</p>
-                                                            <ul className="list-disc ml-5 space-y-1">
-                                                                {Object.entries(item.effects).map(([key, value]) => (
-                                                                    <li key={key}>
-                                                                        <strong>{key}:</strong> {String(value)}
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
-                                                        </div>
-                                                    )}
-
-                                                    <p className="mt-2">{item.description}</p>
+                                            {selected.effects && (
+                                                <div className="mt-2 p-2 rounded-lg bg-(--accent) text-(--text-accent) border border-(--border)">
+                                                    <p className="font-bold mb-1">Властивості:</p>
+                                                    <ul className="list-disc ml-5 space-y-1">
+                                                        {Object.entries(selected.effects).map(([key, value]) => (
+                                                            <li key={key}>
+                                                                <strong>{getNormalizeEffectName(key)}:</strong> {getNormalizeValueName(String(value))}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
                                                 </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </div>
-                            );
-                        })}
-                    </ul>
-                </div>
-            ))}
-        </div>
+                                            )}
+
+                                            <p className="mt-2">{selected.description}</p>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    </div >
+                )
+            })
+            }
+        </div >
     );
 }

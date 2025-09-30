@@ -26,7 +26,7 @@ export default function Sidebar() {
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
             animate={{ width: isOpen ? 220 : 70 }}
-            className="fixed h-screen bg-(--background) text-(--foreground) flex flex-col shadow-lg left-0 top-0 bottom-0 z-16 border-r border-r-(--border)"
+            className="hidden md:flex fixed h-screen bg-(--background) text-(--foreground) flex-col shadow-lg left-0 top-0 bottom-0 z-16 border-r border-(--border)"
             transition={{ duration: 0.3 }}
         >
             <div className="relative flex items-center justify-center h-16 border-b border-(--border)">
@@ -86,8 +86,8 @@ export default function Sidebar() {
                                     <motion.span
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: isOpen ? 1 : 0 }}
-                                        transition={{ duration: 0.6 }}
-                                        className="text-base"
+                                        transition={{ duration: 0.3, delay: isOpen ? 0.3 : 0 }}
+                                        className="text-base whitespace-nowrap"
                                     >
                                         {item.label}
                                     </motion.span>
@@ -102,16 +102,16 @@ export default function Sidebar() {
                     <motion.div
                         className="mx-4 flex items-center transition duration-300 p-2 gap-3 cursor-pointer hover:bg-(--accent-hover) hover:text-(--text-accent) rounded-md">
                         <div className="w-6 h-6 flex items-center justify-center">
-                            <HandCoins size={24} className="w-5 h-5"/>
+                            <HandCoins size={24} className="w-5 h-5" />
                         </div>
                         {isOpen && (
                             <motion.span
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: isOpen ? 1 : 0 }}
-                                transition={{ duration: 0.6 }}
-                                className="text-base"
+                                transition={{ duration: 0.3, delay: isOpen ? 0.3 : 0 }}
+                                className="text-base whitespace-nowrap"
                             >
-                                Підтримати проект
+                                Підтримати
                             </motion.span>
                         )}
                     </motion.div>

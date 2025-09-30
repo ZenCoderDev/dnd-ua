@@ -6,7 +6,8 @@ export default function Home() {
     const { data: feats } = useGetFeatsQuery();
 
     return (
-        <div className=" max-w-[90%] relative mx-auto grid grid-cols-3 gap-6 p-6">
+        <div className="md:max-w-[90%] top-12 md:top-0 relative mx-auto grid gap-6 p-6 
+                grid-cols-[repeat(auto-fit,minmax(360px,1fr))]">
             {feats?.map((feat, index) => (
                 <div
                     key={index}
@@ -33,7 +34,7 @@ export default function Home() {
                         </div>
                     )}
 
-                    <p className="text-sm text-(--text-second) whitespace-pre-line">{feat.description_uk}</p>
+                    <p className="text-sm whitespace-pre-line">{feat.description_uk}</p>
                 </div>
             ))}
         </div>
