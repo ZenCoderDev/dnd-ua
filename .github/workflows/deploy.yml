@@ -67,7 +67,7 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           source: "./next-build/*"
           target: /var/www/tbdices_com_usr/data/www/tbdices.com
-          strip_components: 0
+          strip_components: 1
 
   deploy:
     runs-on: ubuntu-22.04
