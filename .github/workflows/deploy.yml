@@ -65,9 +65,9 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
-          source: "./next-build/*"
+          source: "./next-build"
           target: /var/www/tbdices_com_usr/data/www/tbdices.com
-          strip_components: 1
+          strip_components: 0
 
   deploy:
     runs-on: ubuntu-22.04
