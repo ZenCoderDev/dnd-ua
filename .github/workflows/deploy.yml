@@ -94,7 +94,7 @@ jobs:
             echo "PostgreSQL is ready!"
 
             echo "Installing production dependencies..."
-            npm ci --omit=dev
+            npm install --production
 
             echo "Generating Prisma client..."
             npx prisma generate
