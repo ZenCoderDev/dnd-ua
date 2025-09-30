@@ -155,7 +155,7 @@ export default function ItemsPage() {
     if (isError) return <p>Помилка завантаження</p>;
 
     return (
-        <div className="top-12 md:top-0 relative w-full mx-auto flex flex-col gap-4 ">
+        <div className="mt-12 md:mt-0 relative w-full mx-auto flex flex-col gap-4 ">
             {/* Фільтри */}
             <div className="hidden md:absolute default-background h-full z-8 right-0 w-[5%]">
 

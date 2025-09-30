@@ -8,8 +8,8 @@ export default function Home() {
     const { data: races, isLoading, error } = useGetRacesQuery();
 
     return (
-        <div className="md:max-w-[90%] top-12 md:top-0 relative mx-auto grid gap-6 p-6 
-                grid-cols-[repeat(auto-fit,minmax(360px,1fr))]">
+        <div className="md:max-w-[90%] mt-12 md:mt-0 relative grid gap-6 px-2 py-4 md:p-6
+                grid-cols-[repeat(auto-fit,minmax(340px,1fr))] mx-auto overflow-y-hidden">
             {races?.map((race, index) => (
                 <Link
                     key={race.id}

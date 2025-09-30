@@ -43,7 +43,7 @@ export default function RulesCategoryClient({ id }: { id: string }) {
                     </h1>
                     <div className="grid gap-4"
                         style={{
-                            gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+                            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
                         }}>
                         {items.map((item) => (
                             <div key={item.id} className="border p-2 rounded bg-(--active)">

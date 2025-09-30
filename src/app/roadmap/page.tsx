@@ -13,7 +13,7 @@ export default function RoadmapPage() {
     if (error) return <p>Помилка завантаження</p>;
 
     return (
-        <div className="relative md:max-w-[90%] md:top-6 top-12 mx-auto p-6 flex flex-col gap-2">
+        <div className="relative md:max-w-[90%] md:mt-6 mt-12 mx-auto p-6 flex flex-col gap-2">
             {roadmap && roadmap.length > 0 && (
                 <div className="mt-6">
                     <h2 className="text-2xl font-semibold">Шлях сайту до поліпшення</h2>

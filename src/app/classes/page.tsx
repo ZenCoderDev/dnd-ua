@@ -11,13 +11,13 @@ export default function Home() {
     if (error) return <p>Помилка завантаження</p>;
 
     return (
-       <div className="md:max-w-[90%] top-12 md:top-0 relative mx-auto grid gap-6 p-6 
-                grid-cols-[repeat(auto-fit,minmax(360px,1fr))]">
+       <div className="md:max-w-[90%] mt-12 md:mt-0 relative grid gap-6 px-2 py-4 md:p-6
+                grid-cols-[repeat(auto-fit,minmax(340px,1fr))] mx-auto overflow-y-hidden">
             {classes?.map((classes, index) => (
                 <Link
                     key={classes.id}
                     href={`/classes/${classes.id}`}
-                    className={`cursor-pointer animate-fade-up animate-duration-1000  group p-4 relative overflow-hidden bg-(--card-background) border border-(--border) rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105`}
+                    className={`cursor-pointer mx-0 animate-fade-up animate-duration-1000  group p-4 relative overflow-hidden bg-(--card-background) border border-(--border) rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105`}
                     style={{ animationDelay: `${index * 100}ms` }}>
                     <Image
                         src={classes.image}

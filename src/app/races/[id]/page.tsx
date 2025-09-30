@@ -91,7 +91,7 @@ export default function RaceDetails() {
                     <h2 className="text-2xl font-bold">Підраси</h2>
                     <div className="grid gap-4 mt-2"
                         style={{
-                            gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+                            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
                         }}>
                         {race.subraces.map((sub) => (
                             <div key={sub.id} className="rounded-md border p-3 bg-(--card-background)">

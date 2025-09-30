@@ -1,7 +1,9 @@
 
 
 const DragonTalonSilhouette = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style={{ rotate: "315deg", width: "60%", height: "60%" }} id="svg1" viewBox="0 0 816 750.66669" >
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style={{ rotate: "315deg", width: "60%"}} className="absolute -bottom-16 z-4
+   h-[calc(50vw*0.56)]
+   md:h-[calc(34vw*0.56)]" id="svg1" viewBox="0 0 816 750.66669" >
         <defs id="defs1" />
         <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">

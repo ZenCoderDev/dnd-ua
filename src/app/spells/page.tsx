@@ -63,7 +63,7 @@ export default function Home() {
     const entries = Array.from(spellsByLevel.entries()).sort(([a], [b]) => a - b);
 
     return (
-        <div className="top-12 md:top-0 relative w-full mx-auto flex flex-col gap-4 ">
+        <div className="mt-12 md:mt-0 relative w-full mx-auto flex flex-col gap-4 mb-12">
             <div className="hidden md:absolute default-background h-full z-8 right-0 w-[5%]">
 
             </div>
