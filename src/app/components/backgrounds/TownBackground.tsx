@@ -1,5 +1,5 @@
 const TownSVG = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" viewBox="0 0 900 600" className="absolute mx-auto -bottom-2 md:relative  w-[100%]" style={{ zIndex: "4" }} preserveAspectRatio="none">
+  <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" viewBox="0 0 900 600" className="absolute mx-auto -bottom-16 md:relative  w-[100%]" style={{ zIndex: "4" }} preserveAspectRatio="none">
     <rect width="900" height="600" fill="transparent" />
 
     {/* Первый "слой земли" ниже (с 400 → 500) */}
