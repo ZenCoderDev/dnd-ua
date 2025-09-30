@@ -35,7 +35,7 @@ jobs:
           path: |
             package.json
             package-lock.json
-            .next/**
+            .next
             prisma.config.ts
             prisma
             docker-compose.yml
@@ -57,7 +57,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
-          source: "./package.json,./package-lock.json,./.next/**,./prisma.config.ts,./prisma,./docker-compose.yml"
+          source: "./package.json,./package-lock.json,./.next,./prisma.config.ts,./prisma,./docker-compose.yml"
           target: /var/www/tbdices_com_usr/data/www/tbdices.com
           strip_components: 0
 
