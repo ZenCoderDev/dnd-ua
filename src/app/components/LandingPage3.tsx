@@ -44,7 +44,7 @@ export default function HomePage() {
                 viewport={{ amount: 0.3, once: false }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative flex items-center z-10 justify-center text-(--foreground) w-full text-5xl h-screen border">
-                <div className="absolute bottom-0 md:-bottom-10 z-10 w-full max-w-[40%] md:max-w-[50%] max-h-[60%] md:right-20 right-10">
+                <div className="absolute bottom-0 md:-bottom-25 z-10 w-full max-w-[40%] md:max-w-[50%] max-h-[60%] md:right-20 right-10">
                     <DragonTalonSilhouette />
                 </div>
                 <motion.div
