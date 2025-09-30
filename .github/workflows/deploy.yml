@@ -35,7 +35,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
-          source: "package.json,package-lock.json,.next,prisma.config.ts,prisma"
+          source: "package.json,package-lock.json,next.config.ts,.next,prisma.config.ts,prisma,public"
           target: /var/www/tbdices_com_usr/data/www/tbdices.com
           strip_components: 0
 
@@ -55,14 +55,21 @@ jobs:
 
             set -e
             cd /var/www/tbdices_com_usr/data/www/tbdices.com
-            
+
             docker compose -f docker-compose.yml up -d postgres
 
             echo "Waiting for PostgreSQL to be ready..."
-              until docker exec -i dnd_postgres pg_isready -U postgres -q; do
-            sleep 1
+            until docker exec -i dnd_postgres pg_isready -U postgres -q; do
+              sleep 1
             done
             echo "PostgreSQL is ready!"
+
+            if docker exec -i dnd_postgres psql -U postgres -d dnddb -c '\dt' | grep -q '(0 rows)'; then
+              echo "Importing initial database dump..."
+              docker exec -i dnd_postgres psql -U postgres -d dnddb < ./backup.sql
+            else
+              echo "Database already has data, skipping import..."
+            fi
 
             echo "Installing production dependencies..."
             npm install --production
@@ -76,7 +83,7 @@ jobs:
             else
               pm2 start npm --name "tbdices" -- start
             fi
-            
+
             echo "Starting Prisma Studio..."
             if pm2 list | grep -q "prisma-studio"; then
               pm2 restart prisma-studio
