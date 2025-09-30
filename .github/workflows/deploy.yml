@@ -25,6 +25,9 @@ jobs:
       - name: Build Next.js
         run: npm run build
 
+      - name: Debug Next.js build
+        run: ls -la .next
+
       - name: Save build artifacts
         uses: actions/upload-artifact@v4
         with:
