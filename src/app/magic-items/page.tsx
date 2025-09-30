@@ -58,7 +58,7 @@ const getNormalizeEffectName = (name: string): string => {
     return name;
 }
 
-export const getNormalizeValueName = (name: string): string => {
+const getNormalizeValueName = (name: string): string => {
     switch (name) {
         case "true":
             return "Так";
