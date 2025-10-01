@@ -64,13 +64,6 @@ jobs:
             done
             echo "PostgreSQL is ready!"
 
-            if docker exec -i dnd_postgres psql -U postgres -d dnddb -c '\dt' | grep -q '(0 rows)'; then
-              echo "Importing initial database dump..."
-              docker exec -i dnd_postgres psql -U postgres -d dnddb < ./backup.sql
-            else
-              echo "Database already has data, skipping import..."
-            fi
-
             echo "Installing production dependencies..."
             npm install --production
 
