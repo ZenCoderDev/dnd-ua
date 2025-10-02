@@ -322,6 +322,15 @@ export default function RaceDetails() {
                                         <th className="border px-2 py-1 text-left">Рівень</th>
                                         <th className="border px-2 py-1 text-left">Можливості</th>
                                         <th className="border px-2 py-1 text-left">Бонус майстерності</th>
+                                        {selectedClass.progression.some((row) => row.spellsKnown?.martialArtsDie !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Кубик бойового мистецтва</th>
+                                        )}
+                                        {selectedClass.progression.some((row) => row.spellsKnown?.unarmoredMovement !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Швидкість без броні</th>
+                                        )}
+                                        {selectedClass.progression.some((row) => row.spellsKnown?.kiPoints !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Кіл-сть очок Ці</th>
+                                        )}
                                         {selectedClass.progression.some((row) => row.spellsKnown?.cantrips !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Заговорів відомо</th>
                                         )}
@@ -355,7 +364,15 @@ export default function RaceDetails() {
                                                 {row.features.filter((f) => f !== "—").length > 0 ? row.features.join(", ") : "—"}
                                             </td>
                                             <td className="border border-(--border) px-2 py-1">{row.proficiencyBonus}</td>
-
+                                            {row.spellsKnown?.martialArtsDie !== undefined && (
+                                                <td className="border border-(--border) px-2 py-1">{row.spellsKnown.martialArtsDie}</td>
+                                            )}
+                                            {row.spellsKnown?.unarmoredMovement !== undefined && (
+                                                <td className="border border-(--border) px-2 py-1">+{row.spellsKnown.unarmoredMovement}</td>
+                                            )}
+                                            {row.spellsKnown?.kiPoints !== undefined && (
+                                                <td className="border border-(--border) px-2 py-1">{row.spellsKnown.kiPoints}</td>
+                                            )}
                                             {row.spellsKnown?.cantrips !== undefined && (
                                                 <td className="border border-(--border) px-2 py-1">{row.spellsKnown.cantrips}</td>
                                             )}

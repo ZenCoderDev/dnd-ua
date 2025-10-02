@@ -42,6 +42,9 @@ interface SpellKnown {
   spells: number;
   slot: number;
   level: number;
+  kiPoints: number;
+  unarmoredMovement: number;
+  martialArtsDie: string;
   invocation: number;
 }
 interface LevelProgressionLong {
