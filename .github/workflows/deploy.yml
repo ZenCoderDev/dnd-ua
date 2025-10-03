@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 env:
   REGISTRY: ghcr.io
@@ -43,46 +43,57 @@ jobs:
     runs-on: ubuntu-22.04
     needs: build_and_copy
     steps:
-      - name: Deploy on server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          port: ${{ secrets.SERVER_PORT }}
-          script: |
-            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ env.REGISTRY_OWNER }} --password-stdin
+    - name: Deploy on server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_IP }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        password: ${{ secrets.SERVER_PASSWORD }}
+        port: ${{ secrets.SERVER_PORT }}
+        script: |
+          set -e
+          cd /var/www/tbdices_com_usr/data/www/tbdices.com
 
-            set -e
-            cd /var/www/tbdices_com_usr/data/www/tbdices.com
+          echo "==> Проверяем volume для базы..."
+          docker volume ls | grep -q postgres_data || docker volume create postgres_data
 
-            docker compose -f docker-compose.yml up -d postgres
+          echo "==> Запускаем контейнеры..."
+          docker compose -f docker-compose.yml up -d --no-recreate
 
-            echo "Waiting for PostgreSQL to be ready..."
-            until docker exec -i dnd_postgres pg_isready -U postgres -q; do
-              sleep 1
-            done
-            echo "PostgreSQL is ready!"
+          echo "==> Ждём, пока Postgres поднимется..."
+          until docker exec -i dnd_postgres pg_isready -U postgres -q; do
+            sleep 1
+          done
+          echo "PostgreSQL готов!"
 
-            echo "Installing production dependencies..."
-            npm install --production
+          echo "==> Проверяем, пустая ли база..."
+          if ! docker exec -i dnd_postgres psql -U postgres -d dnddb -tAc "SELECT 1 FROM information_schema.tables WHERE table_schema='public' LIMIT 1;" | grep -q 1; then
+            echo "База пустая → восстанавливаем backup..."
+            docker exec -i dnd_postgres psql -U postgres -d dnddb < /var/www/tbdices_com_usr/data/www/tbdices.com/backup_utf8.sql
+            echo "✅ Backup восстановлен!"
+          else
+            echo "База уже содержит таблицы → пропускаем restore."
+          fi
 
-            echo "Applying Prisma migrations..."
-            npx prisma migrate deploy
+          echo "==> Устанавливаем прод-зависимости..."
+          npm install --production
 
-            echo "Starting or restarting Next.js with PM2..."
-            if pm2 list | grep -q "tbdices"; then
-              pm2 restart tbdices
-            else
-              pm2 start "npm run start" --name "tbdices" --cwd /var/www/tbdices_com_usr/data/www/tbdices.com
-            fi
+          echo "==> Накатываем миграции Prisma..."
+          npx prisma migrate deploy
 
-            echo "Starting Prisma Studio..."
-            if pm2 list | grep -q "prisma-studio"; then
-              pm2 restart prisma-studio
-            else
-              pm2 start "npx prisma studio --port 5555 --browser none" --name "prisma-studio"
-            fi
+          echo "==> Рестартуем Next.js..."
+          if pm2 list | grep -q "tbdices"; then
+            pm2 restart tbdices
+          else
+            pm2 start "npm run start" --name "tbdices" --cwd /var/www/tbdices_com_usr/data/www/tbdices.com
+          fi
 
-            pm2 save
-            echo "Deployment finished successfully!"
+          echo "==> Рестартуем Prisma Studio..."
+          if pm2 list | grep -q "prisma-studio"; then
+            pm2 restart prisma-studio
+          else
+            pm2 start "npx prisma studio --port 5555 --browser none" --name "prisma-studio"
+          fi
+
+          pm2 save
+          echo "✅ Deploy completed!"
