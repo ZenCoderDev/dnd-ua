@@ -7,8 +7,8 @@ import Link from "next/link";
 export default function Home() {
     const { data: races, isLoading, error } = useGetRacesQuery();
 
-    if (isLoading) return <p>Завантаження...</p>;
-    if (error) return <p>Помилка завантаження</p>;
+    if (isLoading)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Завантаження...</p></div>;
+    if (error)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Помилка завантаження</p></div>;
 
     return (
         <div className="grid grid-cols-4 gap-6 p-6">

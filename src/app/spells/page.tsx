@@ -57,8 +57,8 @@ export default function Home() {
         return Array.from(map.entries()).map(([id, name]) => ({ id, name }));
     }, [spells]);
 
-    if (isLoading) return <p>Loading...</p>;
-    if (isError) return <p>Помилка завантаження</p>;
+    if (isLoading)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Loading...</p></div>;
+    if (isError)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Помилка завантаження</p></div>;
 
     const entries = Array.from(spellsByLevel.entries()).sort(([a], [b]) => a - b);
 

@@ -9,8 +9,8 @@ export default function RoadmapPage() {
 
     const { data: roadmap, isLoading, error } = useGetPlansQuery();
 
-    if (isLoading) return <p>Завантаження...</p>;
-    if (error) return <p>Помилка завантаження</p>;
+    if (isLoading)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Завантаження...</p></div>;
+    if (error)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Помилка завантаження</p></div>;
 
     return (
         <div className="relative md:max-w-[90%] md:mt-6 mt-12 mx-auto p-6 flex flex-col gap-2">

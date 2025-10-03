@@ -97,8 +97,8 @@ export const getNormalizeValueName = (name: string): string => {
 export default function EquipmentCategoryClient({ id }: { id: string }) {
     const { data, isLoading, isError } = useGetEquipmentByCategoryQuery(id);
 
-    if (isLoading) return <p>Завантаження...</p>;
-    if (isError || !data) return <p>Помилка!</p>;
+    if (isLoading)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Завантаження...</p></div>;
+    if (isError || !data)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Помилка!</p></div>;
 
     const grouped = new Map<string, typeof data>();
     data.forEach((item) => {

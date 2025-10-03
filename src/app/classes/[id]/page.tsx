@@ -70,9 +70,9 @@ export default function RaceDetails() {
         return [...classFeatures, ...subclassFeatures].sort((a, b) => a.level - b.level);
     }, [selectedClass, selectedSubclass]);
 
-    if (isLoading) return <p>Завантаження...</p>;
-    if (error) return <p>Помилка завантаження</p>;
-    if (!selectedClass) return <p>Раса не знайдена</p>;
+    if(isLoading) return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Завантаження...</p></div>;
+    if (error) return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Помилка завантаження</p></div>;
+    if (!selectedClass) return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Раса не знайдена</p></div>;
 
     return (
         <div className="relative md:max-w-[90%] mt-14 md:mt-6 w-full mx-auto md:p-6">
@@ -138,7 +138,7 @@ export default function RaceDetails() {
                     {/* твой старый блок */}
                     <div className="flex flex-col-reverse md:flex-row gap-4">
                         <div className="flex-2 gap-4 flex flex-col">
-                            <h1 className="text-2xl font-bold">Кістки здоров`&apos;я</h1>
+                            <h1 className="text-2xl font-bold">Кістки здоров&apos;я</h1>
                             <div
                                 className="grid gap-4"
                                 style={{

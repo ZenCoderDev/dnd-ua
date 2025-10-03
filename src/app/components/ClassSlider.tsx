@@ -10,7 +10,7 @@ export default function ClassSlider() {
     const { data: classes, isLoading, error } = useGetClassesQuery();
     const [index, setIndex] = useState(0);
 
-    if (!classes) return <p>Завантаження...</p>;
+    if (!classes)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Завантаження...</p></div>;
 
     const next = () => setIndex((prev) => (prev + 1) % classes.length);
     const prev = () => setIndex((prev) => (prev - 1 + classes.length) % classes.length);

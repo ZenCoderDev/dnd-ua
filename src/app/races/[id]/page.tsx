@@ -34,9 +34,9 @@ export default function RaceDetails() {
     const { data: races } = useGetRacesQuery();
     const { data: race, isLoading, error } = useGetRaceByIdQuery(id);
 
-    if (isLoading) return <p>Завантаження...</p>;
-    if (error) return <p>Помилка завантаження</p>;
-    if (!race) return <p>Раса не знайдена</p>;
+    if (isLoading)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Завантаження...</p></div>;
+    if (error)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Помилка завантаження</p></div>;
+    if (!race)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Раса не знайдена</p></div>;
 
     return (
         <div className="relative md:max-w-[90%] mx-auto p-4 md:p-6 mt-16">

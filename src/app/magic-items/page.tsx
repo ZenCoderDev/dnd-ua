@@ -151,8 +151,8 @@ export default function ItemsPage() {
         a.localeCompare(b)
     );
 
-    if (isLoading) return <p>Loading...</p>;
-    if (isError) return <p>Помилка завантаження</p>;
+    if (isLoading)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Loading...</p></div>;
+    if (isError)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Помилка завантаження</p></div>;
 
     return (
         <div className="mt-12 md:mt-0 relative w-full mx-auto flex flex-col gap-4 ">

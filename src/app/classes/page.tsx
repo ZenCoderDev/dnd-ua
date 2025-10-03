@@ -7,8 +7,8 @@ import Link from "next/link";
 export default function Home() {
     const { data: classes, isLoading, error } = useGetClassesQuery();
 
-    if (isLoading) return <p>Завантаження...</p>;
-    if (error) return <p>Помилка завантаження</p>;
+    if (isLoading)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Завантаження...</p></div>;
+    if (error)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Помилка завантаження</p></div>;
 
     return (
        <div className="md:max-w-[90%] mt-12 md:mt-0 relative grid gap-6 px-2 py-4 md:p-6
