@@ -69,7 +69,7 @@ jobs:
           echo "==> Проверяем, пустая ли база..."
           if ! docker exec -i dnd_postgres psql -U postgres -d dnddb -tAc "SELECT 1 FROM information_schema.tables WHERE table_schema='public' LIMIT 1;" | grep -q 1; then
             echo "База пустая → восстанавливаем backup..."
-            docker exec -i dnd_postgres psql -U postgres -d dnddb < /var/www/tbdices_com_usr/data/www/tbdices.com/backup_utf8.sql
+            docker exec -i dnd_postgres psql -U postgres -d dnddb < /root/backup_utf8.sql
             echo "✅ Backup восстановлен!"
           else
             echo "База уже содержит таблицы → пропускаем restore."
