@@ -34,6 +34,7 @@ interface LevelProgressionShort {
   spellsKnown: SpellKnown;
   proficiencyBonus: string;
   features: string[];
+  sneakyDie: string;
   spellSlots: ItemInter;
 }
 
@@ -47,6 +48,7 @@ interface SpellKnown {
   martialArtsDie: string;
   invocation: number;
 }
+
 interface LevelProgressionLong {
   level: number;
   name: string;

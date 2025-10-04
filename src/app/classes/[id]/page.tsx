@@ -15,6 +15,17 @@ interface MergedFeature {
     subclassId?: string;
 }
 
+interface MergedProgression {
+    level: number;
+    proficiencyBonus: string;
+    spellsKnown?: SpellKnown;
+    spellSlots?: ItemInter;
+    sneakyDie?: string;
+    features: string[];
+    source: "class" | "subclass";
+    subclassId?: string;
+}
+
 const getNormalizeFeatureName = (name: string): string => {
     switch (name) {
         case "invocation":
@@ -33,6 +44,7 @@ export default function RaceDetails() {
     const { data: selectedClass, isLoading, error } = useGetClassByIdQuery(id);
     const { data: subclasses } = useGetSubclassesQuery(id);
     const { data: features } = useGetClassFeaturesQuery(id);
+
 
 
     const [expanded, setExpanded] = useState<boolean | null>(null);
@@ -70,7 +82,40 @@ export default function RaceDetails() {
         return [...classFeatures, ...subclassFeatures].sort((a, b) => a.level - b.level);
     }, [selectedClass, selectedSubclass]);
 
-    if(isLoading) return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Завантаження...</p></div>;
+    const mergedProgression: MergedProgression[] = useMemo(() => {
+        if (!selectedClass) return [];
+
+        const classProgression = selectedClass.progression || [];
+        const subclassProgression = selectedSubclass?.progression || [];
+
+        const merged: MergedProgression[] = classProgression.map(levelEntry => {
+            const subclassEntry = subclassProgression.find(se => se.level === levelEntry.level);
+
+            return {
+                level: levelEntry.level,
+                proficiencyBonus: levelEntry.proficiencyBonus,
+                sneakyDie: levelEntry.sneakyDie === undefined ? undefined : levelEntry.sneakyDie,
+                spellsKnown: {
+                    ...levelEntry.spellsKnown,
+                    ...(subclassEntry?.spellsKnown || {})
+                },
+                spellSlots: {
+                    ...levelEntry.spellSlots,
+                    ...(subclassEntry?.spellSlots || {})
+                },
+                features: [
+                    ...(levelEntry.features || []),
+                    ...(subclassEntry?.features || [])
+                ],
+                source: subclassEntry ? "subclass" : "class",
+                subclassId: subclassEntry ? selectedSubclass?.id : undefined
+            };
+        });
+
+        return merged;
+    }, [selectedClass, selectedSubclass]);
+
+    if (isLoading) return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Завантаження...</p></div>;
     if (error) return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Помилка завантаження</p></div>;
     if (!selectedClass) return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Раса не знайдена</p></div>;
 
@@ -314,7 +359,7 @@ export default function RaceDetails() {
                         />
                     </div>
 
-                    {selectedClass.progression && (
+                    {mergedProgression && (
                         <div className="overflow-y-auto "> {/* здесь задаешь нужную высоту */}
                             <table className="min-w-full border border-(--border) text-sm">
                                 <thead className="bg-(--background)">
@@ -322,33 +367,36 @@ export default function RaceDetails() {
                                         <th className="border px-2 py-1 text-left">Рівень</th>
                                         <th className="border px-2 py-1 text-left">Можливості</th>
                                         <th className="border px-2 py-1 text-left">Бонус майстерності</th>
-                                        {selectedClass.progression.some((row) => row.spellsKnown?.martialArtsDie !== undefined) && (
+                                        {mergedProgression.some((row) => row.spellsKnown?.martialArtsDie !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Кубик бойового мистецтва</th>
                                         )}
-                                        {selectedClass.progression.some((row) => row.spellsKnown?.unarmoredMovement !== undefined) && (
+                                        {mergedProgression.some((row) => row.sneakyDie !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Кубик підступної атаки</th>
+                                        )}
+                                        {mergedProgression.some((row) => row.spellsKnown?.unarmoredMovement !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Швидкість без броні</th>
                                         )}
-                                        {selectedClass.progression.some((row) => row.spellsKnown?.kiPoints !== undefined) && (
+                                        {mergedProgression.some((row) => row.spellsKnown?.kiPoints !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Кіл-сть очок Ці</th>
                                         )}
-                                        {selectedClass.progression.some((row) => row.spellsKnown?.cantrips !== undefined) && (
+                                        {mergedProgression.some((row) => row.spellsKnown?.cantrips !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Заговорів відомо</th>
                                         )}
-                                        {selectedClass.progression.some((row) => row.spellsKnown?.spells !== undefined) && (
+                                        {mergedProgression.some((row) => row.spellsKnown?.spells !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Заклинань відомо</th>
                                         )}
-                                        {selectedClass.progression.some((row) => row.spellsKnown?.slot !== undefined) && (
+                                        {mergedProgression.some((row) => row.spellsKnown?.slot !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Кіл-ть заклять</th>
                                         )}
-                                        {selectedClass.progression.some((row) => row.spellsKnown?.level !== undefined) && (
+                                        {mergedProgression.some((row) => row.spellsKnown?.level !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Рівень заклять</th>
                                         )}
-                                        {selectedClass.progression.some((row) => row.spellsKnown?.invocation !== undefined) && (
+                                        {mergedProgression.some((row) => row.spellsKnown?.invocation !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Відомі Інвокації</th>
                                         )}
                                         {[...Array(9)].map((_, i) => {
                                             const slotLevel = (i + 1).toString();
-                                            return selectedClass.progression.some((row) => row.spellSlots?.[slotLevel] !== undefined) ? (
+                                            return mergedProgression.some((row) => row.spellSlots?.[slotLevel] !== undefined) ? (
                                                 <th key={slotLevel} className="border px-2 py-1 text-left">
                                                     {slotLevel}-рів. слоти
                                                 </th>
@@ -357,7 +405,7 @@ export default function RaceDetails() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {selectedClass.progression.map((row) => (
+                                    {mergedProgression.map((row) => (
                                         <tr key={row.level} className="bg-(--card-background)">
                                             <td className="border border-(--border) px-2 py-1">{row.level}</td>
                                             <td className="border border-(--border) px-2 py-1">
@@ -366,6 +414,9 @@ export default function RaceDetails() {
                                             <td className="border border-(--border) px-2 py-1">{row.proficiencyBonus}</td>
                                             {row.spellsKnown?.martialArtsDie !== undefined && (
                                                 <td className="border border-(--border) px-2 py-1">{row.spellsKnown.martialArtsDie}</td>
+                                            )}
+                                            {row.sneakyDie !== undefined && (
+                                                <td className="border border-(--border) px-2 py-1">{row.sneakyDie}</td>
                                             )}
                                             {row.spellsKnown?.unarmoredMovement !== undefined && (
                                                 <td className="border border-(--border) px-2 py-1">+{row.spellsKnown.unarmoredMovement}</td>
@@ -395,7 +446,7 @@ export default function RaceDetails() {
 
                                             {[...Array(9)].map((_, i) => {
                                                 const slotLevel = (i + 1).toString();
-                                                return selectedClass.progression.some((r) => r.spellSlots?.[slotLevel] !== undefined) ? (
+                                                return mergedProgression.some((r) => r.spellSlots?.[slotLevel] !== undefined) ? (
                                                     <td key={slotLevel} className="border border-(--border) px-2 py-1">
                                                         {row.spellSlots?.[slotLevel] ?? "—"}
                                                     </td>

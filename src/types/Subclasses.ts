@@ -15,6 +15,7 @@ interface SubclassType {
   nameEn: string;
   nameUk: string;
   description: string;
+  progression: LevelProgressionShort[];
   features: SuclassFeature[];
 }
 
@@ -23,4 +24,23 @@ interface SuclassFeature {
   name: string;
   description: string;
   details: string;
+}
+
+interface LevelProgressionShort {
+  level: number;
+  spellsKnown: SpellKnown;
+  proficiencyBonus: string;
+  features: string[];
+  spellSlots: ItemInter;
+}
+
+interface SpellKnown {
+  cantrips: number;
+  spells: number;
+  slot: number;
+  level: number;
+  kiPoints: number;
+  unarmoredMovement: number;
+  martialArtsDie: string;
+  invocation: number;
 }

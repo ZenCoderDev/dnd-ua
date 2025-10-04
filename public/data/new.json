@@ -1,0 +1,168 @@
+[
+    {
+        "level": 1,
+        "sneakyDie": "1d6",
+        "features": [
+            "Експертиза",
+            "Підступна атака (1d6)",
+            "Злодійський жаргон"
+        ],
+        "proficiencyBonus": "+2"
+    },
+    {
+        "level": 2,
+        "sneakyDie": "1d6",
+        "features": [
+            "Хитра дія"
+        ],
+        "proficiencyBonus": "+2"
+    },
+    {
+        "level": 3,
+        "sneakyDie": "2d6",
+        "features": [
+            "Архетип пройдисвіта"
+        ],
+        "proficiencyBonus": "+2"
+    },
+    {
+        "level": 4,
+        "sneakyDie": "2d6",
+        "features": [
+            "Покращення характеристик"
+        ],
+        "proficiencyBonus": "+2"
+    },
+    {
+        "level": 5,
+        "sneakyDie": "3d6",
+        "features": [
+            "Підступна атака (3d6)",
+            "Надійна ухильність"
+        ],
+        "proficiencyBonus": "+3"
+    },
+    {
+        "level": 6,
+        "sneakyDie": "3d6",
+        "features": [
+            "Експертиза (ще 2)"
+        ],
+        "proficiencyBonus": "+3"
+    },
+    {
+        "level": 7,
+        "sneakyDie": "4d6",
+        "features": [
+            "Евазія"
+        ],
+        "proficiencyBonus": "+3"
+    },
+    {
+        "level": 8,
+        "sneakyDie": "4d6",
+        "features": [
+            "Покращення характеристик"
+        ],
+        "proficiencyBonus": "+3"
+    },
+    {
+        "level": 9,
+        "sneakyDie": "5d6",
+        "features": [
+            "Архетип (особливість)",
+            "Підступна атака (5d6)"
+        ],
+        "proficiencyBonus": "+4"
+    },
+    {
+        "level": 10,
+        "sneakyDie": "5d6",
+        "features": [
+            "Надійний талант"
+        ],
+        "proficiencyBonus": "+4"
+    },
+    {
+        "level": 11,
+        "sneakyDie": "6d6",
+        "features": [
+            "Підступна атака (6d6)"
+        ],
+        "proficiencyBonus": "+4"
+    },
+    {
+        "level": 12,
+        "sneakyDie": "6d6",
+        "features": [
+            "Покращення характеристик"
+        ],
+        "proficiencyBonus": "+4"
+    },
+    {
+        "level": 13,
+        "sneakyDie": "7d6",
+        "features": [
+            "Слизький розум",
+            "Підступна атака (7d6)"
+        ],
+        "proficiencyBonus": "+5"
+    },
+    {
+        "level": 14,
+        "sneakyDie": "7d6",
+        "features": [
+            "Архетип (особливість)"
+        ],
+        "proficiencyBonus": "+5"
+    },
+    {
+        "level": 15,
+        "sneakyDie": "8d6",
+        "features": [
+            "Невловимий"
+        ],
+        "proficiencyBonus": "+5"
+    },
+    {
+        "level": 16,
+        "sneakyDie": "8d6",
+        "features": [
+            "Покращення характеристик"
+        ],
+        "proficiencyBonus": "+5"
+    },
+    {
+        "level": 17,
+        "sneakyDie": "9d6",
+        "features": [
+            "Підступна атака (9d6)"
+        ],
+        "proficiencyBonus": "+6"
+    },
+    {
+        "level": 18,
+        "sneakyDie": "9d6",
+        "features": [
+            "Невидимий погляд"
+        ],
+        "proficiencyBonus": "+6"
+    },
+    {
+        "level": 19,
+        "sneakyDie": "10d6",
+        "features": [
+            "Покращення характеристик"
+        ],
+        "proficiencyBonus": "+6"
+    },
+    {
+        "level": 20,
+        "sneakyDie": "10d6",
+        "features": [
+            "Удар долі",
+            "Підступна атака (10d6)"
+        ],
+        "proficiencyBonus": "+6"
+    }
+]

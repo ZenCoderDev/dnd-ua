@@ -42,15 +42,6 @@
   --text-second: #F7CE65;     
   --text-tips: #FFF8BD;       
 } */
-@keyframes rarityPulse {
-  0%   { background-color: var(--rarity-light); }
-  100% { background-color: var(--rarity-base); }
-}
-
-.animate-rarity {
-  animation: rarityPulse 1s ease-in-out forwards;
-}
-
 
 :root {
   --background: #ebedc1;
@@ -96,6 +87,7 @@
 }
 
 body {
+  background-color: var(--background);
   background: url("/images/texture.png") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
