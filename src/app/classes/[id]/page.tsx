@@ -74,7 +74,7 @@ export default function RaceDetails() {
             selectedSubclass?.features?.map(f => ({
                 level: f.level,
                 name: f.name,
-                description: `${f.description}\n${f.details}`,
+                description: `${f.description}`,
                 source: "subclass",
                 subclassId: selectedSubclass.id
             })) || [];
