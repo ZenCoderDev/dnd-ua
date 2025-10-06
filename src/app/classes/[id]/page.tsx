@@ -12,6 +12,7 @@ interface MergedFeature {
     name: string;
     description: string;
     source: "class" | "subclass";
+    subSource?: string;
     subclassId?: string;
 }
 
@@ -21,6 +22,10 @@ interface MergedProgression {
     spellsKnown?: SpellKnown;
     spellSlots?: ItemInter;
     sneakyDie?: string;
+    knownRunes?: number;
+    giantMightUses?: number;
+    giantMightDice?: string;
+    psiDice?: string;
     features: string[];
     source: "class" | "subclass";
     subclassId?: string;
@@ -44,8 +49,6 @@ export default function RaceDetails() {
     const { data: selectedClass, isLoading, error } = useGetClassByIdQuery(id);
     const { data: subclasses } = useGetSubclassesQuery(id);
     const { data: features } = useGetClassFeaturesQuery(id);
-
-
 
     const [expanded, setExpanded] = useState<boolean | null>(null);
 
@@ -87,14 +90,20 @@ export default function RaceDetails() {
 
         const classProgression = selectedClass.progression || [];
         const subclassProgression = selectedSubclass?.progression || [];
+        console.log(subclassProgression);
 
         const merged: MergedProgression[] = classProgression.map(levelEntry => {
             const subclassEntry = subclassProgression.find(se => se.level === levelEntry.level);
+            console.log(levelEntry);
 
             return {
                 level: levelEntry.level,
                 proficiencyBonus: levelEntry.proficiencyBonus,
                 sneakyDie: levelEntry.sneakyDie === undefined ? undefined : levelEntry.sneakyDie,
+                knownRunes: subclassEntry?.knownRunes === undefined ? undefined : subclassEntry.knownRunes,
+                giantMightUses: subclassEntry?.giantMightUses === undefined ? undefined : subclassEntry.giantMightUses,
+                giantMightDice: subclassEntry?.giantMightDice === undefined ? undefined : subclassEntry.giantMightDice,
+                psiDice: subclassEntry?.psiDice === undefined ? undefined : subclassEntry.psiDice,
                 spellsKnown: {
                     ...levelEntry.spellsKnown,
                     ...(subclassEntry?.spellsKnown || {})
@@ -153,13 +162,12 @@ export default function RaceDetails() {
                                 >
                                     <div className="flex flex-col">
                                         <h3 className="font-medium">{subclass.nameUk}</h3>
-                                        <p className="text-sm opacity-80">{subclass.description}</p>
+                                        <h3 className="text-xs opacity-80">{subclass.source}</h3>
                                     </div>
                                 </div>
                             ))}
                         </div>
 
-                        {/* --- Mobile Dropdown --- */}
                         <div className="fixed block md:hidden w-full bg-(--card-background) mb-4 p-4 z-8">
                             <label className="block text-2xl font-bold mb-2">Підкласи</label>
                             <select
@@ -179,8 +187,6 @@ export default function RaceDetails() {
                 )}
 
                 <div className="flex flex-col mt-32 md:mt-0 gap-4 md:w-[80%] p-4 md:p-0">
-
-                    {/* твой старый блок */}
                     <div className="flex flex-col-reverse md:flex-row gap-4">
                         <div className="flex-2 gap-4 flex flex-col">
                             <h1 className="text-2xl font-bold">Кістки здоров&apos;я</h1>
@@ -370,6 +376,18 @@ export default function RaceDetails() {
                                         {mergedProgression.some((row) => row.spellsKnown?.martialArtsDie !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Кубик бойового мистецтва</th>
                                         )}
+                                        {mergedProgression.some((row) => row.psiDice !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Кубик ПСІ сил</th>
+                                        )}
+                                        {mergedProgression.some((row) => row.knownRunes !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Відомі руни</th>
+                                        )}
+                                        {mergedProgression.some((row) => row.giantMightDice !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Кубик сил гіганта</th>
+                                        )}
+                                        {mergedProgression.some((row) => row.giantMightUses !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Використання сил гіганта</th>
+                                        )}
                                         {mergedProgression.some((row) => row.sneakyDie !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Кубик підступної атаки</th>
                                         )}
@@ -415,6 +433,18 @@ export default function RaceDetails() {
                                             {row.spellsKnown?.martialArtsDie !== undefined && (
                                                 <td className="border border-(--border) px-2 py-1">{row.spellsKnown.martialArtsDie}</td>
                                             )}
+                                            {mergedProgression.some((row) => row.psiDice !== undefined) && (
+                                                <th className="border px-2 py-1 text-left">{row.psiDice}</th>
+                                            )}
+                                            {mergedProgression.some((row) => row.knownRunes !== undefined) && (
+                                                <th className="border px-2 py-1 text-left">{row.knownRunes}</th>
+                                            )}
+                                            {mergedProgression.some((row) => row.giantMightDice !== undefined) && (
+                                                <th className="border px-2 py-1 text-left">{row.giantMightDice}</th>
+                                            )}
+                                            {mergedProgression.some((row) => row.giantMightUses !== undefined) && (
+                                                <th className="border px-2 py-1 text-left">{row.giantMightUses}</th>
+                                            )}
                                             {row.sneakyDie !== undefined && (
                                                 <td className="border border-(--border) px-2 py-1">{row.sneakyDie}</td>
                                             )}
@@ -456,6 +486,54 @@ export default function RaceDetails() {
                                     ))}
                                 </tbody>
                             </table>
+                        </div>
+                    )}
+
+                    {selectedSubclass && (
+                        <div className="flex flex-col bg-(--active) p-4 rounded-md mt-4">
+                            <h3 className="text-2xl font-bold">{selectedSubclass.nameUk}</h3>
+                            <h3 className="text-xs">{selectedSubclass.source}</h3>
+                            <p className="text-base">{selectedSubclass.description}</p>
+
+                            {selectedSubclass.subSpells && selectedSubclass.subSpells.length > 0 && (
+                                <div className="overflow-x-auto">
+                                    <table className="min-w-full border rounded-md text-sm text-left">
+                                        <thead>
+                                            <tr className="bg-(--card-background)">
+                                                <th className="border  px-3 py-2 text-center w-12">Ур.</th>
+                                                {selectedSubclass.subSpells[0].groups.map((group, index) => (
+                                                    <th
+                                                        key={index}
+                                                        className="border  px-3 py-2 text-center font-semibold"
+                                                    >
+                                                        {group.title || "Заклинання"}
+                                                    </th>
+                                                ))}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {selectedSubclass.subSpells.map((levelItem) => (
+                                                <tr key={levelItem.level} className="odd:bg-(--background) even:bg-(--card-background)">
+                                                    <td className="border  px-3 py-2 text-center font-bold">
+                                                        {levelItem.level}
+                                                    </td>
+                                                    {levelItem.groups.map((group, index) => (
+                                                        <td key={index} className="border  px-3 py-2 align-top">
+                                                            <ul className="list-disc pl-4">
+                                                                {group.spells.map((spell, i) => (
+                                                                    <li key={i} className="capitalize">
+                                                                        {typeof spell === "string" ? spell : spell.nameUk || spell.nameEn}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </td>
+                                                    ))}
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            )}
                         </div>
                     )}
 

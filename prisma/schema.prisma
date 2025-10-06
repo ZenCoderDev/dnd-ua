@@ -120,8 +120,10 @@ model Subclass {
   nameUk      String
   description String
   features    Json
-  progression Json     @default("[]")
+  progression Json   @default("[]")
   classId     String
+  subSpells   Json?
+  source      String @default("PHB")
   class       Class  @relation("ClassToSubclass", fields: [classId], references: [id]) // ✅ имя совпадает
 }
 

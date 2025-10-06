@@ -25,7 +25,7 @@ export default function Sidebar() {
         <motion.aside
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
-            animate={{ width: isOpen ? 220 : 70 }}
+            animate={{ width: !isOpen ? 70 : 220 }}
             className="hidden md:flex fixed h-screen bg-(--background) text-(--foreground) flex-col shadow-lg left-0 top-0 bottom-0 z-16 border-r border-(--border)"
             transition={{ duration: 0.3 }}
         >
