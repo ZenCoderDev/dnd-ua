@@ -493,14 +493,16 @@ export default function RaceDetails() {
                         <div className="flex flex-col bg-(--active) p-4 rounded-md mt-4">
                             <h3 className="text-2xl font-bold">{selectedSubclass.nameUk}</h3>
                             <h3 className="text-xs">{selectedSubclass.source}</h3>
-                            <p className="text-base">{selectedSubclass.description}</p>
+                            <p className="text-base whitespace-pre-line">
+                                {selectedSubclass.description.replaceAll("\\n", "\n")}
+                            </p>
 
                             {selectedSubclass.subSpells && selectedSubclass.subSpells.length > 0 && (
                                 <div className="overflow-x-auto">
                                     <table className="min-w-full border rounded-md text-sm text-left">
                                         <thead>
                                             <tr className="bg-(--card-background)">
-                                                <th className="border  px-3 py-2 text-center w-12">Ур.</th>
+                                                <th className="border  px-3 py-2 text-center w-12">Рів.</th>
                                                 {selectedSubclass.subSpells[0].groups.map((group, index) => (
                                                     <th
                                                         key={index}
