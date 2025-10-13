@@ -8,6 +8,7 @@ import { equipmentApi } from "./api/apiEquipment";
 import { propertiesApi } from "./api/apiProperties";
 import { rulesApi } from "./api/apiRules"
 import { roadmapApi } from "./api/apiRoadmap";
+import { entitiesApi } from "./api/apiEntity";
 
 export const store = configureStore({
   reducer: {
@@ -19,7 +20,8 @@ export const store = configureStore({
     [equipmentApi.reducerPath] : equipmentApi.reducer,
     [propertiesApi.reducerPath] : propertiesApi.reducer,
     [rulesApi.reducerPath] : rulesApi.reducer,
-    [roadmapApi.reducerPath] : roadmapApi.reducer
+    [roadmapApi.reducerPath] : roadmapApi.reducer,
+    [entitiesApi.reducerPath] : entitiesApi.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -31,7 +33,8 @@ export const store = configureStore({
       equipmentApi.middleware,
       propertiesApi.middleware,
       rulesApi.middleware,
-      roadmapApi.middleware
+      roadmapApi.middleware,
+      entitiesApi.middleware
     ),
 });
 

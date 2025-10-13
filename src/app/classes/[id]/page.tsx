@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState, useMemo } from "react"; // ⬅️ добавляем хуки
 import { useGetClassesQuery, useGetClassByIdQuery, useGetSubclassesQuery, useGetClassFeaturesQuery } from "@/store/api/apiClasses";
 import { AnimatePresence, motion } from "framer-motion";
+import Tooltip from "@/app/components/Tooltip";
 
 interface MergedFeature {
     level: number;
@@ -23,6 +24,8 @@ interface MergedProgression {
     spellSlots?: ItemInter;
     sneakyDie?: string;
     knownRunes?: number;
+    infusionsKnown?: number;
+    infusionsActive?: number;
     giantMightUses?: number;
     giantMightDice?: string;
     psiDice?: string;
@@ -39,6 +42,8 @@ const getNormalizeFeatureName = (name: string): string => {
             return "Маневр";
         case "metamagic":
             return "Мета-магiя";
+        case "infusion":
+            return "Магічні інфузії";
     }
     return name;
 }
@@ -85,21 +90,22 @@ export default function RaceDetails() {
         return [...classFeatures, ...subclassFeatures].sort((a, b) => a.level - b.level);
     }, [selectedClass, selectedSubclass]);
 
+
     const mergedProgression: MergedProgression[] = useMemo(() => {
         if (!selectedClass) return [];
 
         const classProgression = selectedClass.progression || [];
         const subclassProgression = selectedSubclass?.progression || [];
-        console.log(subclassProgression);
 
         const merged: MergedProgression[] = classProgression.map(levelEntry => {
             const subclassEntry = subclassProgression.find(se => se.level === levelEntry.level);
-            console.log(levelEntry);
 
             return {
                 level: levelEntry.level,
                 proficiencyBonus: levelEntry.proficiencyBonus,
                 sneakyDie: levelEntry.sneakyDie === undefined ? undefined : levelEntry.sneakyDie,
+                infusionsKnown: levelEntry.infusionsKnown === undefined ? undefined : levelEntry.infusionsKnown,
+                infusionsActive: levelEntry.infusionsActive === undefined ? undefined : levelEntry.infusionsActive,
                 knownRunes: subclassEntry?.knownRunes === undefined ? undefined : subclassEntry.knownRunes,
                 giantMightUses: subclassEntry?.giantMightUses === undefined ? undefined : subclassEntry.giantMightUses,
                 giantMightDice: subclassEntry?.giantMightDice === undefined ? undefined : subclassEntry.giantMightDice,
@@ -295,15 +301,24 @@ export default function RaceDetails() {
                             }
 
                             <h3 className="text-2xl font-bold">Ви отримуєте наступне початкове спорядження: </h3>
-                            {selectedClass.equipment && (
-                                <div className="flex flex-col gap-4 mt-2">
-                                    {selectedClass.equipment.map((equipment, index) => (
-                                        <div key={index} className="p-4 my-auto text-center rounded-md bg-(--card-background) text-(--accent) shadow">
-                                            <p>{equipment}</p>
+                            {selectedClass.equipment && selectedClass.equipment.length > 0 && (
+                                <div className="flex flex-col gap-4 mt-2 rounded-md bg-(--card-background) text-(--accent) shadow p-4">
+                                    {selectedClass.equipment.map((group, groupIndex) => (
+                                        <div key={groupIndex} className="flex gap-2 justify-center flex-wrap">
+                                            {group.map((item, index) =>
+                                                item.type || item.id != 0 ? (
+                                                    <Tooltip key={index} id={`${item.type}:${item.id}`}>
+                                                        <p className="link">{item.text}</p>
+                                                    </Tooltip>
+                                                ) : (
+                                                    <p key={index} className="text-(--accent)">{item.text}</p>
+                                                )
+                                            )}
                                         </div>
                                     ))}
                                 </div>
                             )}
+
                             {features && features.length > 0 && (
                                 <div>
                                     <h3 className="text-2xl font-bold">Особливості класу</h3>
@@ -335,7 +350,7 @@ export default function RaceDetails() {
                                                                 {f.requirements && (
                                                                     <div>
                                                                         {f.requirements.map((req, index) => (
-                                                                            <p key={index} className="text-sm text-(--text-secondary)">
+                                                                            <p key={index} className="text-sm text-(--active)">
                                                                                 Необхідно: {req}
                                                                             </p>
                                                                         ))}
@@ -367,7 +382,7 @@ export default function RaceDetails() {
 
                     {mergedProgression && (
                         <div className="overflow-y-auto "> {/* здесь задаешь нужную высоту */}
-                            <table className="min-w-full border border-(--border) text-sm">
+                            <table className="min-w-full rounded-md p-4 border border-(--border) text-sm">
                                 <thead className="bg-(--background)">
                                     <tr>
                                         <th className="border px-2 py-1 text-left">Рівень</th>
@@ -375,6 +390,12 @@ export default function RaceDetails() {
                                         <th className="border px-2 py-1 text-left">Бонус майстерності</th>
                                         {mergedProgression.some((row) => row.spellsKnown?.martialArtsDie !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Кубик бойового мистецтва</th>
+                                        )}
+                                        {mergedProgression.some((row) => row.infusionsKnown !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Знані інфузії</th>
+                                        )}
+                                        {mergedProgression.some((row) => row.infusionsActive !== undefined) && (
+                                            <th className="border px-2 py-1 text-left">Використання інфузій</th>
                                         )}
                                         {mergedProgression.some((row) => row.psiDice !== undefined) && (
                                             <th className="border px-2 py-1 text-left">Кубик ПСІ сил</th>
@@ -435,6 +456,12 @@ export default function RaceDetails() {
                                             )}
                                             {mergedProgression.some((row) => row.psiDice !== undefined) && (
                                                 <th className="border px-2 py-1 text-left">{row.psiDice}</th>
+                                            )}
+                                            {mergedProgression.some((row) => row.infusionsKnown !== undefined) && (
+                                                <th className="border px-2 py-1 text-left">{row.infusionsKnown}</th>
+                                            )}
+                                            {mergedProgression.some((row) => row.infusionsActive !== undefined) && (
+                                                <th className="border px-2 py-1 text-left">{row.infusionsActive}</th>
                                             )}
                                             {mergedProgression.some((row) => row.knownRunes !== undefined) && (
                                                 <th className="border px-2 py-1 text-left">{row.knownRunes}</th>
@@ -498,7 +525,7 @@ export default function RaceDetails() {
                             </p>
 
                             {selectedSubclass.subSpells && selectedSubclass.subSpells.length > 0 && (
-                                <div className="overflow-x-auto">
+                                <div className="overflow-visible">
                                     <table className="min-w-full border rounded-md text-sm text-left">
                                         <thead>
                                             <tr className="bg-(--card-background)">
@@ -521,11 +548,13 @@ export default function RaceDetails() {
                                                     </td>
                                                     {levelItem.groups.map((group, index) => (
                                                         <td key={index} className="border  px-3 py-2 align-top">
-                                                            <ul className="list-disc pl-4">
+                                                            <ul className="list-disc pl-4 w-fit">
                                                                 {group.spells.map((spell, i) => (
-                                                                    <li key={i} className="capitalize">
-                                                                        {typeof spell === "string" ? spell : spell.nameUk || spell.nameEn}
-                                                                    </li>
+                                                                    <Tooltip id={`spell:${spell.id}`} key={i}>
+                                                                        <li className="capitalize link ">
+                                                                            {typeof spell === "string" ? spell : spell.nameUk || spell.nameEn}
+                                                                        </li>
+                                                                    </Tooltip>
                                                                 ))}
                                                             </ul>
                                                         </td>

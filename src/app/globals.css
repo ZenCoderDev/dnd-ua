@@ -52,6 +52,8 @@
 
   --accent: #290000;
   --accent-hover: #550c07;
+  --link: #7b1a0f;
+  --link-decoration: #b42514;
 
   --border: #550c07;
   --text-second: #4a3a16;
@@ -99,4 +101,18 @@ body {
   background: url("/images/texture.png") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.link {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  text-decoration-color: var(--link-decoration);
+}
+
+.link:hover {
+  color: var(--link-decoration);
+  text-decoration-color: var(--link-decoration);
 }

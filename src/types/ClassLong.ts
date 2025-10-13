@@ -14,11 +14,17 @@ interface ClassLong {
   armor: ItemInter[];
   weapons: ItemInter[];
   tools: ItemInter[];
-  equipment: string[];
+  equipment: EquipmentItem[][];
   description: string;
   progression: LevelProgressionShort[];
   features: LevelProgressionLong[];
 }
+
+interface EquipmentItem {
+  id: number;
+  type: string;
+  text: string;
+} 
 
 interface ClassSkills {
   choose: number;
@@ -36,6 +42,8 @@ interface LevelProgressionShort {
   features: string[];
   sneakyDie: string;
   spellSlots: ItemInter;
+  infusionsKnown: number;
+  infusionsActive: number;
 }
 
 interface SpellKnown {
