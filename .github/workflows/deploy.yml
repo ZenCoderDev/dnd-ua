@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  REGISTRY_OWNER: ZenCoderDev
+  REGISTRY_OWNER: zencoderdev
 
 permissions:
   contents: read
