@@ -19,14 +19,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Build and push Next.js image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.next
+          push: true
+          tags: ghcr.io/${{ env.REGISTRY_OWNER }}/tbdices-next:latest
 
-      - name: Generate Prisma Client
-        run: npx prisma generate
-
-      - name: Build Next.js
-        run: npm run build
+      - name: Build and push Prisma image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.prisma
+          push: true
+          tags: ghcr.io/${{ env.REGISTRY_OWNER }}/tbdices-prisma:latest
 
       - name: Copy build to server
         uses: appleboy/scp-action@master
@@ -35,7 +42,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
-          source: "package.json,package-lock.json,next.config.ts,.next,prisma.config.ts,prisma,public"
+          source: "docker-compose.prod.yml"
           target: /var/www/tbdices_com_usr/data/www/tbdices.com
           strip_components: 0
 
@@ -54,48 +61,11 @@ jobs:
           set -e
           cd /var/www/tbdices_com_usr/data/www/tbdices.com
 
-          echo "==> Проверяем volume для базы..."
-          docker volume ls | grep -q postgres_data || docker volume create postgres_data
+          echo "==> Docker login..."
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-          echo "==> Запускаем контейнеры..."
-          docker compose -f docker-compose.yml up -d --no-recreate
+          echo "==> Pull latest images..."
+          docker compose -f docker-compose.prod.yml pull
 
-          echo "==> Ждём, пока Postgres поднимется..."
-          until docker exec -i dnd_postgres pg_isready -U postgres -q; do
-            sleep 1
-          done
-          echo "PostgreSQL готов!"
 
-          echo "==> Проверяем, пустая ли база..."
-            if ! docker exec -i dnd_postgres psql -U postgres -tAc "SELECT 1 FROM pg_database WHERE datname='dnddb'" | grep -q 1; then
-              echo "База dnddb не найдена → создаём..."
-              docker exec -i dnd_postgres psql -U postgres -c "CREATE DATABASE dnddb;"
-  
-              echo "Заливаем backup..."
-              docker exec -i dnd_postgres psql -U postgres -d dnddb < /var/www/tbdices_com_usr/data/www/tbdices.com/backup_utf8.sql
-            else
-              echo "База dnddb уже существует → пропускаем восстановление."
-            fi
-
-          echo "==> Устанавливаем прод-зависимости..."
-          npm install --production
-
-          echo "==> Накатываем миграции Prisma..."
-          npx prisma migrate deploy
-
-          echo "==> Рестартуем Next.js..."
-          if pm2 list | grep -q "tbdices"; then
-            pm2 restart tbdices
-          else
-            pm2 start "npm run start" --name "tbdices" --cwd /var/www/tbdices_com_usr/data/www/tbdices.com
-          fi
-
-          echo "==> Рестартуем Prisma Studio..."
-          if pm2 list | grep -q "prisma-studio"; then
-            pm2 restart prisma-studio
-          else
-            pm2 start "npx prisma studio --port 5555 --browser none" --name "prisma-studio"
-          fi
-
-          pm2 save
           echo "✅ Deploy completed!"
