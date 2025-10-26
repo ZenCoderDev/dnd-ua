@@ -1,7 +1,6 @@
 "use client";
 
 import { useGetPlansQuery } from "@/store/api/apiRoadmap";
-import { motion } from "framer-motion";
 import { HandCoins } from "lucide-react";
 import Link from "next/link";
 

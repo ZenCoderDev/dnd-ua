@@ -2,8 +2,6 @@
 
 import { Provider } from "react-redux";
 import { store } from "./index";
-import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 
 export const animations = {
     fade: {
@@ -33,9 +31,6 @@ export const animations = {
 };
 
 export function ReduxProvider({ children }: { children: React.ReactNode }) {
-    const pathname = usePathname();
-    const effect = animations.fade;
-
     return (
         <Provider store={store} >
             {children}

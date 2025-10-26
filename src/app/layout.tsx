@@ -4,7 +4,6 @@ import "./globals.css";
 import { ReduxProvider } from "@/store/Providers";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import Script from "next/script";
 import HeaderWithMobileMenu from "./components/HeaderWithMobileMenu";
 
 const montserrat = Montserrat({

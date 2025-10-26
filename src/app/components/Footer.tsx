@@ -1,11 +1,8 @@
-import Image from "next/image";
-
 export default function Footer() {
     return (
         <footer className="bg-(--card-background) z-8 text-(--text) py-6 border-t border-(--border)">
             <div className="max-w-[90%] mx-auto flex flex-col md:flex-row justify-between gap-4 text-sm">
 
-                {/* Ліва частина */}
                 <div className="flex flex-col gap-2">
                     <p className="font-semibold uppercase text-3xl">Table Dices</p>
                     <p>Фанатський ресурс для гравців та майстрів D&D.</p>
@@ -29,7 +26,6 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Контакти */}
                 <div className="flex flex-col gap-2">
                     <p className="font-semibold">Контакти</p>
                     <a href="mailto:dicestable@gmail.com" className="hover:underline">
@@ -37,7 +33,6 @@ export default function Footer() {
                     </a>
                 </div>
 
-                {/* Дисклеймер */}
                 <div className="flex flex-col gap-2">
                     <p className="font-semibold">Дисклеймер</p>
                     <p className="text-xs text-(--text-second)">

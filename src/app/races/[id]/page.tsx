@@ -95,7 +95,7 @@ export default function RaceDetails() {
                         }}>
                         {race.subraces.map((sub) => (
                             <div key={sub.id} className="rounded-md border p-3 bg-(--card-background)">
-                                <img
+                                <Image
                                     src={sub.image}
                                     alt={sub.name}
                                     className="w-full h-32 object-cover rounded"

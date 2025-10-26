@@ -147,10 +147,6 @@ export default function ItemsPage() {
         return sortedMap;
     }, [items]);
 
-    const entries = Array.from(itemsByRarity.entries()).sort(([a], [b]) =>
-        a.localeCompare(b)
-    );
-
     if (isLoading)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Loading...</p></div>;
     if (isError)return <div className="relative text-center w-full h-full flex items-center justify-center"><p className="mx-auto my-0 w-full h-full">Помилка завантаження</p></div>;
 

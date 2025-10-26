@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
     BookOpen,
     User,
@@ -15,6 +15,8 @@ import {
     HandCoins,
     Menu,
     X,
+    Sun,
+    Moon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -32,6 +34,31 @@ const menuItems = [
 
 export default function HeaderWithMobileMenu() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isDark, setIsDark] = useState(false);
+
+    // Инициализация темы при загрузке
+    useEffect(() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark") {
+            document.body.classList.add("dark-theme");
+            setIsDark(true);
+        } else if (saved === "light") {
+            document.body.classList.add("light-theme");
+            setIsDark(false);
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.body.classList.add("dark-theme");
+            setIsDark(true);
+        }
+    }, []);
+
+    // Переключение темы
+    const toggleTheme = () => {
+        const newTheme = !isDark ? "dark" : "light";
+        document.body.classList.toggle("dark-theme", !isDark);
+        document.body.classList.toggle("light-theme", isDark);
+        localStorage.setItem("theme", newTheme);
+        setIsDark(!isDark);
+    };
 
     return (
         <>
@@ -74,6 +101,15 @@ export default function HeaderWithMobileMenu() {
                         </Link>
                     ))}
                 </nav>
+                <div className="p-4 border-t border-(--border)">
+                    <div
+                        onClick={toggleTheme}
+                        className="flex items-center gap-3 p-2 rounded-md hover:bg-(--accent-hover) hover:text-(--text-accent)"
+                    >
+                        {isDark ? <Sun size={24} className="w-5 h-5" /> : <Moon size={24} className="w-5 h-5" />}
+                        <span>{isDark ? "Світла тема" : "Темна тема"}</span>
+                    </div>
+                </div>
                 <div className="p-4 border-t border-(--border)">
                     <Link
                         href="https://send.monobank.ua/jar/AHEjY15aq8"

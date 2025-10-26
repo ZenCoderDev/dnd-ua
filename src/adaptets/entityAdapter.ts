@@ -3,7 +3,6 @@
 import { EntityViewModel } from "@/types/Entity";
 import { Ammunition, Armor, Gear, Spell, Tool, Weapon } from "@prisma/client";
 import { JsonValue } from "@prisma/client/runtime/binary";
-import { NextResponse } from "next/server";
 
 export function adaptWeapon(weapon: Weapon): EntityViewModel {
   return {

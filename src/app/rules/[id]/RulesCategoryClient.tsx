@@ -1,6 +1,5 @@
 "use client";
 
-import { useGetEquipmentByCategoryQuery } from "@/store/api/apiEquipment";
 import { useGetRulesByCategoryQuery } from "@/store/api/apiRules";
 
 export const getNormalizeTypeName = (name: string): string => {

@@ -134,7 +134,7 @@ export default function Home() {
                 md:grid-cols-[repeat(auto-fit,minmax(360px,1fr))] items-start gap-6 transition-all w-full duration-300 ${selected ? "md:w-2/3" : "w-full"
                                 }`}
                         >
-                            {list.map((spell, index) => {
+                            {list.map((spell) => {
                                 const isSelected = selected?.id === spell.id;
                                 return (
                                     <div

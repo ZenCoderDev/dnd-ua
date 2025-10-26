@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { BookOpen, User, Scroll, Backpack, Sparkles, Gem, Scale, Award, Route, HandCoins } from "lucide-react";
+import { useEffect, useState } from "react";
+import { BookOpen, User, Scroll, Backpack, Sparkles, Gem, Scale, Award, Route, HandCoins, Sun, Moon } from "lucide-react";
 import Link from "next/link";
 
 const menuItems = [
@@ -20,6 +20,31 @@ const menuItems = [
 
 export default function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isDark, setIsDark] = useState(false);
+
+    // Инициализация темы при загрузке
+    useEffect(() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark") {
+            document.body.classList.add("dark-theme");
+            setIsDark(true);
+        } else if (saved === "light") {
+            document.body.classList.add("light-theme");
+            setIsDark(false);
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.body.classList.add("dark-theme");
+            setIsDark(true);
+        }
+    }, []);
+
+    // Переключение темы
+    const toggleTheme = () => {
+        const newTheme = !isDark ? "dark" : "light";
+        document.body.classList.toggle("dark-theme", !isDark);
+        document.body.classList.toggle("light-theme", isDark);
+        localStorage.setItem("theme", newTheme);
+        setIsDark(!isDark);
+    };
 
     return (
         <motion.aside
@@ -97,6 +122,23 @@ export default function Sidebar() {
 
                     ))}
                 </nav>
+                <motion.div
+                    onClick={toggleTheme}
+                    className="mx-4 flex items-center transition duration-300 p-2 gap-3 cursor-pointer hover:bg-(--accent-hover) hover:text-(--text-accent) rounded-md">
+                    <div className="w-6 h-6 flex items-center justify-center">
+                        {isDark ? <Sun size={24} className="w-5 h-5" /> : <Moon size={24} className="w-5 h-5" />}
+                    </div>
+                    {isOpen && (
+                        <motion.span
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: isOpen ? 1 : 0 }}
+                            transition={{ duration: 0.3, delay: isOpen ? 0.3 : 0 }}
+                            className="text-base whitespace-nowrap"
+                        >
+                            {isDark ? "Світла тема" : "Темна тема"}
+                        </motion.span>
+                    )}
+                </motion.div>
                 <Link
                     href={"https://send.monobank.ua/jar/AHEjY15aq8"}>
                     <motion.div

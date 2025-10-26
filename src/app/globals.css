@@ -1,49 +1,8 @@
 @import "tailwindcss";
 @import "tailwindcss-animated";
 
-/* :root {
-  --background: #0F0A1F;
-  --foreground: #FFFFFF;
-
-  --card-background: #18112D;
-  --active: #3B266D;
-  --accent: #7C3AED;
-  --accent-hover: #A78BFA;
-  --text-second: #D1D5DB;
-  --text-tips: #9CA3AF;
-  --border: #27233A;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0F0A1F;
-    --foreground: #FFFFFF;
-  }
-} */
-
-/* :root {
-  --background: #030303;      
-  --foreground: #F7CE65;      
-
-  --card-background: #290000; 
-  --active: #930C10;          
-
-  --accent: #C41E2E;          
-  --accent-hover: #FFDD66;    
-
-  --border: #930C10;          
-  --text-second: #F7CE65;     
-  --text-tips: #FFF8BD;       
-} */
-
 :root {
+  /* Светлая тема по умолчанию */
   --background: #ebedc1;
   --foreground: #2e250a;
 
@@ -59,33 +18,6 @@
   --text-second: #4a3a16;
   --text-tips: #6b5a2c;
   --text-accent: #ebedc1;
-}
-
-/* :root {
-  --background: #030303;
-  --foreground: #ebedc1;
-  --card-background: #290000;
-  --active: #930C10;
-  --accent: #b46934;
-  --accent-hover: #FFDD66;
-  --border: #930C10;
-  --text-second: #F7CE65;
-  --text-tips: #FFF8BD;
-} */
-
-.hide-scrollbar::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-}
-
-/* Firefox */
-.hide-scrollbar {
-  scrollbar-width: none;
-}
-
-/* IE/Edge */
-.hide-scrollbar {
-  -ms-overflow-style: none;
 }
 
 body {
@@ -115,4 +47,64 @@ body {
 .link:hover {
   color: var(--link-decoration);
   text-decoration-color: var(--link-decoration);
+}
+
+/* ========== ТЕМНАЯ ТЕМА ========== */
+body.dark-theme {
+  --background: #0F0A1F;
+  --foreground: #FFFFFF;
+
+  --card-background: #18112D;
+  --active: #3B266D;
+
+  --accent: #7C3AED;
+  --accent-hover: #A78BFA;
+
+  --link: #C084FC;
+  --link-decoration: #A855F7;
+
+  --border: #27233A;
+  --text-second: #D1D5DB;
+  --text-tips: #9CA3AF;
+  --text-accent: #EDE9FE;
+}
+
+body.dark-theme {
+  background: url("/images/texture-dark.png") no-repeat center center;
+  background-color: var(--background);
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--foreground);
+}
+
+body.dark-theme .default-background {
+  background: url("/images/texture-dark.png") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Скрытие скроллбара */
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.list-card {
+  @apply cursor-pointer animate-fade-up border border-(--border) animate-duration-1000 p-4 relative overflow-hidden bg-(--card-background) rounded-2xl shadow-xl transition duration-300 hover:scale-105;
+}
+
+.list-card-img {
+  @apply w-full max-h-80 object-top object-cover rounded-lg border-(--border) border;
+}
+
+.list-card-blur-body {
+  @apply absolute inset-0 pointer-events-none overflow-hidden;
+}
+
+.list-card-blur {
+  @apply group-hover:opacity-70 group-hover:translate-x-0 group-hover:translate-y-0 absolute bottom-1/2 right-1/2 w-[200%] h-[200%] bg-gradient-to-tl from-white/40 to-transparent opacity-0 transform translate-x-1/3 translate-y-1/3 rotate-45 transition-all duration-700 ease-out blur-xl;
 }
