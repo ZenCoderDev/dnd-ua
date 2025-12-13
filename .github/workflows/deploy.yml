@@ -13,11 +13,14 @@ permissions:
   packages: write
 
 jobs:
-  build_and_copy:
+  build_and_push:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Log in to GHCR
         uses: docker/login-action@v3
@@ -32,7 +35,11 @@ jobs:
           context: .
           file: Dockerfile.next
           push: true
-          tags: ghcr.io/${{ env.REGISTRY_OWNER }}/tbdices-next:latest
+          tags: |
+            ghcr.io/${{ env.REGISTRY_OWNER }}/tbdices-next:latest
+            ghcr.io/${{ env.REGISTRY_OWNER }}/tbdices-next:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: Build and push Prisma image
         uses: docker/build-push-action@v6
@@ -40,39 +47,57 @@ jobs:
           context: .
           file: Dockerfile.prisma
           push: true
-          tags: ghcr.io/${{ env.REGISTRY_OWNER }}/tbdices-prisma:latest
+          tags: |
+            ghcr.io/${{ env.REGISTRY_OWNER }}/tbdices-prisma:latest
+            ghcr.io/${{ env.REGISTRY_OWNER }}/tbdices-prisma:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
-      - name: Copy build to server
-        uses: appleboy/scp-action@master
+  deploy:
+    runs-on: ubuntu-22.04
+    needs: build_and_push
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Copy docker-compose and prisma to server
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
-          source: "docker-compose.prod.yml"
+          source: "docker-compose.prod.yml,prisma/schema.prisma,prisma/migrations"
           target: /var/www/tbdices_com_usr/data/www/tbdices.com
           strip_components: 0
 
-  deploy:
-    runs-on: ubuntu-22.04
-    needs: build_and_copy
-    steps:
-    - name: Deploy on server
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SERVER_IP }}
-        username: ${{ secrets.SERVER_USERNAME }}
-        password: ${{ secrets.SERVER_PASSWORD }}
-        port: ${{ secrets.SERVER_PORT }}
-        script: |
-          set -e
-          cd /var/www/tbdices_com_usr/data/www/tbdices.com
+      - name: Deploy on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            set -e
+            cd /var/www/tbdices_com_usr/data/www/tbdices.com
 
-          echo "==> Docker login..."
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            echo "==> Docker login to GHCR..."
+            echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ env.REGISTRY_OWNER }} --password-stdin
 
-          echo "==> Pull latest images..."
-          docker compose -f docker-compose.prod.yml pull
+            echo "==> Pull latest images..."
+            docker compose -f docker-compose.prod.yml pull
 
+            echo "==> Restart containers..."
+            docker compose -f docker-compose.prod.yml up -d
 
-          echo "✅ Deploy completed!"
+            echo "==> Wait for postgres to be ready..."
+            sleep 10
+
+            echo "==> Apply database migrations..."
+            docker compose -f docker-compose.prod.yml exec -T nextjs npx prisma migrate deploy
+
+            echo "==> Clean up old images..."
+            docker image prune -f
+
+            echo "✅ Deploy completed!"

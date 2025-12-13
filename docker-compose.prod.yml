@@ -4,20 +4,33 @@ services:
     container_name: dnd_postgres
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: dnddb
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-dnddb}
+      # Явная поддержка UTF-8 для кириллицы
+      # Используем C.UTF-8 - доступна во всех образах и поддерживает все символы Unicode
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --lc-collate=C.UTF-8 --lc-ctype=C.UTF-8"
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-dnddb}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # НЕ экспонируем порт наружу в проде (только внутренняя сеть)
+    # Раскомментируй если нужен доступ извне:
+    # ports:
+    #   - "5432:5432"
 
   nextjs:
     image: ghcr.io/zencoderdev/tbdices-next:latest
     container_name: tbdices_next
     restart: always
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     env_file:
       - .env
     ports:
@@ -29,7 +42,8 @@ services:
     container_name: prisma_studio
     restart: always
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     env_file:
       - .env
     ports:
