@@ -19,10 +19,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    # НЕ экспонируем порт наружу в проде (только внутренняя сеть)
-    # Раскомментируй если нужен доступ извне:
-    # ports:
-    #   - "5432:5432"
+
 
   nextjs:
     image: ghcr.io/zencoderdev/tbdices-next:latest

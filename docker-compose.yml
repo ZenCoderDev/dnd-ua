@@ -6,8 +6,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: dnddb
-      # Явная поддержка UTF-8 для кириллицы
-      # Используем C.UTF-8 - доступна во всех образах и поддерживает все символы Unicode
       POSTGRES_INITDB_ARGS: "--encoding=UTF8 --lc-collate=C.UTF-8 --lc-ctype=C.UTF-8"
       LANG: C.UTF-8
       LC_ALL: C.UTF-8

@@ -82,9 +82,6 @@ jobs:
             set -e
             cd /var/www/tbdices_com_usr/data/www/tbdices.com
 
-            echo "==> Docker login to GHCR..."
-            echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ env.REGISTRY_OWNER }} --password-stdin
-
             echo "==> Pull latest images..."
             docker compose -f docker-compose.prod.yml pull
 
