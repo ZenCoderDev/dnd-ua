@@ -80,6 +80,7 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             set -e
+            echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ env.REGISTRY_OWNER }} --password-stdin
             cd /var/www/tbdices_com_usr/data/www/tbdices.com
 
             echo "==> Pull latest images..."
